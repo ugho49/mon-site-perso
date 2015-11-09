@@ -35,3 +35,21 @@
 .info h2 {
   font-family: 'Pacifico', cursive;
 }
+
+.progress {
+    background-color: #E9E7E7 !important;
+    height: 8px !important;
+}
+
+.title_section {
+
+}
+
+.title_border {
+  background: none repeat scroll 0 0 #999999;
+  display: block;
+height: 10px;
+margin-top: 30px;
+margin-bottom: 30px;
+width: 100px;
+}
