@@ -5,16 +5,20 @@ $color = "grey darken-1";
 $color_btn = "grey lighten-1";
 ?>
 
+<!-- DEBUT Partie Avatar -->
 <div class="parallax-container">
   <div class="parallax">
     <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" class="fond_info">
     <div class="info">
         <img src="img/avatar.jpg" alt="avatar" class="avatar circle" />
         <h2>Ugho Stephan</h2>
-        <h4>Developer Web & Mobile </h4>
+        <h4>developpeur Web & Mobile </h4>
     </div>
   </div>
 </div>
+<!-- FIN Partie Avatar -->
+
+<!-- DEBUT Partie Avatar -->
 <div class="section white">
   <div class="row container">
     <h2 class="header">A propos de moi</h2>
@@ -23,11 +27,13 @@ $color_btn = "grey lighten-1";
     </p>
   </div>
 </div>
+<!-- FIN Partie Avatar -->
 
 <div class="parallax-container">
   <div class="parallax"><img src="img/image2.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
 </div>
 
+<!-- DEBUT Partie Compétence -->
 <div class="section white">
   <div class="row container">
     <h2 class="header">Mes compétences</h2>
@@ -36,11 +42,13 @@ $color_btn = "grey lighten-1";
     </p>
   </div>
 </div>
+<!-- FIN Partie Compétence -->
 
 <div class="parallax-container">
   <div class="parallax"><img src="img/image3.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
 </div>
 
+<!-- DEBUT Partie Expérience -->
 <div class="section white">
   <div class="row container">
     <h2 class="header">Mes expériences</h2>
@@ -49,11 +57,13 @@ $color_btn = "grey lighten-1";
     </p>
   </div>
 </div>
+<!-- FIN Partie Expérience -->
 
 <div class="parallax-container">
   <div class="parallax"><img src="img/image4.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
 </div>
 
+<!-- DEBUT Partie Contact -->
 <div class="section white">
   <div class="row container">
     <h2 class="header">Me Contacter</h2>
@@ -62,6 +72,7 @@ $color_btn = "grey lighten-1";
     </p>
   </div>
 </div>
+<!-- FIN Partie Contact -->
 
 <footer class="page-footer <?= $color; ?>" style="margin-top:0px;">
   <div class="container">
