@@ -11,7 +11,7 @@ $color_btn = "grey lighten-1";
     <div class="info">
         <img src="img/avatar.jpg" alt="avatar" class="avatar circle" />
         <h2>Ugho Stephan</h2>
-        <h3>Developer Web & Mobile </h3>
+        <h4>Developer Web & Mobile </h4>
     </div>
   </div>
 </div>
