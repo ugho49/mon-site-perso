@@ -196,7 +196,7 @@ $color_btn = "grey lighten-1";
                     </form>
                 </div>
             </div>
-            <div class="col l12">
+            <div class="col s12">
                 <h4>Me trouver</h4>
                 <div class="row">
                     <div id="gmap" class="col s12" style="height:500px;"></div>
