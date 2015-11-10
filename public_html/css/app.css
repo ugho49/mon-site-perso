@@ -73,3 +73,9 @@ footer {
     height: 50px;
     cursor: pointer;
 }
+
+.fixNavigation{
+     z-index: 9999;
+     position: fixed;
+     top: 0;
+ }
