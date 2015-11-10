@@ -124,7 +124,7 @@ $color_btn = "grey lighten-1";
                     <div class="col offset-s1 s2 valign">
                         <i class="icon_contact material-icons">system_update_alt</i>
                     </div>
-                    <div class="col offset-s1 s8 valign"><a href="">Télécharger mon CV</a></div>
+                    <div class="col offset-s1 s8 valign"><a href="files/CV.pdf">Télécharger mon CV</a></div>
                 </div>
                 <div class="row">
                     <div class="col offset-s1 s2">
