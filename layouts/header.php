@@ -13,7 +13,8 @@
     <!-- Other -->
     <title>Ugho Stephan</title>
     <meta name="language" content="fr">
-    <meta name="keywords" content="sport, fitness, musculation, angers, perte, de, poid, developpement, masse, musculaire, sauna">
+    <meta name="keywords" content="ugho stephan, developpeur, etudiant, mobile, web">
+    <meta name="description" content="Site personnel de Ugho STEPHAN étudiant en informatique ...">
     <meta name="author" content="Ugho STEPHAN">
     <meta name="publisher" content="Ugho STEPHAN">
     <meta name="copyright" content="Ugho STEPHAN">
