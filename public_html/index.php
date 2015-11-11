@@ -181,7 +181,7 @@ $color_btn = "grey lighten-1";
             <h2 class="title_section">Mes compétences</h2>
             <span class="title_border"></span>
             <?php
-            $requete = $pdo->prepare('SELECT * FROM type_skills ORDER BY id DESC');
+            $requete = $pdo->prepare('SELECT * FROM type_skills ORDER BY id ASC');
             $requete->execute();
             $types = $requete->fetchAll();
             ?>
@@ -205,7 +205,11 @@ $color_btn = "grey lighten-1";
                             <div class="row">
                                 <div class="col s12">
                                     <div class="progress">
-                                        <div class="determinate skills" data-width="<?= $skill->percentage; ?>" style="background-color: <?= $skill->color_hexa; ?>"></div>
+                                        <div class="determinate skills" data-width="<?= $skill->percentage; ?>" style="background-color: <?= $skill->color_hexa; ?>">
+                                            <span class="percentage">
+                                                <?= $skill->percentage; ?> %
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -255,27 +259,27 @@ $color_btn = "grey lighten-1";
                     <div class="row">
                         <div class="col offset-s1 s2">
                             <a href="https://www.facebook.com/ugho.stephan" target="_blank">
-                                <img src="img/social_facebook.png" alt="facebook+" class="social_btn hoverable circle"/>
+                                <img src="img/social_facebook.png" alt="facebook+" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
                             <a href="https://plus.google.com/+UghoSTEPHAN" target="_blank">
-                                <img src="img/social_gplus.png" alt="google+" class="social_btn hoverable circle"/>
+                                <img src="img/social_gplus.png" alt="google+" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
                             <a href="https://twitter.com/ughoste" target="_blank">
-                                <img src="img/social_twitter.png" alt="twitter" class="social_btn hoverable circle"/>
+                                <img src="img/social_twitter.png" alt="twitter" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
                             <a href="https://fr.linkedin.com/in/ugho-stephan-37127aa0" target="_blank">
-                                <img src="img/social_linkedin.png" alt="linkedin" class="social_btn hoverable circle"/>
+                                <img src="img/social_linkedin.png" alt="linkedin" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
                             <a href="https://github.com/ugho49" target="_blank">
-                                <img src="img/social_github.png" alt="github" class="social_btn hoverable circle"/>
+                                <img src="img/social_github.png" alt="github" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                     </div>

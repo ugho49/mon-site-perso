@@ -50,7 +50,14 @@
 
 .progress {
     background-color: #E9E7E7 !important;
-    height: 8px !important;
+    height: 20px !important;
+}
+
+.percentage {
+    color: white;
+    margin-left: 45%;
+    font-size: 15px;
+    font-weight: bolder;
 }
 
 .title_section {
@@ -112,5 +119,5 @@ footer {
  .title_experience_libelle{
     font-style: italic;
     font-weight: bolder;
-    text-decoration: underline;  
+    text-decoration: underline;
  }
