@@ -285,6 +285,12 @@ $color_btn = "grey lighten-1";
                     </div>
                 </div>
                 <div class="col l6 s12">
+                    <h4>Me trouver</h4>
+                    <div class="row">
+                        <div id="gmap" class="col s12"></div>
+                    </div>
+                </div>
+                <div class="col s12">
                     <h4 id="title_form">Me contacter</h4>
                     <div class="row">
                         <form class="col s12" id="formulaire">
@@ -317,19 +323,13 @@ $color_btn = "grey lighten-1";
                                 <div class="g-recaptcha" data-sitekey="6Ldu2wkTAAAAAEg7atOJ4HFQYM8EYpdBGgCFN6Ri"></div>
                             </div>
                             <div class="row">
-                                <div class="col offset-l4 l4 offset-m4 m4 offset-s3 s6">
+                                <div class="col offset-l5 l6 offset-m5 m6 offset-s3 s6">
                                     <button class="btn btn-large waves-effect waves-light blue" type="submit" name="action">
                                         Envoyer
                                     </button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-                <div class="col s12">
-                    <h4>Me trouver</h4>
-                    <div class="row">
-                        <div id="gmap" class="col s12" style="height:500px;"></div>
                     </div>
                 </div>
             </div>
