@@ -125,7 +125,7 @@ $color_btn = "grey lighten-1";
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header active">
+                    <div class="collapsible-header">
                         <img src="img/soprasteria.png" alt="Sopra Steria" />
                         <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>Sopra Steria - </b>Développeur J2EE</p>
                     </div>
@@ -140,7 +140,7 @@ $color_btn = "grey lighten-1";
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header active">
+                    <div class="collapsible-header">
                         <img src="img/playmoweb.png" alt="Playmoweb" />
                         <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>Playmoweb - </b>Développeur Android</p>
                     </div>
@@ -153,7 +153,7 @@ $color_btn = "grey lighten-1";
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header active">
+                    <div class="collapsible-header">
                         <img src="img/thyssen.png" alt="ThyssenKrup" />
                         <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>ThyssenKrup - </b>Développeur WebDev</p>
                     </div>
