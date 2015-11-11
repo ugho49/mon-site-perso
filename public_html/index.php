@@ -6,13 +6,13 @@ $color_btn = "grey lighten-1";
 ?>
 
 <!-- DEBUT Partie Avatar -->
-<div class="parallax-container" id="home">
+<div class="parallax-container scrollspy" id="home">
     <div class="parallax">
         <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" class="fond_info">
         <div class="info">
             <img src="img/avatar.jpg" alt="avatar" class="avatar circle" />
             <h2>Ugho Stephan</h2>
-            <h4>developpeur Web & Mobile </h4>
+            <h4>Développeur Web & Mobile </h4>
         </div>
     </div>
 </div>
@@ -23,39 +23,49 @@ $color_btn = "grey lighten-1";
     <div class="nav-wrapper container">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="#home" id="btn_home"><i class="material-icons md-light left">home</i>Accueil</a></li>
-            <li><a href="#about"><i class="material-icons md-light left">public</i>A propos de moi</a></li>
-            <li><a href="#experience"><i class="material-icons md-light left">public</i>Mes expériences</a></li>
-            <li><a href="#competence"><i class="material-icons md-light left">public</i>Mes compétences</a></li>
-            <li><a href="#contact"><i class="material-icons md-light left">public</i>Contact</a></li>
+            <li class="btn_home"><a href="#home"><i class="material-icons md-light left">home</i>Accueil</a></li>
+            <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos de moi</a></li>
+            <li class="btn_experience"><a href="#experience"><i class="material-icons md-light left">star</i>Mes expériences</a></li>
+            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">public</i>Mes compétences</a></li>
+            <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li>
-                <a href="sass.html">
+            <li class="btn_home">
+                <a href="#home">
                     <div class="row valign-wrapper">
-                        <div class="s1 valign">
-                            <i class="material-icons md-light">home</i>
-                        </div>
+                        <div class="s1 valign"><i class="material-icons md-light">home</i></div>
                         <div class="col offset-s1 s9 valign">Accueil</div>
                     </div>
                 </a>
             </li>
-            <li>
-                <a href="sass.html">
+            <li class="btn_about">
+                <a href="#about">
                     <div class="row valign-wrapper">
-                        <div class="s1 valign">
-                            <i class="material-icons md-light">public</i>
-                        </div>
+                        <div class="s1 valign"><i class="material-icons md-light">info</i></div>
                         <div class="col offset-s1 s9 valign">A propos</div>
                     </div>
                 </a>
             </li>
-            <li>
-                <a href="sass.html">
+            <li class="btn_experience">
+                <a href="#experience">
                     <div class="row valign-wrapper">
-                        <div class="s1 valign">
-                            <i class="material-icons md-light">search</i>
-                        </div>
+                        <div class="s1 valign"><i class="material-icons md-light">star</i></div>
+                        <div class="col offset-s1 s9 valign">Mes expériences</div>
+                    </div>
+                </a>
+            </li>
+            <li class="btn_competence">
+                <a href="#competence">
+                    <div class="row valign-wrapper">
+                        <div class="s1 valign"><i class="material-icons md-light">public</i></div>
+                        <div class="col offset-s1 s9 valign">Mes compétences</div>
+                    </div>
+                </a>
+            </li>
+            <li class="btn_contact">
+                <a href="#contact">
+                    <div class="row valign-wrapper">
+                        <div class="s1 valign"><i class="material-icons md-light">message</i></div>
                         <div class="col offset-s1 s9 valign">Contact</div>
                     </div>
                 </a>
@@ -67,7 +77,7 @@ $color_btn = "grey lighten-1";
 
 <div id="afterNavContainer">
     <!-- DEBUT Partie A propos -->
-    <div class="section white" id="about">
+    <div class="section white scrollspy" id="about">
         <div class="row container">
             <br>
             <h2 class="title_section">A propos de moi</h2>
@@ -84,7 +94,7 @@ $color_btn = "grey lighten-1";
     </div>
 
     <!-- DEBUT Partie Expérience -->
-    <div class="section white" id="experience">
+    <div class="section white scrollspy" id="experience">
         <div class="row container">
             <br>
             <h2 class="title_section">Mes expériences</h2>
@@ -101,7 +111,7 @@ $color_btn = "grey lighten-1";
     </div>
 
     <!-- DEBUT Partie Compétence -->
-    <div class="section white" id="competence">
+    <div class="section white scrollspy" id="competence">
         <div class="row container">
             <br>
             <h2 class="title_section">Mes compétences</h2>
@@ -131,7 +141,7 @@ $color_btn = "grey lighten-1";
                             <div class="row">
                                 <div class="col s12">
                                     <div class="progress">
-                                        <div class="determinate" style="width: <?= $skill->percentage; ?>%; background-color: <?= $skill->color_hexa; ?>"></div>
+                                        <div class="determinate skills" data-width="<?= $skill->percentage; ?>" style="background-color: <?= $skill->color_hexa; ?>"></div>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +157,7 @@ $color_btn = "grey lighten-1";
         </div>
 
         <!-- DEBUT Partie Contact -->
-        <div class="section white" id="contact">
+        <div class="section white scrollspy" id="contact">
             <div class="row container">
                 <br>
                 <h2 class="title_section">Contact</h2>
