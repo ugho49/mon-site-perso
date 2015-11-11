@@ -24,9 +24,9 @@ $color_btn = "grey lighten-1";
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
             <li class="btn_home"><a href="#home"><i class="material-icons md-light left">home</i>Accueil</a></li>
-            <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos de moi</a></li>
-            <li class="btn_experience"><a href="#experience"><i class="material-icons md-light left">star</i>Mes expériences</a></li>
-            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">public</i>Mes compétences</a></li>
+            <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
+            <li class="btn_experience"><a href="#experience"><i class="material-icons md-light left">star</i>Expériences</a></li>
+            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">public</i>Compétences</a></li>
             <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
@@ -82,8 +82,14 @@ $color_btn = "grey lighten-1";
             <br>
             <h2 class="title_section">A propos de moi</h2>
             <span class="title_border"></span>
-            <p class="grey-text text-darken-3 lighten-3">
-                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+            <p class="grey-text text-darken-3 lighten-3 flow-text">
+                Après l'obtention de mon BTS Services Informatiques aux Organisations obtenu au Lycée Chevrollier à Angers,
+                je m'oriente naturellement vers une Licence MIAGE (Méthodes Informatiques Appliquées à la Gestion de l'Entreprise)
+                à l'Université de Nantes.  Malheureusement ce parcours ne me plaisant pas, je me suis réorienté vers une licence pro
+                Système informatiques et Logiciel à l'IUT de Nantes.
+            </p>
+            <p class="grey-text text-darken-3 lighten-3 flow-text">
+                Actuellement je suis donc en Licence Pro SIL et je réalise ma formation en alternance dans l'entreprise CGI.
             </p>
         </div>
     </div>
@@ -99,9 +105,67 @@ $color_btn = "grey lighten-1";
             <br>
             <h2 class="title_section">Mes expériences</h2>
             <span class="title_border"></span>
-            <p class="grey-text text-darken-3 lighten-3">
-                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+            <p class="grey-text text-darken-3 lighten-3 flow-text">
+                <h4></h4>
             </p>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header active">
+                        <img src="img/cgi.png" alt="cgi" />
+                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>CGI - </b>Analyste programmeur</p>
+                    </div>
+                    <div class="collapsible-body">
+                        <p class="grey-text text-darken-3 lighten-3 flow-text">
+                            <span class="title_experience_libelle">Septembre 2015 - Actuellement</span>
+                            <br><br>
+                            Intégration d'une équipe de 15 personnes sur une TMA pour le client "La poste".
+                            <br>- Application J2EE avec une base Oracle
+                            <br>- Méthode SCRUM
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header active">
+                        <img src="img/soprasteria.png" alt="Sopra Steria" />
+                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>Sopra Steria - </b>Développeur J2EE</p>
+                    </div>
+                    <div class="collapsible-body">
+                        <p class="grey-text text-darken-3 lighten-3 flow-text">
+                            <span class="title_experience_libelle">Avril - Août 2015</span>
+                            <br><br>
+                            Développement du patrimoine applicatif d'un grand ministère.
+                            <br>- Intégration d'une équipe de 15 personnes sur la TMA d'un projet réalisé en J2EE avec une base Oracle.
+                            <br>- Réalisation d'évolutions et de corrections avec un process qualité mis en place grâce au logiciel HP Quality Center.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header active">
+                        <img src="img/playmoweb.png" alt="Playmoweb" />
+                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>Playmoweb - </b>Développeur Android</p>
+                    </div>
+                    <div class="collapsible-body">
+                        <p class="grey-text text-darken-3 lighten-3 flow-text">
+                            <span class="title_experience_libelle">Janvier - Mars 2014</span>
+                            <br><br>
+                            Création d'application Android avec intégration de réseaux sociaux ! Réalisation de différents modules tel qu'une galerie photo ou une timeline twitter.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header active">
+                        <img src="img/thyssen.png" alt="ThyssenKrup" />
+                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>ThyssenKrup - </b>Développeur WebDev</p>
+                    </div>
+                    <div class="collapsible-body">
+                        <p class="grey-text text-darken-3 lighten-3 flow-text">
+                            <span class="title_experience_libelle">Mai - Juin 2013</span>
+                            <br><br>
+                            Travail sur l'intranet propre aux informaticiens ! Travail avec le logiciel WebDev et créations de nombreuses procédures stockés avec MySQL workbench.
+                        </p>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
     <!-- FIN Partie Expérience -->
@@ -223,8 +287,8 @@ $color_btn = "grey lighten-1";
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                    				<input id="first_name" type="text">
-                    				<label for="first_name">Prénom</label>
+                                    <input id="first_name" type="text">
+                                    <label for="first_name">Prénom</label>
                                 </div>
                                 <div class="input-field col s6">
                                     <input id="last_name" type="text">

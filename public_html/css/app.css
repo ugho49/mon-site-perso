@@ -91,3 +91,26 @@ footer {
      position: fixed;
      top: 0;
  }
+
+ .collapsible-header {
+    line-height: 4rem !important;
+ }
+
+ .collapsible-header img {
+     width: 5rem;
+     font-size: 1.6rem;
+     line-height: 3rem;
+     display: block;
+     float: left;
+     text-align: center;
+ }
+
+ .title_experience {
+     text-align: center;
+ }
+
+ .title_experience_libelle{
+    font-style: italic;
+    font-weight: bolder;
+    text-decoration: underline;  
+ }
