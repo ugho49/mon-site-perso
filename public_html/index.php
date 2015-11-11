@@ -217,9 +217,9 @@ $color_btn = "grey lighten-1";
                     </div>
                 </div>
                 <div class="col l6 s12">
-                    <h4>Me contacter</h4>
+                    <h4 id="title_form">Me contacter</h4>
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" id="formulaire">
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>

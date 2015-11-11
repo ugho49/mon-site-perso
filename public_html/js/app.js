@@ -19,7 +19,7 @@ $(document).ready(function(){
     //animate skills bar
     $('.skills').each(function () {
         $(this).appear(function() {
-            var b = $(this).attr("data-width");
+            var b = $(this).data('width');
             $(this).animate({
                 width: b + "%"
             }, 600, "easeOutCirc");
@@ -28,6 +28,33 @@ $(document).ready(function(){
 
     $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
         checkScroll();
+    });
+
+
+    $('#formulaire').submit(function( event ) {
+        // Stop form from submitting normally
+        event.preventDefault();
+
+        var recaptchaResponse = $('#g-recaptcha-response').val();
+        var message = $('#message').val();
+        var email = $('#email').val();
+        var nom = $('#last_name').val();
+        var prenom = $('#first_name').val();
+
+        $.ajax({
+    		type: "POST",
+    		url: "ajax.php",
+            data: {"prenom" : prenom, "nom" : nom, "email" : email, "message" : message, "recaptcha" : recaptchaResponse},
+    		dataType: "json",
+    		success: function(data) {
+    			if(data.status == 'success') {
+                    setFlash(data.status, data.libelle);
+                    document.getElementById("formulaire").reset();
+                } else {
+                    setFlash(data.status, data.libelle);
+                }
+    		}
+    	});
     });
 });
 
@@ -51,35 +78,14 @@ function checkScroll(){
         //hide btn home
         $('.btn_home').hide(500);
     }
-
-    /*var posCursor = $(window).scrollTop();
-    var posHome = $('#home').position().top;
-    var posAbout = $('#about').position().top;
-    var posExperience = $('#experience').position().top;
-    var posCompetence = $('#competence').position().top;
-    var posContact = $('#contact').position().top;*/
-
-    //console.log('cursor : ' + posCursor + " - home : " + posHome + " - about : " + posAbout + " - experience : " + posExperience);
-
-    /*if (posCursor >= posHome && posCursor < posAbout) {
-    disableAllNav();
-} else if (posCursor >= posAbout && posCursor < posExperience) {
-enableOneNav('about');
-} else if (posCursor >= posExperience && posCursor < posCompetence) {
-enableOneNav('experience');
-} else if (posCursor >= posCompetence && posCursor < posContact) {
-enableOneNav('competence');
-} else if (posCursor >= posContact) {
-enableOneNav('contact');
-}*/
-}
-/*
-function disableAllNav() {
-$('.active').removeClass('active');
 }
 
-function enableOneNav(type) {
-disableAllNav();
-$('.btn_' + type).addClass('active');
-console.log(type);
-}*/
+function setFlash(type, libelle) {
+    var flash = '<div class="chip col s12 z-depth-1 ' + type + '"> ' + libelle + '<i class="material-icons">close</i></div>';
+
+    $('#title_form').after(flash);
+
+    $('.chip').delay(3000).fadeOut(500, function() {
+        $(this).remove();
+    });
+}
