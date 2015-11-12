@@ -129,3 +129,33 @@ footer {
 .skills {
     opacity: 0;
 }
+
+.separator {
+    border-color: rgba(128, 128, 128, 0.25);
+}
+
+.bulle {
+    color: white;
+    text-align: center;
+
+    height: 150px;
+    width: 150px;
+}
+
+.expe {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.expe_desc {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.expe_title {
+    font-size: 2.28rem;
+}
+
+.expe_subtitle {
+    font-size: 1.64rem;
+}

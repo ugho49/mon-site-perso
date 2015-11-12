@@ -1,4 +1,5 @@
 <?php
+setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
 include '../layouts/header.php';
 $pdo = require '../src/pdo.php';
 $color = "grey darken-1";
@@ -114,9 +115,40 @@ $color_btn = "grey lighten-1";
             <br>
             <h2 class="title_section">Mes formations</h2>
             <span class="title_border"></span>
-            <p class="grey-text text-darken-3 lighten-3 flow-text">
-                Comming Soon ...
-            </p>
+
+            <?php
+            $requete = $pdo->prepare('SELECT * FROM formations ORDER BY start DESC');
+            $requete->execute();
+            $experiences = $requete->fetchAll();
+            $nb_row = count($experiences);
+            $cpt = 0;
+            ?>
+
+            <?php foreach ($experiences as $e): ?>
+                <?php $cpt++; ?>
+
+                <div class="row expe">
+                    <div class="col l2 m2 offset-s4 s6" style="margin-bottom:10px;">
+                        <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
+                            <div class="valign" style="width: 100%;"><?= ucfirst(strftime('%b %Y', strtotime($e->start))); ?>
+                            <?php if ($e->end != null) {
+                                echo ",<br>".ucfirst(strftime('%b %Y', strtotime($e->end)));
+                            }?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col offset-l1 l9 offset-m2 m8 s12 expe_desc grey-text text-darken-3 lighten-3">
+                        <span class="expe_title"><?= $e->nom_ecole; ?></span>
+                        <br>
+                        <span class="expe_subtitle"><?= $e->titre; ?></span>
+                        <p><?= $e->subtitle; ?></p>
+                    </div>
+                </div>
+
+                <?php if ($cpt != $nb_row): ?>
+                     <div class="divider"></div>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
     </div>
     <!-- FIN Partie Formation -->
@@ -131,67 +163,41 @@ $color_btn = "grey lighten-1";
             <br>
             <h2 class="title_section">Mes expériences</h2>
             <span class="title_border"></span>
-            <p class="grey-text text-darken-3 lighten-3 flow-text">
-                <h4></h4>
-            </p>
-            <ul class="collapsible" data-collapsible="accordion">
-                <li>
-                    <div class="collapsible-header active">
-                        <img src="img/cgi.png" alt="cgi" />
-                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>CGI - </b>Analyste programmeur</p>
+
+            <?php
+            $requete = $pdo->prepare('SELECT * FROM experience ORDER BY start DESC');
+            $requete->execute();
+            $experiences = $requete->fetchAll();
+            $nb_row = count($experiences);
+            $cpt = 0;
+            ?>
+
+            <?php foreach ($experiences as $e): ?>
+                <?php $cpt++; ?>
+
+                <div class="row expe">
+                    <div class="col l2 m2 offset-s4 s6" style="margin-bottom:10px;">
+                        <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
+                            <div class="valign" style="width: 100%;"><?= ucfirst(strftime('%b %Y', strtotime($e->start))); ?>
+                            <?php if ($e->end != null) {
+                                echo ",<br>".ucfirst(strftime('%b %Y', strtotime($e->end)));
+                            }?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="collapsible-body">
-                        <p class="grey-text text-darken-3 lighten-3 flow-text">
-                            <span class="title_experience_libelle">Septembre 2015 - Actuellement</span>
-                            <br><br>
-                            Intégration d'une équipe de 15 personnes sur une TMA pour le client "La poste".
-                            <br>- Application J2EE avec une base Oracle
-                            <br>- Méthode SCRUM
-                        </p>
+                    <div class="col offset-l1 l9 offset-m2 m8 s12 expe_desc grey-text text-darken-3 lighten-3">
+                        <span class="expe_title"><?= $e->nom_entreprise; ?></span>
+                        <br>
+                        <span class="expe_subtitle"><?= $e->titre; ?></span>
+                        <p><?= $e->description; ?></p>
                     </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">
-                        <img src="img/soprasteria.png" alt="Sopra Steria" />
-                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>Sopra Steria - </b>Développeur J2EE</p>
-                    </div>
-                    <div class="collapsible-body">
-                        <p class="grey-text text-darken-3 lighten-3 flow-text">
-                            <span class="title_experience_libelle">Avril - Août 2015</span>
-                            <br><br>
-                            Développement du patrimoine applicatif d'un grand ministère.
-                            <br>- Intégration d'une équipe de 15 personnes sur la TMA d'un projet réalisé en J2EE avec une base Oracle.
-                            <br>- Réalisation d'évolutions et de corrections avec un process qualité mis en place grâce au logiciel HP Quality Center.
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">
-                        <img src="img/playmoweb.png" alt="Playmoweb" />
-                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>Playmoweb - </b>Développeur Android</p>
-                    </div>
-                    <div class="collapsible-body">
-                        <p class="grey-text text-darken-3 lighten-3 flow-text">
-                            <span class="title_experience_libelle">Janvier - Mars 2014</span>
-                            <br><br>
-                            Création d'application Android avec intégration de réseaux sociaux ! Réalisation de différents modules tel qu'une galerie photo ou une timeline twitter.
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header">
-                        <img src="img/thyssen.png" alt="ThyssenKrup" />
-                        <p class="grey-text text-darken-3 lighten-3 flow-text title_experience"><b>ThyssenKrup - </b>Développeur WebDev</p>
-                    </div>
-                    <div class="collapsible-body">
-                        <p class="grey-text text-darken-3 lighten-3 flow-text">
-                            <span class="title_experience_libelle">Mai - Juin 2013</span>
-                            <br><br>
-                            Travail sur l'intranet propre aux informaticiens ! Travail avec le logiciel WebDev et créations de nombreuses procédures stockées avec MySQL workbench.
-                        </p>
-                    </div>
-                </li>
-            </ul>
+                </div>
+
+                <?php if ($cpt != $nb_row): ?>
+                     <div class="divider"></div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+
         </div>
     </div>
     <!-- FIN Partie Expérience -->
