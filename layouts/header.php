@@ -22,6 +22,8 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/icon">
 
     <meta charset="utf-8" />
+
+    <link rel="alternate" href="http://www.ugho-stephan.fr" hreflang="fr" />
   </head>
 
   <body>
