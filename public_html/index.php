@@ -95,8 +95,8 @@ $color_btn = "grey lighten-1";
             <p class="grey-text text-darken-3 lighten-3 flow-text">
                 Après l'obtention de mon BTS Services Informatiques aux Organisations obtenu au Lycée Chevrollier à Angers,
                 je m'oriente naturellement vers une Licence MIAGE (Méthodes Informatiques Appliquées à la Gestion de l'Entreprise)
-                à l'Université de Nantes.  Malheureusement ce parcours ne me plaisant pas, je me suis réorienté vers une licence pro
-                Système informatiques et Logiciel à l'IUT de Nantes.
+                à l'Université de Nantes.  Malheureusement ce parcours ne me plaisant pas, je me suis réorienté vers une licence Pro
+                Systèmes informatiques et Logiciels à l'IUT de Nantes.
             </p>
             <p class="grey-text text-darken-3 lighten-3 flow-text">
                 Actuellement je suis donc en Licence Pro SIL et je réalise ma formation en alternance dans l'entreprise CGI.
