@@ -119,20 +119,20 @@ $color_btn = "grey lighten-1";
             <?php
             $requete = $pdo->prepare('SELECT * FROM formations ORDER BY start DESC');
             $requete->execute();
-            $experiences = $requete->fetchAll();
-            $nb_row = count($experiences);
+            $formations = $requete->fetchAll();
+            $nb_row = count($formations);
             $cpt = 0;
             ?>
 
-            <?php foreach ($experiences as $e): ?>
+            <?php foreach ($formations as $e): ?>
                 <?php $cpt++; ?>
 
                 <div class="row expe">
                     <div class="col l2 m2 offset-s4 s6" style="margin-bottom:10px;">
                         <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
-                            <div class="valign" style="width: 100%;"><?= ucfirst(strftime('%b %Y', strtotime($e->start))); ?>
+                            <div class="valign" style="width: 100%;"><?= $e->start; ?>
                             <?php if ($e->end != null) {
-                                echo ",<br>".ucfirst(strftime('%b %Y', strtotime($e->end)));
+                                echo ",<br>".$e->end;
                             }?>
                             </div>
                         </div>
