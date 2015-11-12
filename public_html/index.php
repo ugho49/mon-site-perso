@@ -25,7 +25,8 @@ $color_btn = "grey lighten-1";
         <ul class="left hide-on-med-and-down">
             <li class="btn_home"><a href="#home"><i class="material-icons md-light left">home</i>Accueil</a></li>
             <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
-            <li class="btn_experience"><a href="#experience"><i class="material-icons md-light left">star</i>Expériences</a></li>
+            <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">done</i>Formations</a></li>
+            <li class="btn_formation"><a href="#experience"><i class="material-icons md-light left">star</i>Expériences</a></li>
             <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">public</i>Compétences</a></li>
             <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
@@ -43,6 +44,14 @@ $color_btn = "grey lighten-1";
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">info</i></div>
                         <div class="col offset-s1 s9 valign">A propos</div>
+                    </div>
+                </a>
+            </li>
+            <li class="btn_formation">
+                <a href="#formation">
+                    <div class="row valign-wrapper">
+                        <div class="s1 valign"><i class="material-icons md-light">done</i></div>
+                        <div class="col offset-s1 s9 valign">Mes formations</div>
                     </div>
                 </a>
             </li>
@@ -96,7 +105,24 @@ $color_btn = "grey lighten-1";
     <!-- FIN Partie A propos -->
 
     <div class="parallax-container">
-        <div class="parallax"><img src="img/image3.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
+        <div class="parallax"><img src="img/image5.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
+    </div>
+
+    <!-- DEBUT Partie Formation -->
+    <div class="section white scrollspy" id="formation">
+        <div class="row container">
+            <br>
+            <h2 class="title_section">Mes formations</h2>
+            <span class="title_border"></span>
+            <p class="grey-text text-darken-3 lighten-3 flow-text">
+                Comming Soon ...
+            </p>
+        </div>
+    </div>
+    <!-- FIN Partie Formation -->
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="img/image2.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
     </div>
 
     <!-- DEBUT Partie Expérience -->
@@ -161,7 +187,7 @@ $color_btn = "grey lighten-1";
                         <p class="grey-text text-darken-3 lighten-3 flow-text">
                             <span class="title_experience_libelle">Mai - Juin 2013</span>
                             <br><br>
-                            Travail sur l'intranet propre aux informaticiens ! Travail avec le logiciel WebDev et créations de nombreuses procédures stockés avec MySQL workbench.
+                            Travail sur l'intranet propre aux informaticiens ! Travail avec le logiciel WebDev et créations de nombreuses procédures stockées avec MySQL workbench.
                         </p>
                     </div>
                 </li>
@@ -171,7 +197,7 @@ $color_btn = "grey lighten-1";
     <!-- FIN Partie Expérience -->
 
     <div class="parallax-container">
-        <div class="parallax"><img src="img/image2.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
+        <div class="parallax"><img src="img/image3.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
     </div>
 
     <!-- DEBUT Partie Compétence -->
@@ -232,32 +258,37 @@ $color_btn = "grey lighten-1";
                 <span class="title_border"></span>
                 <div class="col l6 m12">
                     <h4>Rester en contact</h4>
+
                     <div class="row valign-wrapper">
-                        <div class="col offset-s1 s2 valign">
+                        <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">email</i>
                         </div>
-                        <div class="col offset-s1 s8 valign">stephan.ugho@gmail.com</div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign">stephan.ugho@gmail.com</div>
                     </div>
+
                     <div class="row valign-wrapper">
-                        <div class="col offset-s1 s2 valign">
+                        <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">phone</i>
                         </div>
-                        <div class="col offset-s1 s8 valign">06 88 10 65 38</div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign">06 88 10 65 38</div>
                     </div>
+
                     <div class="row valign-wrapper">
-                        <div class="col offset-s1 s2 valign">
+                        <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">location_on</i>
                         </div>
-                        <div class="col offset-s1 s8 valign">Nantes, France</div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign">Nantes, France</div>
                     </div>
+
                     <div class="row valign-wrapper">
-                        <div class="col offset-s1 s2 valign">
+                        <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">system_update_alt</i>
                         </div>
-                        <div class="col offset-s1 s8 valign"><a href="files/CV.pdf">Télécharger mon CV</a></div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign"><a href="files/CV.pdf" target="_blank">Télécharger mon CV</a></div>
                     </div>
+
                     <div class="row">
-                        <div class="col offset-s1 s2">
+                        <div class="col offset-m1 m2 s2">
                             <a href="https://www.facebook.com/ugho.stephan" target="_blank">
                                 <img src="img/social_facebook.png" alt="facebook+" class="social_btn hoverable circle z-depth-1"/>
                             </a>
@@ -297,25 +328,25 @@ $color_btn = "grey lighten-1";
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="first_name" type="text">
+                                    <input id="first_name" type="text" required="required">
                                     <label for="first_name">Prénom</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="last_name" type="text">
+                                    <input id="last_name" type="text" required="required">
                                     <label for="last_name">Nom</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email">
+                                    <input id="email" type="email" required="required">
                                     <label for="email">Email</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="message" class="materialize-textarea"></textarea>
+                                    <textarea id="message" class="materialize-textarea" required="required"></textarea>
                                     <label for="message">Message ...</label>
                                 </div>
                             </div>
@@ -326,6 +357,7 @@ $color_btn = "grey lighten-1";
                                 <div class="col offset-l5 l6 offset-m5 m6 offset-s3 s6">
                                     <button class="btn btn-large waves-effect waves-light blue" type="submit" name="action">
                                         Envoyer
+                                        <i class="material-icons right">send</i>
                                     </button>
                                 </div>
                             </div>

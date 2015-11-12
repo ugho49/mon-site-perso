@@ -125,3 +125,7 @@ footer {
 #gmap {
     height:340px;
 }
+
+.skills {
+    opacity: 0;
+}

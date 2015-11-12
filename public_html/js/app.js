@@ -18,11 +18,15 @@ $(document).ready(function(){
 
     //animate skills bar
     $('.skills').each(function () {
+        $('.percentage').hide();
         $(this).appear(function() {
             var b = $(this).data('width');
             $(this).animate({
-                width: b + "%"
-            }, 600, "easeOutCirc");
+                width: b + "%",
+                opacity: 1
+            }, 1000, "easeOutCirc", function() {
+                $( this ).children('.percentage').show();
+            });
         });
     });
 
