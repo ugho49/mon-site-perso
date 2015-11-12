@@ -26,16 +26,13 @@
 }
 
 .avatar {
-    /* Remove materialize style */
     display: block !important;
     position: relative !important;
-    min-width: auto !important;
-    min-height: auto !important;
-    left: 50% !important;
-    bottom: auto !important;
-    /* Personal style */
-    height: 50%;
-    padding-top: 30px;
+    min-width: 0px !important;
+    min-height: 0px !important;
+    height: 220px;
+    border-radius: 50%;
+    margin-top: 50px;
 }
 
 .info h2, .info h4 {

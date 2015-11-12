@@ -11,7 +11,7 @@ $color_btn = "grey lighten-1";
     <div class="parallax">
         <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" class="fond_info">
         <div class="info">
-            <img src="img/avatar.jpg" alt="avatar" class="avatar circle" />
+            <img src="img/avatar.jpg" alt="avatar" class="avatar" />
             <h2>Ugho Stephan</h2>
             <h4>Développeur Web & Mobile </h4>
         </div>
