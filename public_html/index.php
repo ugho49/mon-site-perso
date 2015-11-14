@@ -20,6 +20,14 @@ $color_btn = "grey lighten-1";
 <!-- FIN Partie Avatar -->
 
 <!--DEBUT Navigation-->
+<!-- Dropdown Structure -->
+<ul id="dropdown_contact" class="dropdown-content">
+  <li><a href="#informations">Informations</a></li>
+  <li><a href="#findme">Me trouver</a></li>
+  <li class="divider"></li>
+  <li><a href="#contactme">Me contacter</a></li>
+</ul>
+
 <nav id="navigation" class="grey darken-1">
     <div class="nav-wrapper container">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -29,7 +37,7 @@ $color_btn = "grey lighten-1";
             <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">done</i>Formations</a></li>
             <li class="btn_formation"><a href="#experience"><i class="material-icons md-light left">star</i>Expériences</a></li>
             <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">public</i>Compétences</a></li>
-            <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i>Contact</a></li>
+            <li class="btn_contact dropdown-button" data-activates="dropdown_contact"><a href="#!"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li class="btn_home">
@@ -263,7 +271,7 @@ $color_btn = "grey lighten-1";
                 <h2 class="title_section">Contact</h2>
                 <span class="title_border"></span>
                 <div class="col l6 m12">
-                    <h4>Rester en contact</h4>
+                    <h4 id="informations" class="scrollspy">Informations</h4>
 
                     <div class="row valign-wrapper">
                         <div class="col offset-m1 m2 s2 valign">
@@ -322,13 +330,13 @@ $color_btn = "grey lighten-1";
                     </div>
                 </div>
                 <div class="col l6 s12">
-                    <h4>Me trouver</h4>
+                    <h4 id="findme" class="scrollspy">Me trouver</h4>
                     <div class="row">
                         <div id="gmap" class="col s12"></div>
                     </div>
                 </div>
                 <div class="col s12">
-                    <h4 id="title_form">Me contacter</h4>
+                    <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
                     <div class="row">
                         <form class="col s12" id="formulaire">
                             <div class="row">
