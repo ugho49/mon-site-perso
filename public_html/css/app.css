@@ -156,3 +156,11 @@ footer {
 .expe_subtitle {
     font-size: 1.64rem;
 }
+
+#dropdown_contact li a {
+    color: #ffffff !important;
+}
+
+#dropdown_contact li a:hover {
+    color: #757575 !important;
+}

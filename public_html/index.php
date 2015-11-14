@@ -21,7 +21,7 @@ $color_btn = "grey lighten-1";
 
 <!--DEBUT Navigation-->
 <!-- Dropdown Structure -->
-<ul id="dropdown_contact" class="dropdown-content">
+<ul id="dropdown_contact" class="dropdown-content grey darken-1">
   <li><a href="#informations">Informations</a></li>
   <li><a href="#findme">Me trouver</a></li>
   <li class="divider"></li>
