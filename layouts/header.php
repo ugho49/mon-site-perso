@@ -23,7 +23,7 @@
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
     <!-- Animate -->
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <!-- App  -->
     <link rel="stylesheet" href="css/app.min.css">
 
