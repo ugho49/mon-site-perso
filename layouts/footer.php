@@ -1,6 +1,6 @@
     
     <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Appear -->
     <script type="text/javascript" src="js/appear.min.js"></script>
     <!-- Materialize -->
