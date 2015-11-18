@@ -4,7 +4,7 @@
     <!-- Appear -->
     <script type="text/javascript" src="js/appear.min.js"></script>
     <!-- Materialize -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <!-- Init Materialize -->
     <script type="text/javascript" src="js/init.min.js"></script>
     <!-- App -->
