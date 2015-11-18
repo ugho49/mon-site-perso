@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-<<<<<<< HEAD
 
-=======
-   
->>>>>>> 22b034e25a6719fa011e5d2eac0d1d1d1738487f
     <!-- Important Header -->
     <title>Ugho Stephan</title>
     <meta charset="utf-8" />
@@ -17,17 +13,10 @@
     <meta name="author" content="Ugho STEPHAN">
     <meta name="publisher" content="Ugho STEPHAN">
     <meta name="copyright" content="Ugho STEPHAN">
-<<<<<<< HEAD
 
     <!-- Let browser know website is optimized for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-=======
-    
-    <!-- Let browser know website is optimized for mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
->>>>>>> 22b034e25a6719fa011e5d2eac0d1d1d1738487f
     <!--Import Google Icon Font-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico" type="text/css">
