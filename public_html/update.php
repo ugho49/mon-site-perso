@@ -1,5 +1,5 @@
 <?php
-$sh = shell_exec('cd /var/www/public_prod/ && git reset --hard origin/master 2>&1');
+$sh = shell_exec('cd /var/www/public_prod/ && git reset --hard origin/master 2>&1 && git pull 2>&1');
 $output = explode("\n", $sh); 
 foreach($output as $line) 
 { 
