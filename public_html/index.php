@@ -1,7 +1,7 @@
 <?php
 setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
 include '../layouts/header.php';
-$pdo = require '../src/pdo.php';
+$pdo = require '../src/Pdo.php';
 $color = "grey darken-1";
 $color_btn = "grey lighten-1";
 ?>

@@ -1,4 +1,7 @@
 <?php
+/**
+* Vérifications params
+*/
 if (empty($_POST['recaptcha'])) {
     $obj = array('status' => 'warning', 'libelle' => 'Il faut cliquez sur "Je ne suis pas un robot"');
     die(json_encode($obj));
@@ -19,6 +22,9 @@ if (empty($_POST['recaptcha'])) {
     }
 }
 
+/**
+* Functions
+*/
 function isValid($code)
 {
     if (empty($code)) {
