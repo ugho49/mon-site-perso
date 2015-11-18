@@ -368,10 +368,10 @@ $color_btn = "grey lighten-1";
                                 <div class="g-recaptcha" data-sitekey="6Ldu2wkTAAAAAEg7atOJ4HFQYM8EYpdBGgCFN6Ri"></div>
                             </div>
                             <div class="row">
-                                <div class="col offset-l5 l6 offset-m5 m6 offset-s3 s6">
-                                    <button class="btn btn-large waves-effect waves-light blue" type="submit" name="action">
-                                        Envoyer
-                                        <i class="material-icons right">send</i>
+                                <div class="center-align">   
+                                    <button class="valign btn btn-large waves-effect waves-light blue" type="submit" name="action">
+                                            Envoyer
+                                            <i class="material-icons right">send</i>
                                     </button>
                                 </div>
                             </div>
