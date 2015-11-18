@@ -1,6 +1,9 @@
 <?php
-echo shell_exec('cd /var/www/public_prod/');
+echo '<p>'.shell_exec('cd /var/www/public_prod/').'</p>';
 echo '<br>';
-echo shell_exec('git reset --hard origin/master 2>&1');
+echo '<p>'.shell_exec('git reset --hard origin/master 2>&1').'</p>';
 echo '<br>';
-echo shell_exec('git pull 2>&1');
+$output = shell_exec('git pull 2>&1');
+if($output == "Already up-to-date.") {
+    echo '<p style="color: green;">'.$output.'</p>';
+}
