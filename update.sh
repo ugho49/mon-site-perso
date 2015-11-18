@@ -1,8 +1,3 @@
 #!/bin/sh
-
-echo "Script for update project"
-echo "Update begin ..."
-
+cd /var/www/public_prod
 git pull
-
-echo "Update end !!!"
