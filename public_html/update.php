@@ -4,8 +4,5 @@ $output = explode("\n", $output);
 foreach($output as $line) 
 { 
     $line = rtrim($line); 
-    if(substr($line,0,7)=='Protocol') {
-        $line = "<b>$line</b><br>"; 
-    }
     echo $line; 
 }  
