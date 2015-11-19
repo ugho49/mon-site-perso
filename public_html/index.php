@@ -1,9 +1,8 @@
 <?php
 setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
 include '../layouts/header.php';
-$pdo = require '../src/Pdo.php';
-$color = "grey darken-1";
-$color_btn = "grey lighten-1";
+include '../src/App.php';
+$app = new App();
 ?>
 
 <!-- DEBUT Partie Avatar -->
@@ -21,14 +20,14 @@ $color_btn = "grey lighten-1";
 
 <!--DEBUT Navigation-->
 <!-- Dropdown Structure -->
-<ul id="dropdown_contact" class="dropdown-content grey darken-1">
+<ul id="dropdown_contact" class="dropdown-content <?= $app->getColor(); ?>">
   <li><a href="#informations">Informations</a></li>
   <li><a href="#findme">Me trouver</a></li>
   <li class="divider"></li>
   <li><a href="#contactme">Me contacter</a></li>
 </ul>
 
-<nav id="navigation" class="grey darken-1">
+<nav id="navigation" class="<?= $app->getColor(); ?>">
     <div class="nav-wrapper container">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
@@ -125,9 +124,7 @@ $color_btn = "grey lighten-1";
             <span class="title_border"></span>
 
             <?php
-            $requete = $pdo->prepare('SELECT * FROM formations ORDER BY start DESC');
-            $requete->execute();
-            $formations = $requete->fetchAll();
+            $formations = $app->getFormation();
             $nb_row = count($formations);
             $cpt = 0;
             ?>
@@ -173,9 +170,7 @@ $color_btn = "grey lighten-1";
             <span class="title_border"></span>
 
             <?php
-            $requete = $pdo->prepare('SELECT * FROM experience ORDER BY start DESC');
-            $requete->execute();
-            $experiences = $requete->fetchAll();
+            $experiences = $app->getExperience();
             $nb_row = count($experiences);
             $cpt = 0;
             ?>
@@ -220,13 +215,8 @@ $color_btn = "grey lighten-1";
             <br>
             <h2 class="title_section">Mes compétences</h2>
             <span class="title_border"></span>
-            <?php
-            $requete = $pdo->prepare('SELECT * FROM type_skills ORDER BY id ASC');
-            $requete->execute();
-            $types = $requete->fetchAll();
-            ?>
 
-            <?php foreach ($types as $type): ?>
+            <?php foreach ($app->getTypeSkills() as $type): ?>
 
                 <?php if ($type->id == 1): ?>
                     <div class="col l12 s12">
@@ -235,9 +225,7 @@ $color_btn = "grey lighten-1";
                         <?php endif; ?>
                         <h4><?= $type->libelle; ?></h4>
                         <?php
-                        $requete = $pdo->prepare('SELECT * FROM skills WHERE type_skill_id = ?');
-                        $requete->execute([$type->id]);
-                        $skills = $requete->fetchAll();
+                        $skills = $app->getSkillsByType($type->id);
                         $cpt = 0;
                         ?>
                         <?php foreach ($skills as $skill): ?>
@@ -368,7 +356,7 @@ $color_btn = "grey lighten-1";
                                 <div class="g-recaptcha" data-sitekey="6Ldu2wkTAAAAAEg7atOJ4HFQYM8EYpdBGgCFN6Ri"></div>
                             </div>
                             <div class="row">
-                                <div class="center-align">   
+                                <div class="center-align">
                                     <button class="valign btn btn-large waves-effect waves-light blue" type="submit" name="action">
                                             Envoyer
                                             <i class="material-icons right">send</i>
@@ -383,7 +371,7 @@ $color_btn = "grey lighten-1";
         <!-- FIN Partie Contact -->
     </div>
 
-    <footer class="page-footer <?= $color; ?>" style="margin-top:0px;">
+    <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
         <div class="footer-copyright">
             <div class="container">© 2015 Ugho STEPHAN, All rights reserved.</div>
         </div>

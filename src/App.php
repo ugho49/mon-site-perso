@@ -7,7 +7,6 @@ class App
     private $pdo;
 
     private $color = "grey darken-1";
-    private $color_btn = "grey lighten-1";
 
     function __construct() {
         $this->pdo = require_once 'Pdo.php';
@@ -15,10 +14,6 @@ class App
 
     public function getColor() {
         return $this->color;
-    }
-
-    public function getButtonColor() {
-        return $this->color_btn;
     }
 
     public function getFormation() {

@@ -13,8 +13,88 @@
     gulp  OR  gulp <task> <othertask>
 */
 
-var gulp = require('gulp');
+/*
+npm install gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
+*/
 
-gulp.task('default', function() {
-    // place code for your default task here
+// Load plugins
+var gulp = require('gulp'),
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    cache = require('gulp-cache'),
+    livereload = require('gulp-livereload'),
+    del = require('del');
+
+// Styles
+gulp.task('styles', function() {
+  return sass('src/assets/**/*.scss', { style: 'expanded' })
+    .pipe(autoprefixer('last 2 version'))
+    .pipe(gulp.dest('dist/styles'))
+    .pipe(concat('style.min.css'))
+    .pipe(minifycss())
+    .pipe(gulp.dest('public_html/css'))
+    .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.src('src/css/**/*.css')
+    .pipe(minifyCSS())
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
+    .pipe(concat('style.min.css'))
+    .pipe(gulp.dest('dist/css'))
+
+// Scripts
+gulp.task('scripts', function() {
+  return gulp.src('src/assets/**/*.js')
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('default'))
+    .pipe(gulp.dest('public_html/js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(gulp.dest('public_html/js'))
+    .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+// Images
+gulp.task('images', function() {
+  return gulp.src('src/assets/img/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('public_html/img'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
+
+// Clean
+gulp.task('clean', function() {
+  return del(['public_html/css', 'public_html/js', 'public_html/img']);
+});
+
+// Default task
+gulp.task('default', ['clean'], function() {
+  gulp.start('styles', 'scripts', 'images');
+});
+
+// Watch
+gulp.task('watch', function() {
+
+  // Watch .scss files
+  gulp.watch('src/assets/css/**/*.scss', ['styles']);
+
+  // Watch .js files
+  gulp.watch('src/assets/js/**/*.js', ['scripts']);
+
+  // Watch image files
+  gulp.watch('src/assets/images/**/*', ['images']);
+
+  // Create LiveReload server
+  livereload.listen();
+
+  // Watch any files in dist/, reload on change
+  gulp.watch(['public_html/**']).on('change', livereload.changed);
+
 });
