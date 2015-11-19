@@ -1,10 +1,5 @@
 <?php
 /**
-* Constantes
-*/
-$path = './src/assets/files/';
-
-/**
 * Verification params
 */
 if(empty($_GET["file"])) {
@@ -30,7 +25,7 @@ if(empty($_GET["file"])) {
 */
 function getPdf($filename) {
     // Create absolute dir
-    $file = $path.$filename;
+    $file = "../src/assets/files/".$filename;
     // Check file exist
     if (file_exists($file)) {
         // Different header
@@ -48,7 +43,7 @@ function getPdf($filename) {
 
 function getApk($filename) {
     // Create absolute dir
-    $file = $path.$filename;
+    $file = "../src/assets/files/".$filename;
     // Check file exist
     if (file_exists($file)) {
         // Different header

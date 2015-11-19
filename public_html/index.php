@@ -287,7 +287,7 @@ $info = $app->getInformations();
                         <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">system_update_alt</i>
                         </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign"><a href="files/CV.pdf" target="_blank">Télécharger mon CV</a></div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign"><a href="files.php?file=cv" target="_blank">Télécharger mon CV</a></div>
                     </div>
 
                     <div class="row">
