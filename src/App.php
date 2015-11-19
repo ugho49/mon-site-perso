@@ -28,7 +28,7 @@ class App
     }
 
     public function getExperience() {
-        $requete = $this->pdo->prepare('SELECT * FROM experience ORDER BY start DESC');
+        $requete = $this->pdo->prepare('SELECT * FROM experiences ORDER BY start DESC');
         $requete->execute();
         return $requete->fetchAll();
     }
