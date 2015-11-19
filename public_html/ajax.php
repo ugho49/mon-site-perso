@@ -64,12 +64,11 @@ function sendMail($prenom, $nom, $email, $message){
 	$sujet = "Nouveau message ugho-stephan.fr";
 
 	/* Construction du message */
-	$msg  = 'Bonjour,'."\r\n\r\n";
-	$msg .= 'Ce mail a été envoyé de façon automatique'."\r\n\r\n";
 	$msg .= ucfirst(strtolower($prenom)).' '.strtoupper($nom).' ('.$email.') vous à envoyé un message :'."\r\n\r\n";
 	$msg .= '************************'."\r\n\r\n";
 	$msg .= $message ."\r\n\r\n";
-    $msg .= '************************'."\r\n\r\n";
+    	$msg .= '************************'."\r\n\r\n";
+    	$msg .= 'Ce mail a été envoyé de façon automatique'."\r\n\r\n";
 
 	/* En-têtes de l'e-mail */
 	$headers = 'From: ugho-stephan.fr <contact@ugho-stephan.fr>'."\r\n\r\n";
