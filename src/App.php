@@ -16,6 +16,18 @@ class App
         return $this->color;
     }
 
+    public function getInformations() {
+        $result = [];
+        $requete = $this->pdo->prepare('SELECT * FROM informations');
+        $requete->execute();
+
+        foreach ($requete->fetchAll() as $r) {
+            $result[$r->libelle] = $r->value;
+        }
+
+        return $result;
+    }
+
     public function getFormation() {
         $requete = $this->pdo->prepare('SELECT * FROM formations ORDER BY start DESC');
         $requete->execute();

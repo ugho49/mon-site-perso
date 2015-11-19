@@ -1,4 +1,8 @@
 <?php
+
+include_once '../src/App.php';
+$app = new App();
+
 /**
 * Vérifications params
 */
@@ -30,8 +34,9 @@ function isValid($code)
     if (empty($code)) {
         return false; // Si aucun code n'est entré, on ne cherche pas plus loin
     }
+
     $params = [
-        'secret'    => '6Ldu2wkTAAAAABnUbpPx3iJkofFkbdVF5WbCTzF0',
+        'secret'    => $app->getInformations()['recaptcha_secret'],
         'response'  => $code
     ];
 

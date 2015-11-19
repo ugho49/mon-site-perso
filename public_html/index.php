@@ -3,6 +3,7 @@ setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
 include '../layouts/header.php';
 include '../src/App.php';
 $app = new App();
+$info = $app->getInformations();
 ?>
 
 <!-- DEBUT Partie Avatar -->
@@ -11,8 +12,8 @@ $app = new App();
         <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" class="fond_info">
         <div class="info">
             <img src="img/avatar.jpg" alt="avatar" class="avatar" />
-            <h2>Ugho Stephan</h2>
-            <h4>Développeur Web & Mobile </h4>
+            <h2><?= $info['title']; ?></h2>
+            <h4><?= $info['subtitle']; ?></h4>
         </div>
     </div>
 </div>
@@ -265,21 +266,21 @@ $app = new App();
                         <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">email</i>
                         </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign">stephan.ugho@gmail.com</div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['mail']; ?></div>
                     </div>
 
                     <div class="row valign-wrapper">
                         <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">phone</i>
                         </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign">06 88 10 65 38</div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['phone']; ?></div>
                     </div>
 
                     <div class="row valign-wrapper">
                         <div class="col offset-m1 m2 s2 valign">
                             <i class="icon_contact material-icons">location_on</i>
                         </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign">Nantes, France</div>
+                        <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['location']; ?></div>
                     </div>
 
                     <div class="row valign-wrapper">
@@ -291,27 +292,27 @@ $app = new App();
 
                     <div class="row">
                         <div class="col offset-m1 m2 s2">
-                            <a href="https://www.facebook.com/ugho.stephan" target="_blank">
+                            <a href="<?= $info['facebook']; ?>" target="_blank">
                                 <img src="img/social_facebook.png" alt="facebook+" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="https://plus.google.com/+UghoSTEPHAN" target="_blank">
+                            <a href="<?= $info['google+']; ?>" target="_blank">
                                 <img src="img/social_gplus.png" alt="google+" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="https://twitter.com/ughoste" target="_blank">
+                            <a href="<?= $info['twitter']; ?>" target="_blank">
                                 <img src="img/social_twitter.png" alt="twitter" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="https://fr.linkedin.com/in/ugho-stephan-37127aa0" target="_blank">
+                            <a href="<?= $info['linkedin']; ?>" target="_blank">
                                 <img src="img/social_linkedin.png" alt="linkedin" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="https://github.com/ugho49" target="_blank">
+                            <a href="<?= $info['github']; ?>" target="_blank">
                                 <img src="img/social_github.png" alt="github" class="social_btn hoverable circle z-depth-1"/>
                             </a>
                         </div>
@@ -321,6 +322,24 @@ $app = new App();
                     <h4 id="findme" class="scrollspy">Me trouver</h4>
                     <div class="row">
                         <div id="gmap" class="col s12"></div>
+
+                        <script type="text/javascript">
+                        $(document).ready(function(){
+                            var isDraggable = $(document).width() > 480 ? true : false;
+
+                            //Google Maps
+                            $('#gmap').gmap3({
+                                marker:{address:"<?= $info['location']; ?>", options:{icon: "img/location.png"}},
+                                map:{
+                                    options:{
+                                        zoom: 14,
+                                        scrollwheel: false,
+                                        draggable: isDraggable
+                                    }
+                                }
+                            });
+                        });
+                        </script>
                     </div>
                 </div>
                 <div class="col s12">
@@ -353,7 +372,7 @@ $app = new App();
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="g-recaptcha" data-sitekey="6Ldu2wkTAAAAAEg7atOJ4HFQYM8EYpdBGgCFN6Ri"></div>
+                                <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
                             </div>
                             <div class="row">
                                 <div class="center-align">
