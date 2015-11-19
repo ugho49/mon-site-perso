@@ -2,6 +2,20 @@ $(document).ready(function(){
     $('.btn_home').hide();
     checkScroll();
 
+    var isDraggable = $(document).width() > 480 ? true : false;
+
+    //Google Maps
+    $('#gmap').gmap3({
+        marker:{address:"Nantes, France", options:{icon: "img/location.png"}},
+        map:{
+            options:{
+                zoom: 14,
+                scrollwheel: false,
+                draggable: isDraggable
+            }
+        }
+    });
+
     //animate skills bar
     $('.skills').each(function () {
         $('.percentage').hide();

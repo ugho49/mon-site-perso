@@ -22,7 +22,6 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
@@ -36,28 +35,18 @@ var gulp = require('gulp'),
 gulp.task('styles', function() {
   return sass('src/assets/**/*.scss', { style: 'expanded' })
     .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest('dist/styles'))
     .pipe(concat('style.min.css'))
     .pipe(minifycss())
     .pipe(gulp.dest('public_html/css'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
-gulp.src('src/css/**/*.css')
-    .pipe(minifyCSS())
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
-    .pipe(concat('style.min.css'))
-    .pipe(gulp.dest('dist/css'))
-
 // Scripts
 gulp.task('scripts', function() {
   return gulp.src('src/assets/**/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest('public_html/js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('public_html/js'))
+    .pipe(gulp.dest('public_html')) // js folder create automaticly
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -71,12 +60,14 @@ gulp.task('images', function() {
 
 // Clean
 gulp.task('clean', function() {
-  return del(['public_html/css', 'public_html/js', 'public_html/img']);
+  //return del(['public_html/css', 'public_html/js', 'public_html/img']);
+  return del(['public_html/css', 'public_html/js']);
 });
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images');
+  //gulp.start('styles', 'scripts', 'images');
+  gulp.start('styles', 'scripts');
 });
 
 // Watch
@@ -89,7 +80,7 @@ gulp.task('watch', function() {
   gulp.watch('src/assets/js/**/*.js', ['scripts']);
 
   // Watch image files
-  gulp.watch('src/assets/images/**/*', ['images']);
+  //gulp.watch('src/assets/images/**/*', ['images']);
 
   // Create LiveReload server
   livereload.listen();

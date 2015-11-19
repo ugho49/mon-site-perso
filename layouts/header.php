@@ -25,7 +25,7 @@
     <!-- Animate -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <!-- App  -->
-    <link rel="stylesheet" href="css/app.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
 
   </head>
 

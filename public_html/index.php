@@ -322,24 +322,6 @@ $info = $app->getInformations();
                     <h4 id="findme" class="scrollspy">Me trouver</h4>
                     <div class="row">
                         <div id="gmap" class="col s12"></div>
-
-                        <script type="text/javascript">
-                        $(document).ready(function(){
-                            var isDraggable = $(document).width() > 480 ? true : false;
-
-                            //Google Maps
-                            $('#gmap').gmap3({
-                                marker:{address:"<?= $info['location']; ?>", options:{icon: "img/location.png"}},
-                                map:{
-                                    options:{
-                                        zoom: 14,
-                                        scrollwheel: false,
-                                        draggable: isDraggable
-                                    }
-                                }
-                            });
-                        });
-                        </script>
                     </div>
                 </div>
                 <div class="col s12">
