@@ -2,7 +2,7 @@
 /**
 * Constantes
 */
-$path = '../src/assets/files/';
+$path = './src/assets/files/';
 
 /**
 * Verification params
