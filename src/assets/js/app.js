@@ -69,8 +69,7 @@ function activeNavBar() {
     $('.section').each(function () {
         unactiveItemsNavBar();
         $(this).appear(function() {
-            var btn_id = "#btn_" + $(this).attr( "id");
-            $(btn_id).addClass('active');
+            $(".btn_" + $(this).attr( "id")).addClass('active');
         });
     });
 }
