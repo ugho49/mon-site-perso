@@ -9,9 +9,9 @@ $info = $app->getInformations();
 <!-- DEBUT Partie Avatar -->
 <div class="parallax-container scrollspy" id="home">
     <div class="parallax">
-        <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" class="fond_info">
-        <div class="info">
-            <img src="img/avatar.jpg" alt="avatar" class="avatar" />
+        <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" id="fond_info">
+        <div id="info">
+            <img src="img/avatar.jpg" alt="avatar" />
             <h2><?= $info['title']; ?></h2>
             <h4><?= $info['subtitle']; ?></h4>
         </div>
@@ -21,7 +21,7 @@ $info = $app->getInformations();
 
 <!--DEBUT Navigation-->
 <!-- Dropdown Structure -->
-<ul id="dropdown_contact" class="dropdown-content <?= $app->getColor(); ?>">
+<ul id="dropdown_contact" class="dropdown-content <?= $app->getColor(); ?> dropdown_navbar">
   <li><a href="#informations">Informations</a></li>
   <li><a href="#findme">Me trouver</a></li>
   <li class="divider"></li>
@@ -98,7 +98,7 @@ $info = $app->getInformations();
     <div class="section white scrollspy" id="about">
         <div class="row container">
             <br>
-            <h2 class="title_section">A propos de moi</h2>
+            <h2>A propos de moi</h2>
             <span class="title_border"></span>
             <p class="grey-text text-darken-3 lighten-3 flow-text">
                 Après l'obtention de mon BTS Services Informatiques aux Organisations obtenu au Lycée Chevrollier à Angers,
@@ -121,7 +121,7 @@ $info = $app->getInformations();
     <div class="section white scrollspy" id="formation">
         <div class="row container">
             <br>
-            <h2 class="title_section">Mes formations</h2>
+            <h2>Mes formations</h2>
             <span class="title_border"></span>
 
             <?php
@@ -167,7 +167,7 @@ $info = $app->getInformations();
     <div class="section white scrollspy" id="experience">
         <div class="row container">
             <br>
-            <h2 class="title_section">Mes expériences</h2>
+            <h2>Mes expériences</h2>
             <span class="title_border"></span>
 
             <?php
@@ -214,7 +214,7 @@ $info = $app->getInformations();
     <div class="section white scrollspy" id="competence">
         <div class="row container">
             <br>
-            <h2 class="title_section">Mes compétences</h2>
+            <h2>Mes compétences</h2>
             <span class="title_border"></span>
 
             <?php foreach ($app->getTypeSkills() as $type): ?>
@@ -257,7 +257,7 @@ $info = $app->getInformations();
         <div class="section white scrollspy" id="contact">
             <div class="row container">
                 <br>
-                <h2 class="title_section">Contact</h2>
+                <h2>Contact</h2>
                 <span class="title_border"></span>
                 <div class="col l6 m12">
                     <h4 id="informations" class="scrollspy">Informations</h4>
