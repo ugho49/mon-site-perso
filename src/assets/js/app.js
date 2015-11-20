@@ -70,22 +70,17 @@ $(document).ready(function(){
 });
 
 function checkScroll(){
-    if ($(window).scrollTop() > 500) { //si on a défilé de plus de 550px du haut vers le bas
-        $('#navigation').addClass("fixNavigation"); //on ajoute la classe "fixNavigation" à <nav id="navigation">
+    //si on a défilé de plus de 550px du haut vers le bas
+    if ($(window).scrollTop() > 500) {
+        //on ajoute la classe "fixNavigation" à <nav id="navigation">
+        $('#navigation').addClass("fixNavigation");
         $('#afterNavContainer').css('margin-top', '64px');
-        $('#logo').css('opacity', '0').css('transition', 'opacity 0.5s');
-        $('#logocenter').css('opacity', '1');
-
         // Show btn home
         $('.btn_home').show(500);
-
     } else {
-        $('#navigation').removeClass("fixNavigation"); //sinon on retire la classe "fixNavigation" à <nav id="navigation">
-        $('#logo').removeClass("brand-logo center"); //On place le logo de nouveau à gauche
+        //sinon on retire la classe "fixNavigation" à <nav id="navigation">
+        $('#navigation').removeClass("fixNavigation");
         $('#afterNavContainer').css('margin-top', 'auto');
-        $('#logo').css('opacity', '1');
-        $('#logocenter').css('opacity', '0').css('transition', 'opacity 0.5s');
-
         //hide btn home
         $('.btn_home').hide(500);
     }
