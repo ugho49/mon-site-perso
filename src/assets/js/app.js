@@ -30,6 +30,13 @@ $(document).ready(function(){
         });
     });
 
+    //animate formations et compétences
+    $('.expe').each(function () {
+        $(this).appear(function() {
+            $(this).addClass('animated zoomIn');
+        });
+    });
+
     $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
         checkScroll();
     });
