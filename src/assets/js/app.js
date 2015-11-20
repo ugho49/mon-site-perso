@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $('.btn_home').hide();
-    checkScroll();
 
     var isDraggable = $(document).width() > 480 ? true : false;
 
@@ -37,8 +36,9 @@ $(document).ready(function(){
         });
     });
 
+    checkScroll($(window).scrollTop());
     $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
-        checkScroll();
+        checkScroll(this.scrollY);
     });
 
 
@@ -69,9 +69,9 @@ $(document).ready(function(){
     });
 });
 
-function checkScroll(){
+function checkScroll(pos){
     //si on a défilé de plus de 550px du haut vers le bas
-    if ($(window).scrollTop() > 500) {
+    if (pos > 500) {
         //on ajoute la classe "fixNavigation" à <nav id="navigation">
         $('#navigation').addClass("fixNavigation");
         $('#afterNavContainer').css('margin-top', '64px');
