@@ -147,7 +147,7 @@ $info = $app->getInformations();
                         <span class="expe_title"><?= $e->nom_ecole; ?></span>
                         <br>
                         <span class="expe_subtitle"><?= $e->titre; ?></span>
-                        <p><?= $e->subtitle; ?></p>
+                        <p><?= nl2br($e->subtitle); ?></p>
                     </div>
                 </div>
 
@@ -193,7 +193,7 @@ $info = $app->getInformations();
                         <span class="expe_title"><?= $e->nom_entreprise; ?></span>
                         <br>
                         <span class="expe_subtitle"><?= $e->titre; ?></span>
-                        <p><?= $e->description; ?></p>
+                        <p><?= nl2br($e->description); ?></p>
                     </div>
                 </div>
 
