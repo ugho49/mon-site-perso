@@ -16,6 +16,9 @@ $(document).ready(function(){
         }
     });
 
+    //active navbar
+    activeNavBar();
+
     //animate skills bar
     $('.skills').each(function () {
         $('.percentage').hide();
@@ -61,6 +64,20 @@ $(document).ready(function(){
     	});
     });
 });
+
+function activeNavBar() {
+    $('.section').each(function () {
+        unactiveItemsNavBar();
+        $(this).appear(function() {
+            var btn_id = "#btn_" + $(this).attr( "id");
+            $(btn_id).addClass('active');
+        });
+    });
+}
+
+function unactiveItemsNavBar() {
+    $('#navigation li').removeClass('active');
+}
 
 function checkScroll(){
     if ($(window).scrollTop() > 500) { //si on a défilé de plus de 550px du haut vers le bas
