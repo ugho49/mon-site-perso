@@ -17,14 +17,13 @@ $(document).ready(function(){
 
     //animate skills bar
     $('.skills').each(function () {
-        $('.percentage').hide();
+        $(this).children('.percentage').hide();
         $(this).appear(function() {
-            var b = $(this).data('width');
+            var width = $(this).data('width');
             $(this).animate({
-                width: b + "%",
-                opacity: 1
-            }, 1000, "easeOutCirc", function() {
-                $( this ).children('.percentage').show();
+                width: width + '%'
+            }, function() {
+                $(this).children('.percentage').show();
             });
         });
     });
