@@ -134,7 +134,7 @@ $info = $app->getInformations();
                 <?php $cpt++; ?>
 
                 <div class="row expe">
-                    <div class="col l2 m2 offset-s4 s6" style="margin-bottom:10px;">
+                    <div class="col l2 m2 offset-s3 s6" style="margin-bottom:10px;">
                         <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
                             <div class="valign" style="width: 100%;"><?= $e->start; ?>
                             <?php if ($e->end != null) {
@@ -180,7 +180,7 @@ $info = $app->getInformations();
                 <?php $cpt++; ?>
 
                 <div class="row expe">
-                    <div class="col l2 m2 offset-s4 s6" style="margin-bottom:10px;">
+                    <div class="col l2 m2 offset-s3 s6" style="margin-bottom:10px;">
                         <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
                             <div class="valign" style="width: 100%;"><?= ucfirst(strftime('%b %Y', strtotime($e->start))); ?>
                             <?php if ($e->end != null) {
