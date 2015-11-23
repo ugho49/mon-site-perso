@@ -12,7 +12,7 @@ if (empty($_POST['recaptcha'])) {
     }
     else {
         if(isValid($_POST['recaptcha'])) {
-            sendMail($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['message']);
+            sendMail($_POST['prenom'], $_POST['nom'], $_POST['email'], htmlspecialchars($_POST['message']));
             $obj = array('status' => 'success', 'libelle' => 'Le message à été envoyé avec succès.');
             die(json_encode($obj));
         } else {
