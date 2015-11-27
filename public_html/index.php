@@ -28,9 +28,9 @@ $info = $app->getInformations();
   <li><a href="#contactme" style="color: #3A3A3A;">Me contacter</a></li>
 </ul>
 
-<nav id="navigation" class="<?= $app->getColor(); ?>">
+<nav id="navigation" class="<?= $app->getColor(); ?>" style="border-bottom: 1px rgba(128, 128, 128, 0.36) solid;">
     <div class="nav-wrapper container">
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse" style="color: #3A3A3A;"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
             <li class="btn_home"><a href="#home" style="color: #3A3A3A;"><i class="material-icons md-light left">home</i>Accueil</a></li>
             <li class="btn_about"><a href="#about" style="color: #3A3A3A;"><i class="material-icons md-light left">info</i>A propos</a></li>
