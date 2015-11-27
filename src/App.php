@@ -6,7 +6,7 @@ class App
 {
     private $pdo;
 
-    private $color = "grey darken-1";
+    private $color = "grey lighten-5";
 
     function __construct() {
         $this->pdo = require_once 'Pdo.php';
