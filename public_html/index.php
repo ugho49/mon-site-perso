@@ -374,7 +374,7 @@ $info = $app->getInformations();
 
     <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
         <div class="footer-copyright">
-            <div class="container">© 2015 Ugho STEPHAN, All rights reserved.</div>
+            <div class="container" style="color: #3A3A3A;">© 2015 Ugho STEPHAN, All rights reserved.</div>
         </div>
     </footer>
     <?php include '../layouts/footer.php'; ?>
