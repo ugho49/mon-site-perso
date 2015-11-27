@@ -11,7 +11,7 @@ $info = $app->getInformations();
     <div class="section no-pad-bot">
         <div class="container">
             <div class="row center">
-                <img src="img/avatar.jpg" alt="avatar" class="circle" id="avatar"/>
+                <img src="img/avatar.jpg" alt="avatar" class="circle responsive-img" id="avatar"/>
             </div>
             <div class="row center">
                 <h2><?= $info['title']; ?></h2>
@@ -28,10 +28,10 @@ $info = $app->getInformations();
 <!--DEBUT Navigation-->
 <!-- Dropdown Structure -->
 <ul id="dropdown_contact" class="dropdown-content <?= $app->getColor(); ?> dropdown_navbar">
-  <li><a href="#informations">Informations</a></li>
-  <li><a href="#findme">Me trouver</a></li>
-  <li class="divider"></li>
-  <li><a href="#contactme">Me contacter</a></li>
+    <li><a href="#informations">Informations</a></li>
+    <li><a href="#findme">Me trouver</a></li>
+    <li class="divider"></li>
+    <li><a href="#contactme">Me contacter</a></li>
 </ul>
 
 <nav id="navigation" class="<?= $app->getColor(); ?>">
@@ -124,7 +124,7 @@ $info = $app->getInformations();
     </div>
 
     <!-- DEBUT Partie Formation -->
-    <div class="section white scrollspy" id="formation">
+    <div id="formation" class="white scrollspy">
         <div class="row container">
             <br>
             <h2>Mes formations</h2>
@@ -143,9 +143,9 @@ $info = $app->getInformations();
                     <div class="col l2 m2 offset-s3 s6" style="margin-bottom:10px;">
                         <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
                             <div class="valign" style="width: 100%;"><?= $e->start; ?>
-                            <?php if ($e->end != null) {
-                                echo ",<br>".$e->end;
-                            }?>
+                                <?php if ($e->end != null) {
+                                    echo ",<br>".$e->end;
+                                }?>
                             </div>
                         </div>
                     </div>
@@ -158,19 +158,15 @@ $info = $app->getInformations();
                 </div>
 
                 <?php if ($cpt != $nb_row): ?>
-                     <div class="divider"></div>
+                    <div class="divider"></div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
     </div>
     <!-- FIN Partie Formation -->
 
-    <div class="parallax-container">
-        <div class="parallax"><img src="img/image2.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
-    </div>
-
     <!-- DEBUT Partie Expérience -->
-    <div class="section white scrollspy" id="experience">
+    <div id="experience" class="white scrollspy">
         <div class="row container">
             <br>
             <h2>Mes expériences</h2>
@@ -189,9 +185,9 @@ $info = $app->getInformations();
                     <div class="col l2 m2 offset-s3 s6" style="margin-bottom:10px;">
                         <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
                             <div class="valign" style="width: 100%;"><?= ucfirst(strftime('%b %Y', strtotime($e->start))); ?>
-                            <?php if ($e->end != null) {
-                                echo ",<br>".ucfirst(strftime('%b %Y', strtotime($e->end)));
-                            }?>
+                                <?php if ($e->end != null) {
+                                    echo ",<br>".ucfirst(strftime('%b %Y', strtotime($e->end)));
+                                }?>
                             </div>
                         </div>
                     </div>
@@ -204,7 +200,7 @@ $info = $app->getInformations();
                 </div>
 
                 <?php if ($cpt != $nb_row): ?>
-                     <div class="divider"></div>
+                    <div class="divider"></div>
                 <?php endif; ?>
             <?php endforeach; ?>
 
@@ -253,118 +249,118 @@ $info = $app->getInformations();
                 <?php endforeach; ?>
             </div>
         </div>
-        <!-- FIN Partie Compétence -->
-
-        <div class="parallax-container">
-            <div class="parallax"><img src="img/image4.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
-        </div>
-
-        <!-- DEBUT Partie Contact -->
-        <div class="section white scrollspy" id="contact">
-            <div class="row container">
-                <br>
-                <h2>Contact</h2>
-                <span class="title_border"></span>
-                <div class="col l6 m12">
-                    <h4 id="informations" class="scrollspy">Informations</h4>
-
-                    <div class="row valign-wrapper">
-                        <div class="col offset-m1 m2 s2 valign">
-                            <i class="icon_contact material-icons">email</i>
-                        </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['mail']; ?></div>
-                    </div>
-
-                    <div class="row valign-wrapper">
-                        <div class="col offset-m1 m2 s2 valign">
-                            <i class="icon_contact material-icons">phone</i>
-                        </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['phone']; ?></div>
-                    </div>
-
-                    <div class="row valign-wrapper">
-                        <div class="col offset-m1 m2 s2 valign">
-                            <i class="icon_contact material-icons">location_on</i>
-                        </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['location']; ?></div>
-                    </div>
-
-                    <div class="row valign-wrapper">
-                        <div class="col offset-m1 m2 s2 valign">
-                            <i class="icon_contact material-icons">system_update_alt</i>
-                        </div>
-                        <div class="col offset-m1 m8 offset-s1 s9 valign"><a href="files.php?file=cv" target="_blank">Télécharger mon CV</a></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col offset-m1 m2 offset-s1 s1">
-                            <a href="<?= $info['facebook']; ?>"
-                                target="_blank"
-                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
-                                id="btn_facebook"
-                                data-position="bottom"
-                                data-delay="50"
-                                data-tooltip="Facebook">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </div>
-                        <div class="col m2 offset-s1 s1">
-                            <a href="<?= $info['google+']; ?>"
-                                target="_blank"
-                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
-                                id="btn_gplus"
-                                data-position="bottom"
-                                data-delay="50"
-                                data-tooltip="Google+">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                        </div>
-                        <div class="col m2 offset-s1 s1">
-                            <a href="<?= $info['twitter']; ?>"
-                                target="_blank"
-                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
-                                id="btn_twitter"
-                                data-position="bottom"
-                                data-delay="50"
-                                data-tooltip="Twitter">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </div>
-                        <div class="col m2 offset-s1 s1">
-                            <a href="<?= $info['linkedin']; ?>"
-                                target="_blank"
-                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
-                                id="btn_linkedin"
-                                data-position="bottom"
-                                data-delay="50"
-                                data-tooltip="Linkedin">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </div>
-                        <div class="col m2 offset-s1 s1">
-                            <a href="<?= $info['github']; ?>"
-                                target="_blank"
-                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
-                                id="btn_github"
-                                data-position="bottom"
-                                data-delay="50"
-                                data-tooltip="Github">
-                                <i class="fa fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l6 s12">
-                    <h4 id="findme" class="scrollspy">Me trouver</h4>
-                    <div class="row">
-                        <div id="gmap" class="col s12"></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- FIN Partie Contact -->
     </div>
+    <!-- FIN Partie Compétence -->
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="img/image4.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
+    </div>
+
+    <!-- DEBUT Partie Contact -->
+    <div class="section white scrollspy" id="contact">
+        <div class="row container">
+            <br>
+            <h2>Contact</h2>
+            <span class="title_border"></span>
+            <div class="col l6 m12">
+                <h4 id="informations" class="scrollspy">Informations</h4>
+
+                <div class="row valign-wrapper">
+                    <div class="col offset-m1 m2 s2 valign">
+                        <i class="icon_contact material-icons">email</i>
+                    </div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['mail']; ?></div>
+                </div>
+
+                <div class="row valign-wrapper">
+                    <div class="col offset-m1 m2 s2 valign">
+                        <i class="icon_contact material-icons">phone</i>
+                    </div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['phone']; ?></div>
+                </div>
+
+                <div class="row valign-wrapper">
+                    <div class="col offset-m1 m2 s2 valign">
+                        <i class="icon_contact material-icons">location_on</i>
+                    </div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['location']; ?></div>
+                </div>
+
+                <div class="row valign-wrapper">
+                    <div class="col offset-m1 m2 s2 valign">
+                        <i class="icon_contact material-icons">system_update_alt</i>
+                    </div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign"><a href="files.php?file=cv" target="_blank">Télécharger mon CV</a></div>
+                </div>
+
+                <div class="row">
+                    <div class="col offset-m1 m2 offset-s1 s1">
+                        <a href="<?= $info['facebook']; ?>"
+                            target="_blank"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            id="btn_facebook"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="col m2 offset-s1 s1">
+                        <a href="<?= $info['google+']; ?>"
+                            target="_blank"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            id="btn_gplus"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Google+">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                    <div class="col m2 offset-s1 s1">
+                        <a href="<?= $info['twitter']; ?>"
+                            target="_blank"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            id="btn_twitter"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="col m2 offset-s1 s1">
+                        <a href="<?= $info['linkedin']; ?>"
+                            target="_blank"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            id="btn_linkedin"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="col m2 offset-s1 s1">
+                        <a href="<?= $info['github']; ?>"
+                            target="_blank"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            id="btn_github"
+                            data-position="bottom"
+                            data-delay="50"
+                            data-tooltip="Github">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 s12">
+                <h4 id="findme" class="scrollspy">Me trouver</h4>
+                <div class="row">
+                    <div id="gmap" class="col s12"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- FIN Partie Contact -->
 
     <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
         <br>
@@ -405,8 +401,8 @@ $info = $app->getInformations();
                         <div class="row">
                             <div class="center-align">
                                 <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
-                                        Envoyer
-                                        <i class="material-icons right">send</i>
+                                    Envoyer
+                                    <i class="material-icons right">send</i>
                                 </button>
                             </div>
                         </div>

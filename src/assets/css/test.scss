@@ -1,0 +1,73 @@
+$colorTimeline : #E6E6E6;
+
+.icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.7em;
+    line-height: 60px;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    box-shadow: $colorTimeline 0px 0px 0px 8px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 6px;
+    margin-bottom: 20px;
+}
+
+.timeline {
+
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10px;
+        background: $colorTimeline;
+        margin-left: 25px;
+        z-index: -1;
+    }
+
+    li {
+
+        .icon-school {
+          @extend .icon;
+          background-color: #4CAF50;
+        }
+
+        .icon-compagny {
+          @extend .icon;
+          background-color: #ef5350;
+        }
+
+        .description {
+
+            background-color: $colorTimeline;
+            margin-bottom: 10px;
+            padding: 12px;
+
+            h2 {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+                margin: 0;
+                padding: 0;
+                padding-bottom: 5px;
+                line-height: 26px;
+
+                .time {
+                    font-size: 20px;
+                    font-style: italic;
+                }
+
+                .title {
+                    font-size: 26px;
+                }
+            }
+
+            h4 {
+                font-size: 22px;
+                line-height: 26px;
+            }
+        }
+    }
+}
