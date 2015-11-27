@@ -298,28 +298,58 @@ $info = $app->getInformations();
 
                     <div class="row">
                         <div class="col offset-m1 m2 s2">
-                            <a href="<?= $info['facebook']; ?>" target="_blank">
-                                <img src="img/social_facebook.png" alt="facebook+" class="social_btn hoverable circle z-depth-1"/>
+                            <a href="<?= $info['facebook']; ?>"
+                                target="_blank"
+                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                                id="btn_facebook"
+                                data-position="bottom"
+                                data-delay="50"
+                                data-tooltip="Facebook">
+                                <i class="fa fa-facebook"></i>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="<?= $info['google+']; ?>" target="_blank">
-                                <img src="img/social_gplus.png" alt="google+" class="social_btn hoverable circle z-depth-1"/>
+                            <a href="<?= $info['google+']; ?>"
+                                target="_blank"
+                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                                id="btn_gplus"
+                                data-position="bottom"
+                                data-delay="50"
+                                data-tooltip="Google+">
+                                <i class="fa fa-google-plus"></i>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="<?= $info['twitter']; ?>" target="_blank">
-                                <img src="img/social_twitter.png" alt="twitter" class="social_btn hoverable circle z-depth-1"/>
+                            <a href="<?= $info['twitter']; ?>"
+                                target="_blank"
+                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                                id="btn_twitter"
+                                data-position="bottom"
+                                data-delay="50"
+                                data-tooltip="Twitter">
+                                <i class="fa fa-twitter"></i>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="<?= $info['linkedin']; ?>" target="_blank">
-                                <img src="img/social_linkedin.png" alt="linkedin" class="social_btn hoverable circle z-depth-1"/>
+                            <a href="<?= $info['linkedin']; ?>"
+                                target="_blank"
+                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                                id="btn_linkedin"
+                                data-position="bottom"
+                                data-delay="50"
+                                data-tooltip="Linkedin">
+                                <i class="fa fa-linkedin"></i>
                             </a>
                         </div>
                         <div class="col s2">
-                            <a href="<?= $info['github']; ?>" target="_blank">
-                                <img src="img/social_github.png" alt="github" class="social_btn hoverable circle z-depth-1"/>
+                            <a href="<?= $info['github']; ?>"
+                                target="_blank"
+                                class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                                id="btn_github"
+                                data-position="bottom"
+                                data-delay="50"
+                                data-tooltip="Github">
+                                <i class="fa fa-github"></i>
                             </a>
                         </div>
                     </div>
@@ -330,57 +360,61 @@ $info = $app->getInformations();
                         <div id="gmap" class="col s12"></div>
                     </div>
                 </div>
-                <div class="col s12">
-                    <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
-                    <div class="row">
-                        <form class="col s12" id="formulaire">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="first_name" type="text" required="required">
-                                    <label for="first_name">Prénom</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input id="last_name" type="text" required="required">
-                                    <label for="last_name">Nom</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email" required="required">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="message" class="materialize-textarea" required="required"></textarea>
-                                    <label for="message">Message ...</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
-                            </div>
-                            <div class="row">
-                                <div class="center-align">
-                                    <button class="valign btn btn-large waves-effect waves-light blue" type="submit" name="action">
-                                            Envoyer
-                                            <i class="material-icons right">send</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
             </div>
         </div>
         <!-- FIN Partie Contact -->
     </div>
 
     <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
+        <br>
+        <div class="container">
+            <div class="col s12">
+                <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
+                <div class="row">
+                    <form class="col s12" id="formulaire">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="first_name" type="text" required="required">
+                                <label for="first_name">Prénom</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" required="required">
+                                <label for="last_name">Nom</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" required="required">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="message" class="materialize-textarea" required="required"></textarea>
+                                <label for="message">Message ...</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
+                        </div>
+                        <div class="row">
+                            <div class="center-align">
+                                <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
+                                        Envoyer
+                                        <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="footer-copyright">
-            <div class="container">© 2015 Ugho STEPHAN, All rights reserved.</div>
+            <div class="container center">© 2015 Ugho STEPHAN, All rights reserved.</div>
         </div>
     </footer>
     <?php include '../layouts/footer.php'; ?>
