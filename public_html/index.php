@@ -8,13 +8,19 @@ $info = $app->getInformations();
 
 <!-- DEBUT Partie Avatar -->
 <div class="parallax-container scrollspy" id="home">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <img src="img/avatar.jpg" alt="avatar" class="circle" id="avatar"/>
+            </div>
+            <div class="row center">
+                <h2><?= $info['title']; ?></h2>
+                <h4><?= $info['subtitle']; ?></h4>
+            </div>
+        </div>
+    </div>
     <div class="parallax">
         <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" id="fond_info">
-        <div id="info">
-            <img src="img/avatar.jpg" alt="avatar" />
-            <h2><?= $info['title']; ?></h2>
-            <h4><?= $info['subtitle']; ?></h4>
-        </div>
     </div>
 </div>
 <!-- FIN Partie Avatar -->
