@@ -297,7 +297,7 @@ $info = $app->getInformations();
                     </div>
 
                     <div class="row">
-                        <div class="col offset-m1 m2 s2">
+                        <div class="col offset-m1 m2 offset-s1 s1">
                             <a href="<?= $info['facebook']; ?>"
                                 target="_blank"
                                 class="btn-floating btn-large z-depth-1 hoverable tooltipped"
@@ -308,7 +308,7 @@ $info = $app->getInformations();
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </div>
-                        <div class="col s2">
+                        <div class="col m2 offset-s1 s1">
                             <a href="<?= $info['google+']; ?>"
                                 target="_blank"
                                 class="btn-floating btn-large z-depth-1 hoverable tooltipped"
@@ -319,7 +319,7 @@ $info = $app->getInformations();
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         </div>
-                        <div class="col s2">
+                        <div class="col m2 offset-s1 s1">
                             <a href="<?= $info['twitter']; ?>"
                                 target="_blank"
                                 class="btn-floating btn-large z-depth-1 hoverable tooltipped"
@@ -330,7 +330,7 @@ $info = $app->getInformations();
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </div>
-                        <div class="col s2">
+                        <div class="col m2 offset-s1 s1">
                             <a href="<?= $info['linkedin']; ?>"
                                 target="_blank"
                                 class="btn-floating btn-large z-depth-1 hoverable tooltipped"
@@ -341,7 +341,7 @@ $info = $app->getInformations();
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         </div>
-                        <div class="col s2">
+                        <div class="col m2 offset-s1 s1">
                             <a href="<?= $info['github']; ?>"
                                 target="_blank"
                                 class="btn-floating btn-large z-depth-1 hoverable tooltipped"
@@ -379,6 +379,7 @@ $info = $app->getInformations();
                                 <input id="first_name" type="text" required="required">
                                 <label for="first_name">Prénom</label>
                             </div>
+
                             <div class="input-field col s6">
                                 <input id="last_name" type="text" required="required">
                                 <label for="last_name">Nom</label>
