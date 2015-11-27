@@ -22,26 +22,26 @@ $info = $app->getInformations();
 <!--DEBUT Navigation-->
 <!-- Dropdown Structure -->
 <ul id="dropdown_contact" class="dropdown-content <?= $app->getColor(); ?> dropdown_navbar">
-  <li><a href="#informations" style="color: #3A3A3A;">Informations</a></li>
-  <li><a href="#findme" style="color: #3A3A3A;">Me trouver</a></li>
+  <li><a href="#informations">Informations</a></li>
+  <li><a href="#findme">Me trouver</a></li>
   <li class="divider"></li>
-  <li><a href="#contactme" style="color: #3A3A3A;">Me contacter</a></li>
+  <li><a href="#contactme">Me contacter</a></li>
 </ul>
 
-<nav id="navigation" class="<?= $app->getColor(); ?>" style="border-bottom: 1px rgba(128, 128, 128, 0.36) solid;">
+<nav id="navigation" class="<?= $app->getColor(); ?>">
     <div class="nav-wrapper container">
-        <a href="#" data-activates="mobile-demo" class="button-collapse" style="color: #3A3A3A;"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li class="btn_home"><a href="#home" style="color: #3A3A3A;"><i class="material-icons md-light left">home</i>Accueil</a></li>
-            <li class="btn_about"><a href="#about" style="color: #3A3A3A;"><i class="material-icons md-light left">info</i>A propos</a></li>
-            <li class="btn_experience"><a href="#formation" style="color: #3A3A3A;"><i class="material-icons md-light left">done</i>Formations</a></li>
-            <li class="btn_formation"><a href="#experience" style="color: #3A3A3A;"><i class="material-icons md-light left">star</i>Expériences</a></li>
-            <li class="btn_competence"><a href="#competence" style="color: #3A3A3A;"><i class="material-icons md-light left">public</i>Compétences</a></li>
-            <li class="btn_contact dropdown-button" data-activates="dropdown_contact"><a href="#!" style="color: #3A3A3A;"><i class="material-icons md-light left">message</i>Contact</a></li>
+            <li class="btn_home"><a href="#home"><i class="material-icons md-light left">home</i>Accueil</a></li>
+            <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
+            <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">done</i>Formations</a></li>
+            <li class="btn_formation"><a href="#experience"><i class="material-icons md-light left">star</i>Expériences</a></li>
+            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">public</i>Compétences</a></li>
+            <li class="btn_contact dropdown-button" data-activates="dropdown_contact"><a href="#!"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li class="btn_home">
-                <a href="#home" style="color: #3A3A3A;">
+                <a href="#home">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">home</i></div>
                         <div class="col offset-s1 s9 valign">Accueil</div>
@@ -49,7 +49,7 @@ $info = $app->getInformations();
                 </a>
             </li>
             <li class="btn_about">
-                <a href="#about" style="color: #3A3A3A;">
+                <a href="#about">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">info</i></div>
                         <div class="col offset-s1 s9 valign">A propos</div>
@@ -57,7 +57,7 @@ $info = $app->getInformations();
                 </a>
             </li>
             <li class="btn_formation">
-                <a href="#formation" style="color: #3A3A3A;">
+                <a href="#formation">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">done</i></div>
                         <div class="col offset-s1 s9 valign">Mes formations</div>
@@ -65,7 +65,7 @@ $info = $app->getInformations();
                 </a>
             </li>
             <li class="btn_experience">
-                <a href="#experience" style="color: #3A3A3A;">
+                <a href="#experience">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">star</i></div>
                         <div class="col offset-s1 s9 valign">Mes expériences</div>
@@ -73,7 +73,7 @@ $info = $app->getInformations();
                 </a>
             </li>
             <li class="btn_competence">
-                <a href="#competence" style="color: #3A3A3A;">
+                <a href="#competence">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">public</i></div>
                         <div class="col offset-s1 s9 valign">Mes compétences</div>
@@ -81,7 +81,7 @@ $info = $app->getInformations();
                 </a>
             </li>
             <li class="btn_contact">
-                <a href="#contact" style="color: #3A3A3A;">
+                <a href="#contact">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">message</i></div>
                         <div class="col offset-s1 s9 valign">Contact</div>
@@ -374,7 +374,7 @@ $info = $app->getInformations();
 
     <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
         <div class="footer-copyright">
-            <div class="container" style="color: #3A3A3A;">© 2015 Ugho STEPHAN, All rights reserved.</div>
+            <div class="container">© 2015 Ugho STEPHAN, All rights reserved.</div>
         </div>
     </footer>
     <?php include '../layouts/footer.php'; ?>

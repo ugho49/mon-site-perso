@@ -1,4 +1,9 @@
 /***************
+* Variables
+****************/
+$navcolor: #3A3A3A;
+
+/***************
 * Global
 ****************/
 .title_border {
@@ -63,10 +68,10 @@
 
 .dropdown_navbar li {
     a {
-        color: #ffffff !important;
+        color: $navcolor !important;
     }
     a:hover {
-        color: #757575 !important;
+        color: $navcolor !important;
     }
 }
 
@@ -76,6 +81,13 @@
     top: 0;
 }
 
+nav {
+    border-bottom: 1px rgba(128, 128, 128, 0.36) solid !important;
+
+    a {
+        color: $navcolor !important;
+    }
+}
 /***************
 * Partie A propos
 ****************/
@@ -156,4 +168,8 @@
 footer {
     padding-top: 0px !important;
     margin-top: 0px !important;
+
+    div {
+        color: $navcolor !important;
+    }
 }
