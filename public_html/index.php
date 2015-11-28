@@ -152,13 +152,13 @@ $info = $app->getInformations();
                             </div>
 
                             <div class="col offset-l1 l10 offset-m1 m10 s12">
-                                <div class="description z-depth-1">
+                                <div class="description">
                                     <h2>
                                         <div class="row">
-                                            <div class="col l9 m12">
+                                            <div class="col l8 m12">
                                                 <span class="title"><?= $e->title; ?></span>
                                             </div>
-                                            <div class="col l3 m12 right-align">
+                                            <div class="col l4 m12 right-align">
                                                 <span class="time"><?= $time; ?></span>
                                             </div>
                                         </div>
