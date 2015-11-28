@@ -17,6 +17,7 @@ $colorTimeline : #E6E6E6;
 .timeline {
 
     position: relative;
+    z-index: 1;
 
     &:before {
         content: '';
@@ -47,6 +48,7 @@ $colorTimeline : #E6E6E6;
             margin-bottom: 10px;
             padding: 12px;
 
+
             h2 {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.4);
                 margin: 0;
@@ -56,17 +58,25 @@ $colorTimeline : #E6E6E6;
 
                 .time {
                     font-size: 20px;
+                    font-weight: 400;
                     font-style: italic;
                 }
 
                 .title {
-                    font-size: 26px;
+                    font-size: 28px;
+                    font-weight: 400;
                 }
             }
 
             h4 {
                 font-size: 22px;
                 line-height: 26px;
+                font-weight: 300;
+            }
+
+            .description-text {
+                font-size: 18px;
+                font-weight: 100;
             }
         }
     }

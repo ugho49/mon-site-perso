@@ -28,14 +28,8 @@ class App
         return $result;
     }
 
-    public function getFormation() {
-        $requete = $this->pdo->prepare('SELECT * FROM formations ORDER BY start DESC');
-        $requete->execute();
-        return $requete->fetchAll();
-    }
-
-    public function getExperience() {
-        $requete = $this->pdo->prepare('SELECT * FROM experiences ORDER BY start DESC');
+    public function getFormationExperience() {
+        $requete = $this->pdo->prepare('SELECT * FROM exp_form ex INNER JOIN type_exp_form typ ON typ.id = ex.id_type_exp_form ORDER BY start DESC, end ASC');
         $requete->execute();
         return $requete->fetchAll();
     }

@@ -40,9 +40,8 @@ $info = $app->getInformations();
         <ul class="left hide-on-med-and-down">
             <li class="btn_home"><a href="#home"><i class="material-icons md-light left">home</i>Accueil</a></li>
             <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
-            <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">done</i>Formations</a></li>
-            <li class="btn_formation"><a href="#experience"><i class="material-icons md-light left">star</i>Expériences</a></li>
-            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">public</i>Compétences</a></li>
+            <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">public</i>Formations & Expériences</a></li>
+            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">star</i>Compétences</a></li>
             <li class="btn_contact dropdown-button" data-activates="dropdown_contact"><a href="#!"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
@@ -65,24 +64,24 @@ $info = $app->getInformations();
             <li class="btn_formation">
                 <a href="#formation">
                     <div class="row valign-wrapper">
-                        <div class="s1 valign"><i class="material-icons md-light">done</i></div>
-                        <div class="col offset-s1 s9 valign">Mes formations</div>
+                        <div class="s1 valign"><i class="material-icons md-light">public</i></div>
+                        <div class="col offset-s1 s9 valign">Formations</div>
                     </div>
                 </a>
             </li>
-            <li class="btn_experience">
-                <a href="#experience">
+            <li class="btn_formation">
+                <a href="#formation">
                     <div class="row valign-wrapper">
-                        <div class="s1 valign"><i class="material-icons md-light">star</i></div>
-                        <div class="col offset-s1 s9 valign">Mes expériences</div>
+                        <div class="s1 valign"><i class="material-icons md-light">public</i></div>
+                        <div class="col offset-s1 s9 valign">Expériences</div>
                     </div>
                 </a>
             </li>
             <li class="btn_competence">
                 <a href="#competence">
                     <div class="row valign-wrapper">
-                        <div class="s1 valign"><i class="material-icons md-light">public</i></div>
-                        <div class="col offset-s1 s9 valign">Mes compétences</div>
+                        <div class="s1 valign"><i class="material-icons md-light">star</i></div>
+                        <div class="col offset-s1 s9 valign">Compétences</div>
                     </div>
                 </a>
             </li>
@@ -123,86 +122,57 @@ $info = $app->getInformations();
         <div class="parallax"><img src="img/image5.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
     </div>
 
-    <!-- DEBUT Partie Formation -->
+    <!-- DEBUT Partie Formations et Expérience -->
     <div id="formation" class="white scrollspy">
         <div class="row container">
             <br>
-            <h2>Mes formations</h2>
+            <h2>Formations & Expériences</h2>
             <span class="title_border"></span>
 
-            <?php
-            $formations = $app->getFormation();
-            $nb_row = count($formations);
-            $cpt = 0;
-            ?>
+            <div class="col s12">
+                <ul class="timeline">
 
-            <?php foreach ($formations as $e): ?>
-                <?php $cpt++; ?>
+                    <?php foreach ($experiences = $app->getFormationExperience() as $e): ?>
 
-                <div class="row expe">
-                    <div class="col l2 m2 offset-s3 s6" style="margin-bottom:10px;">
-                        <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
-                            <div class="valign" style="width: 100%;"><?= $e->start; ?>
-                                <?php if ($e->end != null) {
-                                    echo ",<br>".$e->end;
-                                }?>
+                    <?php
+                    $time = ucfirst(strftime('%b %Y', strtotime($e->start)));;
+
+                    if ($e->end != null) {
+                        $time .= ",  ".ucfirst(strftime('%b %Y', strtotime($e->end)));
+                    }
+                    ?>
+
+                    <li>
+                        <div class="row">
+                            <div class="col l1 m1 s12">
+                                <div class="<?= $e->class; ?> tooltipped" data-position="bottom"
+                                data-delay="50"
+                                data-tooltip="<?= $time; ?>">
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col offset-l1 l9 offset-m2 m8 s12 expe_desc grey-text text-darken-3 lighten-3">
-                        <span class="expe_title"><?= $e->nom_ecole; ?></span>
-                        <br>
-                        <span class="expe_subtitle"><?= $e->titre; ?></span>
-                        <p><?= nl2br($e->subtitle); ?></p>
-                    </div>
-                </div>
 
-                <?php if ($cpt != $nb_row): ?>
-                    <div class="divider"></div>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </div>
-    </div>
-    <!-- FIN Partie Formation -->
-
-    <!-- DEBUT Partie Expérience -->
-    <div id="experience" class="white scrollspy">
-        <div class="row container">
-            <br>
-            <h2>Mes expériences</h2>
-            <span class="title_border"></span>
-
-            <?php
-            $experiences = $app->getExperience();
-            $nb_row = count($experiences);
-            $cpt = 0;
-            ?>
-
-            <?php foreach ($experiences as $e): ?>
-                <?php $cpt++; ?>
-
-                <div class="row expe">
-                    <div class="col l2 m2 offset-s3 s6" style="margin-bottom:10px;">
-                        <div class="bulle circle valign-wrapper flow-text" style="background-color: <?= $e->color_hexa; ?>;">
-                            <div class="valign" style="width: 100%;"><?= ucfirst(strftime('%b %Y', strtotime($e->start))); ?>
-                                <?php if ($e->end != null) {
-                                    echo ",<br>".ucfirst(strftime('%b %Y', strtotime($e->end)));
-                                }?>
+                            <div class="col offset-l1 l10 offset-m1 m10 s12">
+                                <div class="description z-depth-1">
+                                    <h2>
+                                        <div class="row">
+                                            <div class="col l9 m12">
+                                                <span class="title"><?= $e->title; ?></span>
+                                            </div>
+                                            <div class="col l3 m12 right-align">
+                                                <span class="time"><?= $time; ?></span>
+                                            </div>
+                                        </div>
+                                    </h2>
+                                    <h4><?= $e->subtitle; ?></h4>
+                                    <span class="description-text"><?= nl2br($e->description); ?></span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col offset-l1 l9 offset-m2 m8 s12 expe_desc grey-text text-darken-3 lighten-3">
-                        <span class="expe_title"><?= $e->nom_entreprise; ?></span>
-                        <br>
-                        <span class="expe_subtitle"><?= $e->titre; ?></span>
-                        <p><?= nl2br($e->description); ?></p>
-                    </div>
-                </div>
 
-                <?php if ($cpt != $nb_row): ?>
-                    <div class="divider"></div>
-                <?php endif; ?>
-            <?php endforeach; ?>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
 
         </div>
     </div>
