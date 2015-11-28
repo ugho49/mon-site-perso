@@ -158,7 +158,7 @@ $info = $app->getInformations();
                                             <div class="col l8 m12">
                                                 <span class="title"><?= $e->title; ?></span>
                                             </div>
-                                            <div class="col l4 m12 right-align">
+                                            <div class="col l4 m12">
                                                 <span class="time"><?= $time; ?></span>
                                             </div>
                                         </div>
