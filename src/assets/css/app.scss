@@ -16,6 +16,26 @@ $breakpoint-small: 601px;
     width: 100px;
 }
 
+.table-of-contents {
+    li {
+        padding: 0 !important;
+    }
+
+    a {
+        line-height: inherit !important;
+    }
+}
+
+.table-of-contents a.active {
+    font-weight: 500 !important;
+    color : #26a69a !important;
+    border-left: 0px solid #fff !important;
+}
+
+.table-of-contents a:hover {
+    border-left: 0px solid #fff !important;
+}
+
 /***************
 * Header
 ****************/
@@ -103,6 +123,16 @@ nav {
 .skills {
     opacity: 1;
 }
+/***************
+* Partie Projet
+****************/
+.image-projet {
+    height: 230px !important;
+}
+
+.link-projet {
+    color: #01579b !important;
+}
 
 /***************
 * Partie Contact
@@ -144,6 +174,16 @@ nav {
 /***************
 * Footer
 ****************/
+#btn_home {
+
+    bottom: 45px !important;
+    right: 50px !important;
+
+    @media (max-width: $breakpoint-small) {
+        display: none !important;
+    }
+}
+
 footer {
     padding-top: 0px !important;
     margin-top: 0px !important;

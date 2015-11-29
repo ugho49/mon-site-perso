@@ -34,6 +34,12 @@ class App
         return $requete->fetchAll();
     }
 
+    public function getProjects() {
+        $requete = $this->pdo->prepare('SELECT * FROM projects ORDER BY id ASC');
+        $requete->execute();
+        return $requete->fetchAll();
+    }
+
     public function getTypeSkills() {
         $requete = $this->pdo->prepare('SELECT * FROM type_skills ORDER BY id ASC');
         $requete->execute();

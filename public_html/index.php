@@ -26,22 +26,15 @@ $info = $app->getInformations();
 <!-- FIN Partie Avatar -->
 
 <!--DEBUT Navigation-->
-<!-- Dropdown Structure -->
-<ul id="dropdown_contact" class="dropdown-content <?= $app->getColor(); ?> dropdown_navbar">
-    <li><a href="#informations">Informations</a></li>
-    <li><a href="#findme">Me trouver</a></li>
-    <li class="divider"></li>
-    <li><a href="#contactme">Me contacter</a></li>
-</ul>
-
 <nav id="navigation" class="<?= $app->getColor(); ?>">
     <div class="nav-wrapper container">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="left hide-on-med-and-down">
+        <ul class="left hide-on-med-and-down table-of-contents">
             <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
             <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">public</i>Formations & Expériences</a></li>
             <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">star</i>Compétences</a></li>
-            <li class="btn_contact dropdown-button" data-activates="dropdown_contact"><a href="#!"><i class="material-icons md-light left">message</i>Contact</a></li>
+            <li class="btn_projet"><a href="#projet"><i class="material-icons md-light left">work</i>Projets</a></li>
+            <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li class="btn_about">
@@ -73,6 +66,14 @@ $info = $app->getInformations();
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">star</i></div>
                         <div class="col offset-s1 s9 valign">Compétences</div>
+                    </div>
+                </a>
+            </li>
+            <li class="btn_projet">
+                <a href="#projet">
+                    <div class="row valign-wrapper">
+                        <div class="s1 valign"><i class="material-icons md-light">work</i></div>
+                        <div class="col offset-s1 s9 valign">Projets</div>
                     </div>
                 </a>
             </li>
@@ -188,11 +189,8 @@ $info = $app->getInformations();
                         <div class="col l6 s12">
                         <?php endif; ?>
                         <h4><?= $type->libelle; ?></h4>
-                        <?php
-                        $skills = $app->getSkillsByType($type->id);
-                        $cpt = 0;
-                        ?>
-                        <?php foreach ($skills as $skill): ?>
+
+                        <?php foreach ($app->getSkillsByType($type->id) as $skill): ?>
                             <span class="title-progress"><?= $skill->libelle; ?></span>
                             <div class="row">
                                 <div class="col s12">
@@ -212,6 +210,44 @@ $info = $app->getInformations();
         </div>
     </div>
     <!-- FIN Partie Compétence -->
+
+    <!-- DEBUT Partie Projet -->
+    <div class="section scrollspy <?= $app->getColor(); ?>" id="projet">
+        <div class="row container">
+            <br>
+            <h2>Mes Projets</h2>
+            <span class="title_border"></span>
+
+            <div class="row">
+                <?php foreach ($app->getProjects() as $e): ?>
+                    <div class="col m6 s12">
+                        <div class="card medium">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator image-projet" src="img/<?= $e->image; ?>">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">
+                                    <?= $e->title; ?>
+                                    <i class="material-icons right">more_vert</i>
+                                </span>
+                                <p class="truncate"><?= $e->description; ?></p>
+                            </div>
+                            <?php if ($e->url): ?>
+                                <div class="card-action center-align">
+                                  <a href="<?= $e->url; ?>" target="_blank" class="link-projet">Accèder au projet</a>
+                                </div>
+                            <?php endif; ?>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4"><?= $e->title; ?><i class="material-icons right">close</i></span>
+                                <p><?= $e->description; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <!-- FIN Partie Projet -->
 
     <div class="parallax-container">
         <div class="parallax"><img src="img/image4.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
@@ -323,66 +359,66 @@ $info = $app->getInformations();
     </div>
     <!-- FIN Partie Contact -->
 
-    <div class="fixed-action-btn" style="bottom: 45px; right: 50px;" id="btn_home">
+    <div class="fixed-action-btn" id="btn_home">
         <a href="#home"
-        class="btn-floating btn-large grey tooltipped"
+        class="btn-floating btn-large teal darken-1 tooltipped"
         data-position="top"
         data-delay="20"
         data-tooltip="Remonter en haut">
-            <i class="fa fa-arrow-up"></i>
-        </a>
-    </div>
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
 
-    <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
-        <br>
-        <div class="container">
-            <div class="col s12">
-                <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
-                <div class="row">
-                    <form class="col s12" id="formulaire">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="first_name" type="text" required="required">
-                                <label for="first_name">Prénom</label>
-                            </div>
+<footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
+    <br>
+    <div class="container">
+        <div class="col s12">
+            <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
+            <div class="row">
+                <form class="col s12" id="formulaire">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="first_name" type="text" required="required">
+                            <label for="first_name">Prénom</label>
+                        </div>
 
-                            <div class="input-field col s6">
-                                <input id="last_name" type="text" required="required">
-                                <label for="last_name">Nom</label>
-                            </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" required="required">
+                            <label for="last_name">Nom</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">email</i>
-                                <input id="email" type="email" required="required">
-                                <label for="email">Email</label>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" required="required">
+                            <label for="email">Email</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="message" class="materialize-textarea" required="required"></textarea>
-                                <label for="message">Message ...</label>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="message" class="materialize-textarea" required="required"></textarea>
+                            <label for="message">Message ...</label>
                         </div>
-                        <div class="row">
-                            <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
+                    </div>
+                    <div class="row">
+                        <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
+                    </div>
+                    <div class="row">
+                        <div class="center-align">
+                            <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
+                                Envoyer
+                                <i class="material-icons right">send</i>
+                            </button>
                         </div>
-                        <div class="row">
-                            <div class="center-align">
-                                <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
-                                    Envoyer
-                                    <i class="material-icons right">send</i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container center">© 2015 Ugho STEPHAN, All rights reserved.</div>
-        </div>
-    </footer>
-    <?php include '../layouts/footer.php'; ?>
+    </div>
+    <div class="footer-copyright">
+        <div class="container center">© 2015 Ugho STEPHAN, All rights reserved.</div>
+    </div>
+</footer>
+<?php include '../layouts/footer.php'; ?>
