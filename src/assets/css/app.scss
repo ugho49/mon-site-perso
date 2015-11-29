@@ -23,16 +23,19 @@ $breakpoint-small: 601px;
 
     a {
         line-height: inherit !important;
+        padding-left: 20px !important;
     }
 }
 
 .table-of-contents a.active {
-    font-weight: 500 !important;
+    font-weight: 300 !important;
     color : #26a69a !important;
     border-left: 0px solid #fff !important;
+    padding-left: 20px !important;
 }
 
 .table-of-contents a:hover {
+    padding-left: 20px !important;
     border-left: 0px solid #fff !important;
 }
 
