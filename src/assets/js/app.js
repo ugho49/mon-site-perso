@@ -28,13 +28,6 @@ $(document).ready(function(){
         });
     });
 
-    //animate formations et compétences
-    $('.expe').each(function () {
-        $(this).appear(function() {
-            $(this).addClass('animated zoomIn');
-        });
-    });
-
     checkScroll($(window).scrollTop());
     $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
         checkScroll(this.scrollY);
@@ -75,13 +68,13 @@ function checkScroll(pos){
         $('#navigation').addClass("fixNavigation");
         $('#afterNavContainer').css('margin-top', '64px');
         // Show btn home
-        $('.btn_home').show(500);
+        $('#btn_home').show(500);
     } else {
         //sinon on retire la classe "fixNavigation" à <nav id="navigation">
         $('#navigation').removeClass("fixNavigation");
         $('#afterNavContainer').css('margin-top', 'auto');
         //hide btn home
-        $('.btn_home').hide(500);
+        $('#btn_home').hide(500);
     }
 }
 

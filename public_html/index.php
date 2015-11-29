@@ -38,21 +38,12 @@ $info = $app->getInformations();
     <div class="nav-wrapper container">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li class="btn_home"><a href="#home"><i class="material-icons md-light left">home</i>Accueil</a></li>
             <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
             <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">public</i>Formations & Expériences</a></li>
             <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">star</i>Compétences</a></li>
             <li class="btn_contact dropdown-button" data-activates="dropdown_contact"><a href="#!"><i class="material-icons md-light left">message</i>Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li class="btn_home">
-                <a href="#home">
-                    <div class="row valign-wrapper">
-                        <div class="s1 valign"><i class="material-icons md-light">home</i></div>
-                        <div class="col offset-s1 s9 valign">Accueil</div>
-                    </div>
-                </a>
-            </li>
             <li class="btn_about">
                 <a href="#about">
                     <div class="row valign-wrapper">
@@ -134,42 +125,42 @@ $info = $app->getInformations();
 
                     <?php foreach ($experiences = $app->getFormationExperience() as $e): ?>
 
-                    <?php
-                    $time = ucfirst(strftime('%b %Y', strtotime($e->start)));;
+                        <?php
+                        $time = ucfirst(strftime('%b %Y', strtotime($e->start)));;
 
-                    if ($e->end != null) {
-                        $time .= ",  ".ucfirst(strftime('%b %Y', strtotime($e->end)));
-                    }
-                    ?>
+                        if ($e->end != null) {
+                            $time .= ",  ".ucfirst(strftime('%b %Y', strtotime($e->end)));
+                        }
+                        ?>
 
-                    <li>
-                        <div class="row">
-                            <div class="col l1 m1 s12">
-                                <div class="<?= $e->class; ?> tooltipped" data-position="bottom"
-                                data-delay="50"
-                                data-tooltip="<?= $time; ?>">
+                        <li>
+                            <div class="row">
+                                <div class="col l1 m1 s12">
+                                    <div class="<?= $e->class; ?> tooltipped" data-position="bottom"
+                                        data-delay="20"
+                                        data-tooltip="<?= $time; ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col offset-l1 l10 offset-m1 m10 s12">
-                                <div class="description">
-                                    <h2>
-                                        <div class="row">
-                                            <div class="col l8 m12">
-                                                <span class="title"><?= $e->title; ?></span>
+                                <div class="col offset-l1 l10 offset-m1 m10 s12">
+                                    <div class="description">
+                                        <h2>
+                                            <div class="row">
+                                                <div class="col l8 m12">
+                                                    <span class="title"><?= $e->title; ?></span>
+                                                </div>
+                                                <div class="col l4 m12">
+                                                    <span class="time"><?= $time; ?></span>
+                                                </div>
                                             </div>
-                                            <div class="col l4 m12">
-                                                <span class="time"><?= $time; ?></span>
-                                            </div>
-                                        </div>
-                                    </h2>
-                                    <h4><?= $e->subtitle; ?></h4>
-                                    <span class="description-text"><?= nl2br($e->description); ?></span>
+                                        </h2>
+                                        <h4><?= $e->subtitle; ?></h4>
+                                        <span class="description-text"><?= nl2br($e->description); ?></span>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>
-                    </li>
+                            </div>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -270,7 +261,7 @@ $info = $app->getInformations();
                             class="btn-floating btn-large z-depth-1 hoverable tooltipped"
                             id="btn_facebook"
                             data-position="bottom"
-                            data-delay="50"
+                            data-delay="20"
                             data-tooltip="Facebook">
                             <i class="fa fa-facebook"></i>
                         </a>
@@ -281,7 +272,7 @@ $info = $app->getInformations();
                             class="btn-floating btn-large z-depth-1 hoverable tooltipped"
                             id="btn_gplus"
                             data-position="bottom"
-                            data-delay="50"
+                            data-delay="20"
                             data-tooltip="Google+">
                             <i class="fa fa-google-plus"></i>
                         </a>
@@ -292,7 +283,7 @@ $info = $app->getInformations();
                             class="btn-floating btn-large z-depth-1 hoverable tooltipped"
                             id="btn_twitter"
                             data-position="bottom"
-                            data-delay="50"
+                            data-delay="20"
                             data-tooltip="Twitter">
                             <i class="fa fa-twitter"></i>
                         </a>
@@ -303,7 +294,7 @@ $info = $app->getInformations();
                             class="btn-floating btn-large z-depth-1 hoverable tooltipped"
                             id="btn_linkedin"
                             data-position="bottom"
-                            data-delay="50"
+                            data-delay="20"
                             data-tooltip="Linkedin">
                             <i class="fa fa-linkedin"></i>
                         </a>
@@ -314,7 +305,7 @@ $info = $app->getInformations();
                             class="btn-floating btn-large z-depth-1 hoverable tooltipped"
                             id="btn_github"
                             data-position="bottom"
-                            data-delay="50"
+                            data-delay="20"
                             data-tooltip="Github">
                             <i class="fa fa-github"></i>
                         </a>
@@ -331,6 +322,16 @@ $info = $app->getInformations();
         </div>
     </div>
     <!-- FIN Partie Contact -->
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 50px;" id="btn_home">
+        <a href="#home"
+        class="btn-floating btn-large grey tooltipped"
+        data-position="top"
+        data-delay="20"
+        data-tooltip="Remonter en haut">
+            <i class="fa fa-arrow-up"></i>
+        </a>
+    </div>
 
     <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
         <br>
