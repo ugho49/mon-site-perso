@@ -177,20 +177,26 @@ $info = $app->getInformations();
 
                 <?php if ($type->id == 1): ?>
                     <div class="col l12 s12">
-                    <?php else: ?>
-                        <div class="col l6 s12">
-                        <?php endif; ?>
+                <?php else: ?>
+                    <div class="col l6 s12">
+                <?php endif; ?>
                         <h4><?= $type->libelle; ?></h4>
 
                         <?php foreach ($app->getSkillsByType($type->id) as $skill): ?>
-                            <span class="title-progress"><?= $skill->libelle; ?></span>
-                            <div class="row">
-                                <div class="col s12">
-                                    <div class="progress">
-                                        <div class="determinate skills" data-width="<?= $skill->percentage; ?>" style="background-color: <?= $skill->color_hexa; ?>">
-                                            <span class="percentage">
-                                                <?= $skill->percentage; ?> %
-                                            </span>
+                            <?php if ($type->id == 1): ?>
+                            <div class="col l6 s12">
+                            <?php else: ?>
+                            <div class="col s12">
+                            <?php endif; ?>
+                                <span class="title-progress"><?= $skill->libelle; ?></span>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="progress">
+                                            <div class="determinate skills" data-width="<?= $skill->percentage; ?>" style="background-color: <?= $skill->color_hexa; ?>">
+                                                <span class="percentage">
+                                                    <?= $skill->percentage; ?> %
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
