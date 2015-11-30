@@ -28,6 +28,20 @@ $(document).ready(function(){
         });
     });
 
+    //animate each parcours
+    $('.timeline-element').each(function () {
+        $(this).appear(function() {
+
+            $(this).addClass('animated slideInRight');
+
+            $(this).animate({
+                opacity: 1
+            }, 10, function() {
+                // Animation complete.
+            });
+        });
+    });
+
     checkScroll($(window).scrollTop());
     $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
         checkScroll(this.scrollY);
@@ -68,13 +82,13 @@ function checkScroll(pos){
         $('#navigation').addClass("fixNavigation");
         $('#afterNavContainer').css('margin-top', '64px');
         // Show btn home
-        $('#btn_home').show(500);
+        $('#btn_home').fadeIn(500);
     } else {
         //sinon on retire la classe "fixNavigation" à <nav id="navigation">
         $('#navigation').removeClass("fixNavigation");
         $('#afterNavContainer').css('margin-top', 'auto');
         //hide btn home
-        $('#btn_home').hide(500);
+        $('#btn_home').fadeOut(500);
     }
 }
 

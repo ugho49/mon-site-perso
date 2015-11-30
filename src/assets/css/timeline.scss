@@ -42,7 +42,9 @@ $breakpoint-small: 601px;
         z-index: -1;
     }
 
-    li {
+    .timeline-element {
+
+        opacity: 0;
 
         .icon-school {
           @extend .icon;

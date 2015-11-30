@@ -7,6 +7,10 @@ $breakpoint-small: 601px;
 /***************
 * Global
 ****************/
+#btn_home {
+    display: none;
+}
+
 .title-section, .subtitle-section  {
     font-weight: 300 !important;
 }
