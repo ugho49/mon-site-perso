@@ -81,7 +81,7 @@ function checkScroll(pos){
 function setFlash(type, libelle) {
     var flash = '<div class="chip col s12 z-depth-1 ' + type + '"> ' + libelle + '<i class="material-icons">close</i></div>';
 
-    $('#title_form').after(flash);
+    $('#formulaire').after(flash);
 
     $('.chip').delay(3000).fadeOut(500, function() {
         $(this).remove();
