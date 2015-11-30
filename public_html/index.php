@@ -180,7 +180,7 @@ $info = $app->getInformations();
                 <?php else: ?>
                     <div class="col l6 s12">
                 <?php endif; ?>
-                        <h4><?= $type->libelle; ?></h4>
+                        <h4 class="subtitle-section"><?= $type->libelle; ?></h4>
 
                         <?php foreach ($app->getSkillsByType($type->id) as $skill): ?>
                             <?php if ($type->id == 1): ?>
