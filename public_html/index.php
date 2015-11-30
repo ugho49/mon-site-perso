@@ -31,7 +31,7 @@ $info = $app->getInformations();
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down table-of-contents">
             <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
-            <li class="btn_experience"><a href="#formation"><i class="material-icons md-light left">public</i>Formations & Expériences</a></li>
+            <li class="btn_parcours"><a href="#parcours"><i class="material-icons md-light left">public</i>Parcours</a></li>
             <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">star</i>Compétences</a></li>
             <li class="btn_projet"><a href="#projet"><i class="material-icons md-light left">work</i>Projets</a></li>
             <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i>Contact</a></li>
@@ -45,19 +45,11 @@ $info = $app->getInformations();
                     </div>
                 </a>
             </li>
-            <li class="btn_formation">
-                <a href="#formation">
+            <li class="btn_parcours">
+                <a href="#parcours">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">public</i></div>
-                        <div class="col offset-s1 s9 valign">Formations</div>
-                    </div>
-                </a>
-            </li>
-            <li class="btn_formation">
-                <a href="#formation">
-                    <div class="row valign-wrapper">
-                        <div class="s1 valign"><i class="material-icons md-light">public</i></div>
-                        <div class="col offset-s1 s9 valign">Expériences</div>
+                        <div class="col offset-s1 s9 valign">Parcours</div>
                     </div>
                 </a>
             </li>
@@ -114,11 +106,11 @@ $info = $app->getInformations();
         <div class="parallax"><img src="img/image5.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
     </div>
 
-    <!-- DEBUT Partie Formations et Expérience -->
-    <div id="formation" class="white scrollspy">
+    <!-- DEBUT Partie Parcours -->
+    <div id="parcours" class="white scrollspy">
         <div class="row container">
             <br>
-            <h2>Formations & Expériences</h2>
+            <h2>Parcours</h2>
             <span class="title_border"></span>
 
             <div class="col s12">
@@ -254,7 +246,7 @@ $info = $app->getInformations();
     </div>
 
     <!-- DEBUT Partie Contact -->
-    <div class="section white scrollspy" id="contact">
+    <div class="white scrollspy" id="contact">
         <div class="row container">
             <br>
             <h2>Contact</h2>
@@ -294,7 +286,7 @@ $info = $app->getInformations();
                     <div class="col offset-m1 m2 offset-s1 s1">
                         <a href="<?= $info['facebook']; ?>"
                             target="_blank"
-                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped waves-effect waves-light"
                             id="btn_facebook"
                             data-position="bottom"
                             data-delay="20"
@@ -305,7 +297,7 @@ $info = $app->getInformations();
                     <div class="col m2 offset-s1 s1">
                         <a href="<?= $info['google+']; ?>"
                             target="_blank"
-                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped waves-effect waves-light"
                             id="btn_gplus"
                             data-position="bottom"
                             data-delay="20"
@@ -316,7 +308,7 @@ $info = $app->getInformations();
                     <div class="col m2 offset-s1 s1">
                         <a href="<?= $info['twitter']; ?>"
                             target="_blank"
-                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped waves-effect waves-light"
                             id="btn_twitter"
                             data-position="bottom"
                             data-delay="20"
@@ -327,7 +319,7 @@ $info = $app->getInformations();
                     <div class="col m2 offset-s1 s1">
                         <a href="<?= $info['linkedin']; ?>"
                             target="_blank"
-                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped waves-effect waves-light"
                             id="btn_linkedin"
                             data-position="bottom"
                             data-delay="20"
@@ -338,7 +330,7 @@ $info = $app->getInformations();
                     <div class="col m2 offset-s1 s1">
                         <a href="<?= $info['github']; ?>"
                             target="_blank"
-                            class="btn-floating btn-large z-depth-1 hoverable tooltipped"
+                            class="btn-floating btn-large z-depth-1 hoverable tooltipped waves-effect waves-light"
                             id="btn_github"
                             data-position="bottom"
                             data-delay="20"
@@ -354,14 +346,65 @@ $info = $app->getInformations();
                     <div id="gmap" class="col s12"></div>
                 </div>
             </div>
+        </div>
 
+        <div class="row <?= $app->getColor(); ?>" style="margin-bottom: 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <br>
+                        <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
+                        <div class="row">
+                            <form class="col s12" id="formulaire">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="first_name" type="text" required="required">
+                                        <label for="first_name">Prénom</label>
+                                    </div>
+
+                                    <div class="input-field col s6">
+                                        <input id="last_name" type="text" required="required">
+                                        <label for="last_name">Nom</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">email</i>
+                                        <input id="email" type="email" required="required" class="validate">
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="message" class="materialize-textarea" required="required"></textarea>
+                                        <label for="message">Message ...</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="center-align">
+                                        <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
+                                            Envoyer
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- FIN Partie Contact -->
 
     <div class="fixed-action-btn" id="btn_home">
         <a href="#home"
-        class="btn-floating btn-large teal darken-1 tooltipped"
+        class="btn-floating btn-large teal darken-1 tooltipped waves-effect waves-light"
         data-position="top"
         data-delay="20"
         data-tooltip="Remonter en haut">
@@ -370,53 +413,6 @@ $info = $app->getInformations();
 </div>
 
 <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
-    <br>
-    <div class="container">
-        <div class="col s12">
-            <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
-            <div class="row">
-                <form class="col s12" id="formulaire">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="first_name" type="text" required="required">
-                            <label for="first_name">Prénom</label>
-                        </div>
-
-                        <div class="input-field col s6">
-                            <input id="last_name" type="text" required="required">
-                            <label for="last_name">Nom</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">email</i>
-                            <input id="email" type="email" required="required">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="message" class="materialize-textarea" required="required"></textarea>
-                            <label for="message">Message ...</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
-                    </div>
-                    <div class="row">
-                        <div class="center-align">
-                            <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
-                                Envoyer
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="footer-copyright">
         <div class="container center">© 2015 Ugho STEPHAN, All rights reserved.</div>
     </div>
