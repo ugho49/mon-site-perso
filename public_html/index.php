@@ -362,6 +362,7 @@ $info = $app->getInformations();
                         <h4 class="subtitle-section">Me contacter</h4>
                         <div class="row">
                             <form class="col s12" id="formulaire">
+                                <span id="ancre_flash"></span>
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <i class="material-icons prefix">account_circle</i>
