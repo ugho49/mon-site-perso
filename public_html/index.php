@@ -219,7 +219,7 @@ $info = $app->getInformations();
             <div class="row">
                 <?php foreach ($app->getProjects() as $e): ?>
                     <div class="col m6 s12">
-                        <div class="card medium">
+                        <div class="card medium hoverable">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator image-projet" src="img/<?= $e->image; ?>">
                             </div>
