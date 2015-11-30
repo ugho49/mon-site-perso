@@ -1,4 +1,4 @@
-$colorTimeline : #E6E6E6;
+$colorTimeline : #EEEEEE;
 $breakpoint-small: 601px;
 
 .icon {
@@ -18,10 +18,9 @@ $breakpoint-small: 601px;
         &:after {
             content: '';
             position: absolute;
-            height: 10px;
             width: 160px;
             margin-top: 25px;
-            background: $colorTimeline;
+            border-top:10px dotted $colorTimeline;
             z-index: -1;
         }
     }
@@ -77,7 +76,8 @@ $breakpoint-small: 601px;
 
                 .title {
                     font-size: 28px;
-                    font-weight: 400;
+                    font-weight: 300;
+                    font-family: 'Ubuntu', sans-serif;
                 }
             }
 
@@ -85,11 +85,13 @@ $breakpoint-small: 601px;
                 font-size: 22px;
                 line-height: 26px;
                 font-weight: 300;
+                font-family: 'Ubuntu', sans-serif;
             }
 
             .description-text {
-                font-size: 18px;
-                font-weight: 100;
+                font-size: 16px;
+                font-weight: 300;
+                font-family: 'Ubuntu', sans-serif;
             }
         }
     }

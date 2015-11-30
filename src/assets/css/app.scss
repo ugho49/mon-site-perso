@@ -7,11 +7,15 @@ $breakpoint-small: 601px;
 /***************
 * Global
 ****************/
+.title-section, .subtitle-section  {
+    font-weight: 300 !important;
+}
+
 .title_border {
-    background: none repeat scroll 0 0 #999999;
+    background: none repeat scroll 0 0 #D0D0D0;
     display: block;
     height: 10px;
-    margin-top: 30px;
+    margin-top: 0;
     margin-bottom: 30px;
     width: 100px;
 }
@@ -58,16 +62,18 @@ $breakpoint-small: 601px;
 
     h2, h4 {
         text-align: center;
-        font-weight: bolder;
+        font-weight: 400;
         color: #fafafa;
     }
 
     h2 {
         font-family: 'Pacifico', cursive;
     }
+
+    h4 {
+        font-family: 'Ubuntu', sans-serif;
+    }
 }
-
-
 
 .collapsible-header {
     line-height: 4rem !important;
@@ -107,10 +113,19 @@ nav {
 /***************
 * Partie A propos
 ****************/
+.about-text {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
+}
 
 /***************
 * Partie Compétences
 ****************/
+.title-progress {
+    font-weight: 300;
+}
+
 .progress {
     background-color: #E9E7E7 !important;
     height: 20px !important;
@@ -137,6 +152,11 @@ nav {
     color: #01579b !important;
 }
 
+.projet-description {
+    font-size: 17px;
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
+}
 /***************
 * Partie Contact
 ****************/
@@ -172,6 +192,12 @@ nav {
 
 #gmap {
     height:340px;
+}
+
+.infos {
+    font-size: 17px;
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 /***************

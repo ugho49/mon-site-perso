@@ -87,15 +87,15 @@ $info = $app->getInformations();
     <div class="section white scrollspy" id="about">
         <div class="row container">
             <br>
-            <h2>A propos de moi</h2>
+            <h2 class="title-section">A propos de moi</h2>
             <span class="title_border"></span>
-            <p class="grey-text text-darken-3 lighten-3 flow-text">
+            <p class="grey-text text-darken-3 lighten-3 about-text">
                 Après l'obtention de mon BTS Services Informatiques aux Organisations obtenu au Lycée Chevrollier à Angers,
                 je m'oriente naturellement vers une Licence MIAGE (Méthodes Informatiques Appliquées à la Gestion de l'Entreprise)
                 à l'Université de Nantes.  Malheureusement ce parcours ne me plaisant pas, je me suis réorienté vers une licence Pro
                 Systèmes informatiques et Logiciels à l'IUT de Nantes.
             </p>
-            <p class="grey-text text-darken-3 lighten-3 flow-text">
+            <p class="grey-text text-darken-3 lighten-3 about-text">
                 Actuellement je suis donc en Licence Pro SIL et je réalise ma formation en alternance dans l'entreprise CGI.
             </p>
         </div>
@@ -110,7 +110,7 @@ $info = $app->getInformations();
     <div id="parcours" class="white scrollspy">
         <div class="row container">
             <br>
-            <h2>Parcours</h2>
+            <h2 class="title-section">Parcours</h2>
             <span class="title_border"></span>
 
             <div class="col s12">
@@ -170,7 +170,7 @@ $info = $app->getInformations();
     <div class="section white scrollspy" id="competence">
         <div class="row container">
             <br>
-            <h2>Mes compétences</h2>
+            <h2 class="title-section">Mes compétences</h2>
             <span class="title_border"></span>
 
             <?php foreach ($app->getTypeSkills() as $type): ?>
@@ -213,7 +213,7 @@ $info = $app->getInformations();
     <div class="section scrollspy <?= $app->getColor(); ?>" id="projet">
         <div class="row container">
             <br>
-            <h2>Mes Projets</h2>
+            <h2 class="title-section">Mes Projets</h2>
             <span class="title_border"></span>
 
             <div class="row">
@@ -228,7 +228,7 @@ $info = $app->getInformations();
                                     <?= $e->title; ?>
                                     <i class="material-icons right">more_vert</i>
                                 </span>
-                                <p class="truncate"><?= $e->description; ?></p>
+                                <p class="truncate projet-description"><?= $e->description; ?></p>
                             </div>
                             <?php if ($e->url): ?>
                                 <div class="card-action center-align">
@@ -237,7 +237,7 @@ $info = $app->getInformations();
                             <?php endif; ?>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4"><?= $e->title; ?><i class="material-icons right">close</i></span>
-                                <p><?= $e->description; ?></p>
+                                <p class="projet-description"><?= $e->description; ?></p>
                             </div>
                         </div>
                     </div>
@@ -255,37 +255,37 @@ $info = $app->getInformations();
     <div class="white scrollspy" id="contact">
         <div class="row container">
             <br>
-            <h2>Contact</h2>
+            <h2 class="title-section">Contact</h2>
             <span class="title_border"></span>
             <div class="col l6 m12">
-                <h4 id="informations" class="scrollspy">Informations</h4>
+                <h4 id="informations" class="subtitle-section">Informations</h4>
 
                 <div class="row valign-wrapper">
                     <div class="col offset-m1 m2 s2 valign">
                         <i class="icon_contact material-icons">email</i>
                     </div>
-                    <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['mail']; ?></div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign infos"><?= $info['mail']; ?></div>
                 </div>
 
                 <div class="row valign-wrapper">
                     <div class="col offset-m1 m2 s2 valign">
                         <i class="icon_contact material-icons">phone</i>
                     </div>
-                    <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['phone']; ?></div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign infos"><?= $info['phone']; ?></div>
                 </div>
 
                 <div class="row valign-wrapper">
                     <div class="col offset-m1 m2 s2 valign">
                         <i class="icon_contact material-icons">location_on</i>
                     </div>
-                    <div class="col offset-m1 m8 offset-s1 s9 valign"><?= $info['location']; ?></div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign infos"><?= $info['location']; ?></div>
                 </div>
 
                 <div class="row valign-wrapper">
                     <div class="col offset-m1 m2 s2 valign">
                         <i class="icon_contact material-icons">system_update_alt</i>
                     </div>
-                    <div class="col offset-m1 m8 offset-s1 s9 valign"><a href="files.php?file=cv" target="_blank">Télécharger mon CV</a></div>
+                    <div class="col offset-m1 m8 offset-s1 s9 valign infos"><a href="files.php?file=cv" target="_blank">Télécharger mon CV</a></div>
                 </div>
 
                 <div class="row">
@@ -347,7 +347,7 @@ $info = $app->getInformations();
                 </div>
             </div>
             <div class="col l6 s12">
-                <h4 id="findme" class="scrollspy">Me trouver</h4>
+                <h4 id="findme" class="subtitle-section">Me trouver</h4>
                 <div class="row">
                     <div id="gmap" class="col s12"></div>
                 </div>
@@ -359,7 +359,7 @@ $info = $app->getInformations();
                 <div class="row">
                     <div class="col s12">
                         <br>
-                        <h4 id="title_form"><span id="contactme" class="scrollspy"></span>Me contacter</h4>
+                        <h4 class="subtitle-section">Me contacter</h4>
                         <div class="row">
                             <form class="col s12" id="formulaire">
                                 <div class="row">
