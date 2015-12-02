@@ -1,9 +1,28 @@
 <?php
-setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
-include '../layouts/header.php';
-include '../src/App.php';
-$app = new App();
-$info = $app->getInformations();
+    setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
+    include '../layouts/header.php';
+    include '../src/App.php';
+    $app = new App();
+    $info = $app->getInformations();
+
+    $images = [];
+
+    switch ($app->checkScreen()) {
+        case 'TABLET':
+            // images for tablet
+            $images = ['tablette-tab.jpg', 'macbookpro-tab.jpg', 'macbookair-tab.jpg', 'coffee-tab.jpg'];
+            break;
+
+        case 'MOBILE':
+            // images for mobile
+            $images = ['tablette-mob.jpg', 'macbookpro-mob.jpg', 'macbookair-mob.jpg', 'coffee-mob.jpg'];
+            break;
+
+        default:
+            // images for deskop
+            $images = ['tablette.jpg', 'macbookpro.jpg', 'macbookair.jpg', 'coffee.jpg'];
+            break;
+    }
 ?>
 
 <!-- DEBUT Partie Avatar -->
@@ -20,7 +39,7 @@ $info = $app->getInformations();
         </div>
     </div>
     <div class="parallax">
-        <img src="img/tablette-min.jpg" id="fond_info" />
+        <img src="img/<?= $images[0]; ?>" id="fond_info" />
     </div>
 </div>
 <!-- FIN Partie Avatar -->
@@ -103,7 +122,7 @@ $info = $app->getInformations();
     <!-- FIN Partie A propos -->
 
     <div class="parallax-container">
-        <div class="parallax"><img src="img/macbookpro-min.jpg" /></div>
+        <div class="parallax"><img src="img/<?= $images[1]; ?>" /></div>
     </div>
 
     <!-- DEBUT Partie Parcours -->
@@ -163,7 +182,7 @@ $info = $app->getInformations();
     <!-- FIN Partie Expérience -->
 
     <div class="parallax-container">
-        <div class="parallax"><img src="img/macbookair-min.jpg" /></div>
+        <div class="parallax"><img src="img/<?= $images[2]; ?>" /></div>
     </div>
 
     <!-- DEBUT Partie Compétence -->
@@ -247,7 +266,7 @@ $info = $app->getInformations();
             <!-- FIN Partie Projet -->
 
             <div class="parallax-container">
-                <div class="parallax"><img src="img/coffee-min.jpg" /></div>
+                <div class="parallax"><img src="img/<?= $images[3]; ?>" /></div>
             </div>
 
             <!-- DEBUT Partie Contact -->
