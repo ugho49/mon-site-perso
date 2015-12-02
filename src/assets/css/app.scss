@@ -62,6 +62,7 @@ $breakpoint-small: 601px;
     #avatar {
         height: 220px;
         margin-top: 50px;
+        border: 7px solid rgba(255, 255, 255, 0.46);
     }
 
     h2, h4 {
@@ -196,6 +197,7 @@ nav {
 
 #gmap {
     height:340px;
+    border-radius: 5px;
 }
 
 .infos {
