@@ -20,7 +20,7 @@ $info = $app->getInformations();
         </div>
     </div>
     <div class="parallax">
-        <img src="img/image1.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" id="fond_info">
+        <img src="img/tablette-min.jpg" style="display: block; transform: translate3d(-50%, 172px, 0px);" id="fond_info">
     </div>
 </div>
 <!-- FIN Partie Avatar -->
@@ -103,7 +103,7 @@ $info = $app->getInformations();
     <!-- FIN Partie A propos -->
 
     <div class="parallax-container">
-        <div class="parallax"><img src="img/image5.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
+        <div class="parallax"><img src="img/macbookpro-min.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
     </div>
 
     <!-- DEBUT Partie Parcours -->
@@ -163,7 +163,7 @@ $info = $app->getInformations();
     <!-- FIN Partie Expérience -->
 
     <div class="parallax-container">
-        <div class="parallax"><img src="img/image3.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
+        <div class="parallax"><img src="img/macbookair-min.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
     </div>
 
     <!-- DEBUT Partie Compétence -->
@@ -247,7 +247,7 @@ $info = $app->getInformations();
             <!-- FIN Partie Projet -->
 
             <div class="parallax-container">
-                <div class="parallax"><img src="img/image4.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
+                <div class="parallax"><img src="img/coffee-min.jpg" style="display: block; transform: translate3d(-50%, 85px, 0px);"></div>
             </div>
 
             <!-- DEBUT Partie Contact -->
