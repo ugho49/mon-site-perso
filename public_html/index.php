@@ -10,17 +10,17 @@
     switch ($app->checkScreen()) {
         case 'TABLET':
             // images for tablet
-            $images = ['tablette-tab.jpg', 'macbookpro-tab.jpg', 'macbookair-tab.jpg', 'coffee-tab.jpg'];
+            $images = ['tablette-tab-min.jpg', 'macbookpro-tab-min.jpg', 'macbookair-tab-min.jpg', 'coffee-tab-min.jpg'];
             break;
 
         case 'MOBILE':
             // images for mobile
-            $images = ['tablette-mob.jpg', 'macbookpro-mob.jpg', 'macbookair-mob.jpg', 'coffee-mob.jpg'];
+            $images = ['tablette-mob-min.jpg', 'macbookpro-mob-min.jpg', 'macbookair-mob-min.jpg', 'coffee-mob-min.jpg'];
             break;
 
         default:
             // images for deskop
-            $images = ['tablette.jpg', 'macbookpro.jpg', 'macbookair.jpg', 'coffee.jpg'];
+            $images = ['tablette-min.jpg', 'macbookpro-min.jpg', 'macbookair-min.jpg', 'coffee-min.jpg'];
             break;
     }
 ?>

@@ -103,10 +103,7 @@ $(document).ready(function(){
     $('.button-collapse').sideNav({'edge': 'left'});
     //$('.datepicker').pickadate({selectYears: 20});
     //$('select').not('.disabled').material_select();
-    if (!isMobile) {
-        // parallax only for desktop
-        $('.parallax').parallax();
-    }
+    $('.parallax').parallax();
 });
 
 function isMobileAndTablet() {
