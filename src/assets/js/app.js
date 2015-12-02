@@ -2,6 +2,7 @@ $(document).ready(function(){
     $('.btn_home').hide();
 
     var isDraggable = $(document).width() > 480 ? true : false;
+    var isMobile = $(document).width() <= 480 ? true : false;
 
     //Google Maps
     $('#gmap').gmap3({
@@ -32,13 +33,17 @@ $(document).ready(function(){
     $('.timeline-element').each(function () {
         $(this).appear(function() {
 
-            $(this).addClass('animated slideInRight');
+            if (!isMobile) {
+                $(this).addClass('animated slideInRight');
 
-            $(this).animate({
-                opacity: 1
-            }, 10, function() {
-                // Animation complete.
-            });
+                $(this).animate({
+                    opacity: 1
+                }, 10, function() {
+                    // Animation complete.
+                });
+            } else {
+                $(this).css("opacity", 1);
+            }
         });
     });
 

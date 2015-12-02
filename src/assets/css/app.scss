@@ -7,6 +7,12 @@ $breakpoint-small: 601px;
 /***************
 * Global
 ****************/
+.parallax-container {
+    @media (max-width: $breakpoint-small) {
+        height: 400px !important;
+    }
+}
+
 #btn_home {
     display: none;
 }
@@ -63,6 +69,11 @@ $breakpoint-small: 601px;
         height: 220px;
         margin-top: 50px;
         border: 7px solid rgba(255, 255, 255, 0.46);
+
+        @media (max-width: $breakpoint-small) {
+            height: 180px;
+            margin-top: 0px;
+        }
     }
 
     h2, h4 {
