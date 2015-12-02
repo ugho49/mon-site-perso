@@ -4,8 +4,6 @@
     <script type="text/javascript" src="dist/appear/appear.min.js"></script>
     <!-- Materialize -->
     <script type="text/javascript" src="dist/materialize/js/materialize.min.js"></script>
-    <!-- Init Materialize -->
-    <script type="text/javascript" src="js/init.min.js"></script>
     <!-- App -->
     <script type="text/javascript" src="js/app.min.js"></script>
     <!-- Google Map -->
