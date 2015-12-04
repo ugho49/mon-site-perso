@@ -126,15 +126,14 @@
     </div>
 
     <!-- DEBUT Partie Parcours -->
-    <div id="parcours" class="white scrollspy">
-        <div class="row container">
+    <div id="parcours" class="<?= $app->getColor(); ?> scrollspy">
+        <div class="row container" style="margin-bottom:0px;">
             <br>
             <h2 class="title-section">Parcours</h2>
             <span class="title_border"></span>
 
             <div class="col s12">
-                <ul class="timeline">
-
+                <section id="cd-timeline">
                     <?php foreach ($experiences = $app->getFormationExperience() as $e): ?>
 
                         <?php
@@ -145,36 +144,20 @@
                         }
                         ?>
 
-                        <li class="timeline-element">
-                            <div class="row">
-                                <div class="col l1 m1 s12">
-                                    <div class="<?= $e->class; ?> tooltipped" data-position="bottom"
-                                        data-delay="20"
-                                        data-tooltip="<?= $time; ?>">
-                                    </div>
-                                </div>
+                        <div class="cd-timeline-block">
+                            <div class="cd-timeline-img valign-wrapper <?= $e->background_class; ?>">
+                                <i class="<?= $e->ico_class; ?> fa-2x"></i>
+                            </div> <!-- cd-timeline-img -->
 
-                                <div class="col offset-l1 l10 offset-m1 m10 s12">
-                                    <div class="description">
-                                        <h2>
-                                            <div class="row">
-                                                <div class="col l8 m12">
-                                                    <span class="title"><?= $e->title; ?></span>
-                                                </div>
-                                                <div class="col l4 m12">
-                                                    <span class="time"><?= $time; ?></span>
-                                                </div>
-                                            </div>
-                                        </h2>
-                                        <h4><?= $e->subtitle; ?></h4>
-                                        <span class="description-text"><?= nl2br($e->description); ?></span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </li>
+                            <div class="cd-timeline-content">
+                                <h2><?= $e->title; ?></h2>
+                                <h3><?= $e->subtitle; ?></h3>
+                                <p><?= nl2br($e->description); ?></p>
+                                <span class="cd-date"><?= $time; ?></span>
+                            </div> <!-- cd-timeline-content -->
+                        </div> <!-- cd-timeline-block -->
                     <?php endforeach; ?>
-                </ul>
+                </section>
             </div>
 
         </div>

@@ -6,6 +6,7 @@
     <script type="text/javascript" src="dist/materialize/js/materialize.min.js"></script>
     <!-- App -->
     <script type="text/javascript" src="js/app.min.js"></script>
+<script type="text/javascript" src="js/modernizr.min.js"></script>
     <!-- Google Map -->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=fr"></script>
     <script type="text/javascript" src="dist/gmap3/gmap3.min.js"></script>
