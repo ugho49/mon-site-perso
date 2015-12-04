@@ -28,8 +28,8 @@ class App
         return $result;
     }
 
-    public function getFormationExperience() {
-        $requete = $this->pdo->prepare('SELECT * FROM exp_form ex INNER JOIN type_exp_form typ ON typ.id = ex.id_type_exp_form ORDER BY start DESC, end ASC');
+    public function getTimeline() {
+        $requete = $this->pdo->prepare('SELECT * FROM timeline ti INNER JOIN type_timeline typ ON typ.id = ti.id_type_timeline ORDER BY start DESC, end ASC');
         $requete->execute();
         return $requete->fetchAll();
     }

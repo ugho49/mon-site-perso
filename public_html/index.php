@@ -134,7 +134,7 @@
 
             <div class="col s12">
                 <section id="cd-timeline">
-                    <?php foreach ($experiences = $app->getFormationExperience() as $e): ?>
+                    <?php foreach ($experiences = $app->getTimeline() as $e): ?>
 
                         <?php
                         $time = ucfirst(strftime('%b %Y', strtotime($e->start)));;
