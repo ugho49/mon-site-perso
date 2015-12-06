@@ -97,7 +97,11 @@ $(document).ready(function(){
     $('.button-collapse').sideNav({'edge': 'left'});
     //$('.datepicker').pickadate({selectYears: 20});
     //$('select').not('.disabled').material_select();
-    $('.parallax').parallax();
+
+    if(!isMobile) {
+        $('.parallax').parallax();
+    }
+
 });
 
 function hideBlocks(blocks, offset) {
@@ -145,11 +149,15 @@ function checkScroll(pos){
 }
 
 function setFlash(type, libelle) {
-    var flash = '<div class="chip col s12 z-depth-1 ' + type + '"> ' + libelle + '<i class="material-icons">close</i></div>';
+    var flash = '<div class="delete"><div class="chip col s12 z-depth-1 ' + type + '"> ' + libelle + '<i class="material-icons">close</i></div><br></div>';
 
     $('#ancre_flash').after(flash);
 
-    $('.chip').delay(3000).fadeOut(500, function() {
+    $('html, body').animate({
+        scrollTop: $("#formulaire").offset().top - 64
+    }, 200);
+
+    $('.delete').delay(3000).fadeOut(500, function() {
         $(this).remove();
     });
 }
