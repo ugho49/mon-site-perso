@@ -47,6 +47,7 @@
 <!--DEBUT Navigation-->
 <nav id="navigation" class="<?= $app->getColor(); ?>">
     <div class="nav-wrapper container">
+        <a href="#" class="brand-logo hide-on-large-only"><img src="img/logo.png" alt="logo" /></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down table-of-contents">
             <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>

@@ -35,6 +35,14 @@ $breakpoint-small: 601px;
     }
 }
 
+.brand-logo img {
+    height: 64px !important;
+
+    @media (max-width: $breakpoint-small) {
+        height: 55px !important;
+    }
+}
+
 #btn_home {
     display: none;
 }
