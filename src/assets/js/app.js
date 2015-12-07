@@ -113,6 +113,8 @@ $(document).ready(function(){
 
     if(!isMobile) {
         $('.parallax').parallax();
+    } else {
+        $('.parallax img').css("display", "block");
     }
 
 });
