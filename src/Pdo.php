@@ -1,17 +1,12 @@
 <?php
 $pdo        = null;
-$host       = "";
-$database   = "";
-$user       = "";
-$password   = "";
+$host       = "localhost";
+$database   = "ughostephan_fr";
+$user       = "ughostephan";
+$password   = "ughostephan";
 $errorDatabase = "Erreur de connexion à la base de données.";
 
-if($_SERVER['SERVER_ADDR'] != '151.80.158.49') {
-    $host       = "localhost";
-    $database   = "ughostephan";
-    $user       = "ughostephan";
-    $password   = "ughostephan";
-} else {
+if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
     // Fichier database sur le server
     $filename = "/var/www/databases.json";
     // Si le fichier existe
@@ -25,10 +20,10 @@ if($_SERVER['SERVER_ADDR'] != '151.80.158.49') {
         // Decode the JSON into an associative array
         $json = json_decode($content, true);
         // Récupération des données pour pdo
-        $host       = $json['ughostephan']['host'];
-        $database   = $json['ughostephan']['database'];
-        $user       = $json['ughostephan']['user'];
-        $password   = $json['ughostephan']['password'];
+        $host       = $json['ughostephan']['fr']['host'];
+        $database   = $json['ughostephan']['fr']['database'];
+        $user       = $json['ughostephan']['fr']['user'];
+        $password   = $json['ughostephan']['fr']['password'];
     } else {
         die($errorDatabase);
     }
