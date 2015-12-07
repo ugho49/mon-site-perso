@@ -114,7 +114,7 @@ $(document).ready(function(){
     if(!isMobile) {
         $('.parallax').parallax();
     } else {
-        $('.parallax img').css("display", "block");
+        $('.parallax img').css("display", "block").css("left", "40%").css("bottom", "-170px");
     }
 
 });
