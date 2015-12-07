@@ -52,7 +52,7 @@ class App
         return $requete->fetchAll();
     }
 
-    public function getLang() {
+    public static function getLang() {
 
         $filename = "";
 

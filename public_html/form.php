@@ -1,22 +1,26 @@
 <?php
+include '../src/App.php';
+App::getSession();
+$lang = App::getLang();
+
 /**
 * Vérifications params
 */
 if (empty($_POST['recaptcha'])) {
-    $obj = array('status' => 'warning', 'libelle' => 'Il faut cliquez sur "Je ne suis pas un robot"');
+    $obj = array('status' => 'warning', 'libelle' => $lang->formMessageNotARobot);
     die(json_encode($obj));
 } else {
     if(empty($_POST['prenom']) || empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['message'])) {
-        $obj = array('status' => 'warning', 'libelle' => 'Des champs sont manquants');
+        $obj = array('status' => 'warning', 'libelle' => $lang->formMessageFieldsMissing);
         die(json_encode($obj));
     }
     else {
         if(isValid($_POST['recaptcha'])) {
             sendMail($_POST['prenom'], $_POST['nom'], $_POST['email'], htmlspecialchars($_POST['message']));
-            $obj = array('status' => 'success', 'libelle' => 'Le message à été envoyé avec succès.');
+            $obj = array('status' => 'success', 'libelle' => $lang->formMessageSuccess);
             die(json_encode($obj));
         } else {
-            $obj = array('status' => 'danger', 'libelle' => 'Le champ "Je ne suis pas un robot" est en erreur.');
+            $obj = array('status' => 'danger', 'libelle' => $lang->formMessageRobotNotGood);
             die(json_encode($obj));
         }
     }

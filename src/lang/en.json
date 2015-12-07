@@ -21,5 +21,9 @@
 	"formEmail":"Email",
 	"formMessage":"Message ..",
 	"formBtnSend":"Send",
+	"formMessageNotARobot":"You must click on \"I am not a robot\"",
+	"formMessageFieldsMissing":"Fields are missing",
+	"formMessageSuccess":"The message has been sent successfully.",
+	"formMessageRobotNotGood":"The field \"I am not a robot\" is in error.",
 	"btnGoTop":"Go top"
 }
