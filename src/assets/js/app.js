@@ -64,7 +64,7 @@ $(document).ready(function(){
 
         $.ajax({
     		type: "POST",
-    		url: "ajax.php",
+    		url: "form.php",
             data: {"prenom" : prenom, "nom" : nom, "email" : email, "message" : message, "recaptcha" : recaptchaResponse},
     		dataType: "json",
     		success: function(data) {
@@ -76,6 +76,20 @@ $(document).ready(function(){
                 }
     		}
     	});
+    });
+
+    $('.language_flag').click(function() {
+    	if(!$(this).hasClass('active')) {
+    		$.ajax({
+    			url : 'language.php',
+    			type : 'POST',
+    			data: { 'lang': $(this).data('id') },
+    			dataType : 'json',
+    			success: function(result) {
+    				location.reload();
+    			}
+    		});
+    	}
     });
 
     // Navbar for movile

@@ -1,7 +1,15 @@
 <?php
+
+if(!isset($_SESSION['lang'])) {
+    // Si la variable de session lang n'est pas défini, défault en francais
+    $_SESSION['lang'] = 'fr';
+    // Sinon récupération en session
+}
+
+$lang       = $_SESSION['lang'];
 $pdo        = null;
 $host       = "localhost";
-$database   = "ughostephan_fr";
+$database   = "ughostephan_" . $lang;
 $user       = "ughostephan";
 $password   = "ughostephan";
 $errorDatabase = "Erreur de connexion à la base de données.";
@@ -20,10 +28,10 @@ if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
         // Decode the JSON into an associative array
         $json = json_decode($content, true);
         // Récupération des données pour pdo
-        $host       = $json['ughostephan']['fr']['host'];
-        $database   = $json['ughostephan']['fr']['database'];
-        $user       = $json['ughostephan']['fr']['user'];
-        $password   = $json['ughostephan']['fr']['password'];
+        $host       = $json['ughostephan'][$lang]['host'];
+        $database   = $json['ughostephan'][$lang]['database'];
+        $user       = $json['ughostephan'][$lang]['user'];
+        $password   = $json['ughostephan'][$lang]['password'];
     } else {
         die($errorDatabase);
     }

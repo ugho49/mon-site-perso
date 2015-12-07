@@ -1,10 +1,9 @@
 <?php
-    setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
-    include '../layouts/header.php';
     include '../src/App.php';
+    App::getSession();
     $app = new App();
     $info = $app->getInformations();
-
+    $lang = $app->getLang();
     $images = [];
 
     switch ($app->checkScreen()) {
@@ -23,11 +22,19 @@
             $images = ['tablette-min.jpg', 'macbookpro-min.jpg', 'macbookair-min.jpg', 'coffee-min.jpg'];
             break;
     }
+
+    // Affichage du header
+    include '../layouts/header.php';
 ?>
 
 <!-- DEBUT Partie Avatar -->
 <div class="parallax-container scrollspy" id="home">
     <div class="section no-pad-bot">
+
+        <div id="languages">
+        	<img src="img/fr.jpg" class="language_flag <?php if ($_SESSION['lang'] == "fr"): ?>active<?php endif; ?>" data-id="fr">
+        	<img src="img/en.jpg" class="language_flag <?php if ($_SESSION['lang'] == "en"): ?>active<?php endif; ?>" data-id="en">
+        </div>
         <div class="container">
             <div class="row center">
                 <img src="img/avatar.jpg" alt="avatar" class="circle responsive-img" id="avatar"/>
@@ -50,18 +57,18 @@
         <a href="#" class="brand-logo hide-on-large-only"><img src="img/logo.png" alt="logo" /></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down table-of-contents">
-            <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i>A propos</a></li>
-            <li class="btn_parcours"><a href="#parcours"><i class="material-icons md-light left">public</i>Parcours</a></li>
-            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">star</i>Compétences</a></li>
-            <li class="btn_projet"><a href="#projet"><i class="material-icons md-light left">work</i>Projets</a></li>
-            <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i>Contact</a></li>
+            <li class="btn_about"><a href="#about"><i class="material-icons md-light left">info</i><?= $lang->navAbout; ?></a></li>
+            <li class="btn_parcours"><a href="#parcours"><i class="material-icons md-light left">public</i><?= $lang->navTimeline; ?></a></li>
+            <li class="btn_competence"><a href="#competence"><i class="material-icons md-light left">star</i><?= $lang->navSkills; ?></a></li>
+            <li class="btn_projet"><a href="#projet"><i class="material-icons md-light left">work</i><?= $lang->navProjects; ?></a></li>
+            <li class="btn_contact"><a href="#contact"><i class="material-icons md-light left">message</i><?= $lang->navContact; ?></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li class="btn_about">
                 <a href="#about">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">info</i></div>
-                        <div class="col offset-s1 s9 valign">A propos</div>
+                        <div class="col offset-s1 s9 valign"><?= $lang->navAbout; ?></div>
                     </div>
                 </a>
             </li>
@@ -69,7 +76,7 @@
                 <a href="#parcours">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">public</i></div>
-                        <div class="col offset-s1 s9 valign">Parcours</div>
+                        <div class="col offset-s1 s9 valign"><?= $lang->navTimeline; ?></div>
                     </div>
                 </a>
             </li>
@@ -77,7 +84,7 @@
                 <a href="#competence">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">star</i></div>
-                        <div class="col offset-s1 s9 valign">Compétences</div>
+                        <div class="col offset-s1 s9 valign"><?= $lang->navSkills; ?></div>
                     </div>
                 </a>
             </li>
@@ -85,7 +92,7 @@
                 <a href="#projet">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">work</i></div>
-                        <div class="col offset-s1 s9 valign">Projets</div>
+                        <div class="col offset-s1 s9 valign"><?= $lang->navProjects; ?></div>
                     </div>
                 </a>
             </li>
@@ -93,7 +100,7 @@
                 <a href="#contact">
                     <div class="row valign-wrapper">
                         <div class="s1 valign"><i class="material-icons md-light">message</i></div>
-                        <div class="col offset-s1 s9 valign">Contact</div>
+                        <div class="col offset-s1 s9 valign"><?= $lang->navContact; ?></div>
                     </div>
                 </a>
             </li>
@@ -107,16 +114,13 @@
     <div class="section white scrollspy" id="about">
         <div class="row container">
             <br>
-            <h2 class="title-section">A propos de moi</h2>
+            <h2 class="title-section"><?= $lang->sectionAbout; ?></h2>
             <span class="title_border"></span>
             <p class="grey-text text-darken-3 lighten-3 about-text">
-                Après l'obtention de mon BTS Services Informatiques aux Organisations obtenu au Lycée Chevrollier à Angers,
-                je m'oriente naturellement vers une Licence MIAGE (Méthodes Informatiques Appliquées à la Gestion de l'Entreprise)
-                à l'Université de Nantes.  Malheureusement ce parcours ne me plaisant pas, je me suis réorienté vers une licence Pro
-                Systèmes informatiques et Logiciels à l'IUT de Nantes.
+                <?= $lang->sectionAboutText1; ?>
             </p>
             <p class="grey-text text-darken-3 lighten-3 about-text">
-                Actuellement je suis donc en Licence Pro SIL et je réalise ma formation en alternance dans l'entreprise CGI.
+                <?= $lang->sectionAboutText2; ?>
             </p>
         </div>
     </div>
@@ -130,7 +134,7 @@
     <div id="parcours" class="<?= $app->getColor(); ?> scrollspy">
         <div class="row container" style="margin-bottom:0px;">
             <br>
-            <h2 class="title-section">Parcours</h2>
+            <h2 class="title-section"><?= $lang->sectionTimeline; ?></h2>
             <span class="title_border"></span>
 
             <div class="col s12">
@@ -173,7 +177,7 @@
     <div class="section white scrollspy" id="competence">
         <div class="row container">
             <br>
-            <h2 class="title-section">Mes compétences</h2>
+            <h2 class="title-section"><?= $lang->sectionSkills; ?></h2>
             <span class="title_border"></span>
 
             <?php foreach ($app->getTypeSkills() as $type): ?>
@@ -215,7 +219,7 @@
             <div class="section scrollspy <?= $app->getColor(); ?>" id="projet">
                 <div class="row container">
                     <br>
-                    <h2 class="title-section">Mes Projets</h2>
+                    <h2 class="title-section"><?= $lang->sectionProjects; ?></h2>
                     <span class="title_border"></span>
 
                     <div class="row">
@@ -234,7 +238,7 @@
                                     </div>
                                     <?php if ($e->url): ?>
                                         <div class="card-action center-align">
-                                            <a href="<?= $e->url; ?>" target="_blank" class="link-projet">Accèder au projet</a>
+                                            <a href="<?= $e->url; ?>" target="_blank" class="link-projet"><?= $lang->sectionProjectsBtnAccess; ?></a>
                                         </div>
                                     <?php endif; ?>
                                     <div class="card-reveal">
@@ -257,10 +261,10 @@
             <div class="white scrollspy" id="contact">
                 <div class="row container">
                     <br>
-                    <h2 class="title-section">Contact</h2>
+                    <h2 class="title-section"><?= $lang->sectionContact; ?></h2>
                     <span class="title_border"></span>
                     <div class="col l6 m12">
-                        <h4 id="informations" class="subtitle-section">Informations</h4>
+                        <h4 id="informations" class="subtitle-section"><?= $lang->sectionContactInfo; ?></h4>
 
                         <div class="row valign-wrapper">
                             <div class="col offset-m1 m2 s2 valign">
@@ -287,7 +291,7 @@
                             <div class="col offset-m1 m2 s2 valign">
                                 <i class="icon_contact material-icons">system_update_alt</i>
                             </div>
-                            <div class="col offset-m1 m8 offset-s1 s9 valign infos"><a href="files.php?file=cv" target="_blank">Télécharger mon CV</a></div>
+                            <div class="col offset-m1 m8 offset-s1 s9 valign infos"><a href="files.php?file=cv" target="_blank"><?= $lang->sectionContactInfoBtnResume; ?></a></div>
                         </div>
 
                         <div class="row">
@@ -349,7 +353,7 @@
                         </div>
                     </div>
                     <div class="col l6 s12">
-                        <h4 id="findme" class="subtitle-section">Me trouver</h4>
+                        <h4 id="findme" class="subtitle-section"><?= $lang->sectionContactFindMe; ?></h4>
                         <div class="row">
                             <div id="gmap" class="col s12"></div>
                         </div>
@@ -361,7 +365,7 @@
                         <div class="row">
                             <div class="col s12">
                                 <br>
-                                <h4 class="subtitle-section">Me contacter</h4>
+                                <h4 class="subtitle-section"><?= $lang->sectionContactMessage; ?></h4>
                                 <div class="row">
                                     <form class="col s12" id="formulaire">
                                         <span id="ancre_flash"></span>
@@ -369,26 +373,26 @@
                                             <div class="input-field col s6">
                                                 <i class="material-icons prefix">account_circle</i>
                                                 <input id="first_name" type="text" required="required">
-                                                <label for="first_name">Prénom</label>
+                                                <label for="first_name"><?= $lang->formFirstName; ?></label>
                                             </div>
 
                                             <div class="input-field col s6">
                                                 <input id="last_name" type="text" required="required">
-                                                <label for="last_name">Nom</label>
+                                                <label for="last_name"><?= $lang->formLastName; ?></label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">email</i>
                                                 <input id="email" type="email" required="required" class="validate">
-                                                <label for="email">Email</label>
+                                                <label for="email"><?= $lang->formEmail; ?></label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">mode_edit</i>
                                                 <textarea id="message" class="materialize-textarea" required="required"></textarea>
-                                                <label for="message">Message ...</label>
+                                                <label for="message"><?= $lang->formMessage; ?></label>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -397,7 +401,7 @@
                                         <div class="row">
                                             <div class="center-align">
                                                 <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
-                                                    Envoyer
+                                                    <?= $lang->formBtnSend; ?>
                                                     <i class="material-icons right">send</i>
                                                 </button>
                                             </div>
@@ -416,7 +420,7 @@
                 class="btn-floating btn-large teal darken-1 tooltipped waves-effect waves-light"
                 data-position="top"
                 data-delay="20"
-                data-tooltip="Remonter en haut">
+                data-tooltip="<?= $lang->btnGoTop; ?>">
                 <i class="fa fa-arrow-up"></i>
             </a>
         </div>

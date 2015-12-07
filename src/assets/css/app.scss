@@ -29,6 +29,25 @@ $breakpoint-small: 601px;
 /***************
 * Global
 ****************/
+#languages {
+	position: absolute;
+	z-index: 999;
+	top: 5px;
+	right: 20px;
+
+    .language_flag {
+    	width: 30px;
+    	height: 18px;
+    }
+}
+
+img.language_flag.active {
+	opacity: .6;
+}
+img.language_flag:not(.active) {
+	cursor: pointer;
+}
+
 .parallax-container {
     @media (max-width: $breakpoint-small) {
         height: 400px !important;

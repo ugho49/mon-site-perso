@@ -52,6 +52,61 @@ class App
         return $requete->fetchAll();
     }
 
+    public function getLang() {
+
+        $filename = "";
+
+        if(!isset($_SESSION['lang'])) {
+            // Si la variable de session lang n'est pas défini, défault en francais
+            $_SESSION['lang'] = 'fr';
+            // Sinon récupération en session
+        }
+
+        $lang = $_SESSION['lang'];
+
+        if ($lang == 'fr') {
+            setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
+            $filename = "../src/lang/fr.json";
+        } else {
+            $filename = "../src/lang/en.json";
+        }
+
+        if(file_exists($filename)) {
+            $handle = fopen($filename, "rb");
+            $content = fread($handle, filesize($filename));
+            fclose($handle);
+
+            return json_decode($content);
+        } else {
+            die ("Erreur interne du serveur.");
+        }
+    }
+
+    public static function getSession() {
+
+        $isSessionStarted = false;
+
+        if(php_sapi_name() !== 'cli' ) {
+            if(version_compare(phpversion(), '5.4.0', '>=')) {
+                if(session_status() === PHP_SESSION_ACTIVE) {
+                    $isSessionStarted = true;
+                } else {
+                    $isSessionStarted = false;
+                }
+            } else {
+                if (session_id() === '') {
+                    $isSessionStarted = false;
+                } else {
+                    $isSessionStarted = true;
+                }
+            }
+        }
+
+        if(!$isSessionStarted) {
+            session_start();
+        }
+    }
+
     public function checkScreen() {
         $tablet_browser = 0;
         $mobile_browser = 0;
@@ -80,27 +135,27 @@ class App
             'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',
             'wapr','webc','winw','winw','xda ','xda-');
 
-        if (in_array($mobile_ua,$mobile_agents)) {
-            $mobile_browser++;
-        }
+            if (in_array($mobile_ua,$mobile_agents)) {
+                $mobile_browser++;
+            }
 
-        if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),'opera mini') > 0) {
-            $mobile_browser++;
-            //Check for tablets on opera mini alternative headers
-            $stock_ua = strtolower(isset($_SERVER['HTTP_X_OPERAMINI_PHONE_UA'])?$_SERVER['HTTP_X_OPERAMINI_PHONE_UA']:(isset($_SERVER['HTTP_DEVICE_STOCK_UA'])?$_SERVER['HTTP_DEVICE_STOCK_UA']:''));
-            if (preg_match('/(tablet|ipad|playbook)|(android(?!.*mobile))/i', $stock_ua)) {
-              $tablet_browser++;
+            if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),'opera mini') > 0) {
+                $mobile_browser++;
+                //Check for tablets on opera mini alternative headers
+                $stock_ua = strtolower(isset($_SERVER['HTTP_X_OPERAMINI_PHONE_UA'])?$_SERVER['HTTP_X_OPERAMINI_PHONE_UA']:(isset($_SERVER['HTTP_DEVICE_STOCK_UA'])?$_SERVER['HTTP_DEVICE_STOCK_UA']:''));
+                if (preg_match('/(tablet|ipad|playbook)|(android(?!.*mobile))/i', $stock_ua)) {
+                    $tablet_browser++;
+                }
+            }
+
+            if ($tablet_browser > 0) {
+                return 'TABLET';
+            }
+            else if ($mobile_browser > 0) {
+                return 'MOBILE';
+            }
+            else {
+                return 'DESKTOP';
             }
         }
-
-        if ($tablet_browser > 0) {
-           return 'TABLET';
-        }
-        else if ($mobile_browser > 0) {
-           return 'MOBILE';
-        }
-        else {
-           return 'DESKTOP';
-        }
     }
-}

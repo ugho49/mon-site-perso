@@ -4,15 +4,15 @@
     <script type="text/javascript" src="dist/appear/appear.min.js"></script>
     <!-- Materialize -->
     <script type="text/javascript" src="dist/materialize/js/materialize.min.js"></script>
-    <!-- Modernizr -->    
+    <!-- Modernizr -->
     <script type="text/javascript" src="dist/modernizr/modernizr.min.js"></script>
     <!-- App -->
     <script type="text/javascript" src="js/app.min.js"></script>
     <!-- Google Map -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=fr"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=<?= $_SESSION['lang']; ?>"></script>
     <script type="text/javascript" src="dist/gmap3/gmap3.min.js"></script>
     <!-- Google Recaptcha -->
-    <script type="text/javascript" src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript" src='https://www.google.com/recaptcha/api.js?hl=<?= $_SESSION['lang']; ?>'></script>
     <!-- Google Analytics -->
     <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
