@@ -2,50 +2,49 @@
 * Fonts
 ****************/
 @font-face {
-  font-family: Pacifico;
-  src: url('../fonts/Pacifico.ttf') format("truetype");
+    font-family: Pacifico;
+    src: url(../fonts/Pacifico.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: Ubuntu;
-  src: url('../fonts/Ubuntu-Regular.ttf') format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: Ubuntu;
+    src: url(../fonts/Ubuntu-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: Ubuntu;
-  src: url('../fonts/Ubuntu-Light.ttf') format("truetype");
-  font-weight: 300;
-  font-style: normal;
+    font-family: Ubuntu;
+    src: url(../fonts/Ubuntu-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
 }
-
 /***************
 * Variables
 ****************/
-$navcolor : #3A3A3A;
+$navcolor: #3A3A3A;
 $breakpoint-small: 601px;
-
 /***************
 * Global
 ****************/
 #languages {
-	position: absolute;
-	z-index: 999;
-	top: 5px;
-	right: 20px;
+    position: absolute;
+    z-index: 999;
+    top: 5px;
+    right: 20px;
 
     .language_flag {
-    	width: 30px;
-    	height: 18px;
+        width: 30px;
+        height: 18px;
     }
 }
 
 img.language_flag.active {
-	opacity: .6;
+    opacity: 0.6;
 }
+
 img.language_flag:not(.active) {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .parallax-container {
@@ -66,7 +65,8 @@ img.language_flag:not(.active) {
     display: none;
 }
 
-.title-section, .subtitle-section  {
+.title-section,
+.subtitle-section {
     font-weight: 300 !important;
 }
 
@@ -92,21 +92,20 @@ img.language_flag:not(.active) {
 
 .table-of-contents a.active {
     font-weight: 300 !important;
-    color : #26a69a !important;
-    border-left: 0px solid #fff !important;
+    color: #26a69a !important;
+    border-left: 0 solid #fff !important;
     padding-left: 20px !important;
 }
 
 .table-of-contents a:hover {
     padding-left: 20px !important;
-    border-left: 0px solid #fff !important;
+    border-left: 0 solid #fff !important;
 }
-
 /***************
 * Header
 ****************/
 #fond_info {
-    filter: brightness(70%);
+    filter:brightness(70%);
     -webkit-filter: brightness(70%);
     -moz-filter: brightness(70%);
     -o-filter: brightness(70%);
@@ -121,11 +120,12 @@ img.language_flag:not(.active) {
 
         @media (max-width: $breakpoint-small) {
             height: 180px;
-            margin-top: 0px;
+            margin-top: 0;
         }
     }
 
-    h2, h4 {
+    h2,
+    h4 {
         text-align: center;
         font-weight: 400;
         color: #fafafa;
@@ -157,12 +157,13 @@ img.language_flag:not(.active) {
     a {
         color: $navcolor !important;
     }
+
     a:hover {
         color: $navcolor !important;
     }
 }
 
-.fixNavigation{
+.fixNavigation {
     z-index: 9999;
     position: fixed;
     top: 0;
@@ -183,7 +184,6 @@ nav {
     font-weight: 300;
     font-family: 'Ubuntu', sans-serif;
 }
-
 /***************
 * Partie Compétences
 ****************/
@@ -229,7 +229,7 @@ nav {
     font-size: 3rem !important;
 }
 
-.g-recaptcha{
+.g-recaptcha {
     width: 100% !important;
     text-align: -webkit-center !important;
     text-align: -moz-center !important;
@@ -256,7 +256,7 @@ nav {
 }
 
 #gmap {
-    height:340px;
+    height: 340px;
     border-radius: 5px;
 }
 
@@ -265,12 +265,10 @@ nav {
     font-weight: 300;
     font-family: 'Ubuntu', sans-serif;
 }
-
 /***************
 * Footer
 ****************/
 #btn_home {
-
     bottom: 45px !important;
     right: 50px !important;
 
@@ -280,8 +278,8 @@ nav {
 }
 
 footer {
-    padding-top: 0px !important;
-    margin-top: 0px !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
 
     div {
         color: $navcolor !important;

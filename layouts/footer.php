@@ -1,4 +1,4 @@
- <!-- jQuery -->
+    <!-- jQuery -->
     <script type="text/javascript" src="dist/jquery/jquery.min.js"></script>
     <!-- Appear -->
     <script type="text/javascript" src="dist/appear/appear.min.js"></script>
@@ -24,4 +24,4 @@
           ga('send', 'pageview');
     </script>
 
-  </bod/html>
+</body></html>
