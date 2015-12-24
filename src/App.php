@@ -1,4 +1,6 @@
 <?php
+
+namespace App;
 /**
 * Class Application
 */
@@ -9,7 +11,8 @@ class App
     private $color = "grey lighten-5";
 
     function __construct() {
-        $this->pdo = require_once 'Pdo.php';
+        $database = new Database();
+        $this->pdo = $database->getPdo();
     }
 
     public function getColor() {
@@ -66,9 +69,9 @@ class App
 
         if ($lang == 'fr') {
             setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
-            $filename = "../src/lang/fr.json";
+            $filename = "../lang/fr.json";
         } else {
-            $filename = "../src/lang/en.json";
+            $filename = "../lang/en.json";
         }
 
         if(file_exists($filename)) {
@@ -79,31 +82,6 @@ class App
             return json_decode($content);
         } else {
             die ("Erreur interne du serveur.");
-        }
-    }
-
-    public static function getSession() {
-
-        $isSessionStarted = false;
-
-        if(php_sapi_name() !== 'cli' ) {
-            if(version_compare(phpversion(), '5.4.0', '>=')) {
-                if(session_status() === PHP_SESSION_ACTIVE) {
-                    $isSessionStarted = true;
-                } else {
-                    $isSessionStarted = false;
-                }
-            } else {
-                if (session_id() === '') {
-                    $isSessionStarted = false;
-                } else {
-                    $isSessionStarted = true;
-                }
-            }
-        }
-
-        if(!$isSessionStarted) {
-            session_start();
         }
     }
 

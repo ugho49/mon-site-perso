@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /ajax.php
-Disallow: /files.php
-Disallow: /update.php
-
-Sitemap: http://www.ugho-stephan.fr/sitemap.xml
