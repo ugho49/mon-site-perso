@@ -1,5 +1,5 @@
 <?php
-shell_exec('cd /var/www/public_dev/');
+shell_exec('cd /var/www/dev/');
 shell_exec('git reset --hard origin/master 2>&1');
 
 $output = shell_exec('git pull 2>&1');
