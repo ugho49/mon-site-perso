@@ -17,7 +17,7 @@ if (empty($_POST['recaptcha'])) {
     }
     else {
         if(isValid($app, $logger, $_POST['recaptcha'])) {
-            sendMail($mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], htmlspecialchars($_POST['message']));
+            sendMail($mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], nl2br(htmlspecialchars($_POST['message'])));
             $obj = array('status' => 'success', 'libelle' => $lang->formMessageSuccess);
             die(json_encode($obj));
         } else {
