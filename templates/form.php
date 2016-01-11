@@ -83,6 +83,14 @@ function sendMail($mailer, $logger, $prenom, $nom, $email, $message){
     $mailer->Body = $msg;
     //Attach an image file
     //$mailer->addAttachment('images/phpmailer_mini.png');
+
+    //DKIM
+    $mail->DKIM_domain = 'ugho-stephan.fr';
+    $mail->DKIM_private = '/var/www/dkim.private.key';
+    $mail->DKIM_selector = 'phpmailer';
+    $mail->DKIM_passphrase = '';
+    $mail->DKIM_identity = $mail->From;
+
     //send the message, check for errors
     if (!$mailer->send()) {
         $logger->info("Mailer Error: " . $mailer->ErrorInfo);
