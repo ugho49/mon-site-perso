@@ -85,11 +85,11 @@ function sendMail($mailer, $logger, $prenom, $nom, $email, $message){
     //$mailer->addAttachment('images/phpmailer_mini.png');
 
     //DKIM
-    $mail->DKIM_domain = 'ugho-stephan.fr';
-    $mail->DKIM_private = '/var/www/dkim.private.key';
-    $mail->DKIM_selector = 'phpmailer';
-    $mail->DKIM_passphrase = '';
-    $mail->DKIM_identity = $mail->From;
+    $mailer->DKIM_domain = 'ugho-stephan.fr';
+    $mailer->DKIM_private = '/var/www/dkim.private.key';
+    $mailer->DKIM_selector = 'phpmailer';
+    $mailer->DKIM_passphrase = '';
+    $mailer->DKIM_identity = $mail->From;
 
     //send the message, check for errors
     if (!$mailer->send()) {
