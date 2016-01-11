@@ -17,7 +17,7 @@ if (empty($_POST['recaptcha'])) {
     }
     else {
         if(isValid($app, $logger, $_POST['recaptcha'])) {
-            sendMail($mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], nl2br(htmlspecialchars($_POST['message'])));
+            sendMail($app, $mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], nl2br(htmlspecialchars($_POST['message'])));
             $obj = array('status' => 'success', 'libelle' => $lang->formMessageSuccess);
             die(json_encode($obj));
         } else {
@@ -63,12 +63,12 @@ function isValid($app, $logger, $code)
     return $json->success;
 }
 
-function sendMail($mailer, $logger, $prenom, $nom, $email, $message){
+function sendMail($app, $mailer, $logger, $prenom, $nom, $email, $message){
 
     //Set who the message is to be sent from
     $mailer->setFrom('contact@ugho-stephan.fr', 'ugho-stephan.fr');
     //Set who the message is to be sent to
-    $mailer->addAddress('stephan.ugho@gmail.com', 'Ugho STEPHAN');
+    $mailer->addAddress($app->getInformations()['mail'], 'Ugho STEPHAN');
     //Set the subject line
     $mailer->Subject = 'Nouveau message ugho-stephan.fr';
     // Set email format to HTML
