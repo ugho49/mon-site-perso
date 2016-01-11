@@ -2,6 +2,7 @@
 $app    = $slim->controleur;
 $mailer = $slim->mailer;
 $logger = $slim->logger;
+$render = $slim->render;
 $lang   = $app->getLang();
 
 /**
@@ -17,7 +18,7 @@ if (empty($_POST['recaptcha'])) {
     }
     else {
         if(isValid($app, $logger, $_POST['recaptcha'])) {
-            sendMail($app, $mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], nl2br(htmlspecialchars($_POST['message'])));
+            sendMail($render, $app, $mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], nl2br(htmlspecialchars($_POST['message'])));
             $obj = array('status' => 'success', 'libelle' => $lang->formMessageSuccess);
             die(json_encode($obj));
         } else {
@@ -63,7 +64,7 @@ function isValid($app, $logger, $code)
     return $json->success;
 }
 
-function sendMail($app, $mailer, $logger, $prenom, $nom, $email, $message){
+function sendMail($render, $app, $mailer, $logger, $prenom, $nom, $email, $message){
 
     //Set who the message is to be sent from
     $mailer->setFrom('contact@ugho-stephan.fr', 'ugho-stephan.fr');
@@ -73,21 +74,13 @@ function sendMail($app, $mailer, $logger, $prenom, $nom, $email, $message){
     $mailer->Subject = 'Nouveau message ugho-stephan.fr';
     // Set email format to HTML
     $mailer->isHTML(true);
-    // Construction du message
-	/*$msg  = '<h3>'.ucfirst(strtolower($prenom)).' '.strtoupper($nom).' ('.$email.') vous à envoyé un message : </h3>';
-	$msg .= '<br><hr><br>';
-	$msg .= '<p>'.$message.'</p>';
-    $msg .= '<br><hr><br>';
-    $msg .= 'Ce mail a été envoyé de façon automatique';*/
-    $render = $app->render;
-    $msg = $render('mail.html', [
+    //convert HTML into a basic plain-text alternative body
+    $mailer->Body = $render('mail.html', [
         "%prenom%" => ucfirst(strtolower($prenom)),
         "%nom%" => strtoupper($nom),
         "%email%" => $email,
         "%message%" => $message
     ]);
-    //convert HTML into a basic plain-text alternative body
-    $mailer->Body = $msg;
     //DKIM
     $mailer->DKIM_domain = 'ugho-stephan.fr';
     $mailer->DKIM_private = '/var/www/dkim.private.key';
