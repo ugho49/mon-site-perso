@@ -8,6 +8,18 @@ $container['renderer'] = function ($c) {
     return new Slim\Views\PhpRenderer($settings['template_path']);
 };
 
+// view render
+$container['render'] = function ($c) {
+    $template_path = $c->get('settings')['renderer']['template_path'];
+
+    $render = function ($template, $data) use ($template_path) {
+        $content = file_get_contents($template_path.$template);
+        return str_replace(array_keys($data), array_values($data), $content);
+    };
+
+    return $render;
+};
+
 // monolog
 $container['logger'] = function ($c) {
     $settings = $c->get('settings')['logger'];

@@ -74,22 +74,25 @@ function sendMail($app, $mailer, $logger, $prenom, $nom, $email, $message){
     // Set email format to HTML
     $mailer->isHTML(true);
     // Construction du message
-	$msg  = '<h3>'.ucfirst(strtolower($prenom)).' '.strtoupper($nom).' ('.$email.') vous à envoyé un message : </h3>';
+	/*$msg  = '<h3>'.ucfirst(strtolower($prenom)).' '.strtoupper($nom).' ('.$email.') vous à envoyé un message : </h3>';
 	$msg .= '<br><hr><br>';
 	$msg .= '<p>'.$message.'</p>';
     $msg .= '<br><hr><br>';
-    $msg .= 'Ce mail a été envoyé de façon automatique';
+    $msg .= 'Ce mail a été envoyé de façon automatique';*/
+    $render = $app->render;
+    $msg = $render('mail.html', [
+        "%prenom%" => ucfirst(strtolower($prenom)),
+        "%nom%" => strtoupper($nom),
+        "%email%" => $email,
+        "%message%" => $message
+    ]);
     //convert HTML into a basic plain-text alternative body
     $mailer->Body = $msg;
-    //Attach an image file
-    //$mailer->addAttachment('images/phpmailer_mini.png');
-
     //DKIM
     $mailer->DKIM_domain = 'ugho-stephan.fr';
     $mailer->DKIM_private = '/var/www/dkim.private.key';
     $mailer->DKIM_selector = 'default';
     $mailer->DKIM_passphrase = '';
-
     //send the message, check for errors
     if (!$mailer->send()) {
         $logger->info("Mailer Error: " . $mailer->ErrorInfo);

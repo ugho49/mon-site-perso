@@ -2,5 +2,6 @@
 /logs/*
 node_modules/
 .sass-cache/
+.idea/
 .DS_Store
 composer.lock
