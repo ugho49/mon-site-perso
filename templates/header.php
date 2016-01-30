@@ -1,8 +1,8 @@
 <?php
 if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
-    $site_name="https://ugho-stephan.fr"
+    $site_name="https://ugho-stephan.fr";
 } else {
-    $site_name=""
+    $site_name="";
 }
 ?>
 
@@ -15,7 +15,7 @@ if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
     <meta charset="utf-8" />
     <meta name="language" content="fr">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/icon">
-    <link rel="alternate" href="https://www.ugho-stephan.fr" hreflang="fr" />
+    <link rel="alternate" href="<?=$site_name?>" hreflang="fr" />
     <meta name="keywords" content="ugho stephan, developpeur, etudiant, mobile, web">
     <meta name="description" content="Site personnel de Ugho STEPHAN étudiant en informatique ...">
     <meta name="author" content="Ugho STEPHAN">
