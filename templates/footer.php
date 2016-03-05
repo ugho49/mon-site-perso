@@ -2,7 +2,7 @@
 if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
     $site_name="https://ugho-stephan.fr";
 } else {
-    $site_name="";
+    $site_name="http://localhost/perso/public";
 }
 ?>
 
