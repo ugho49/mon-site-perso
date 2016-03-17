@@ -234,7 +234,7 @@
                                                 <?= $e->title; ?>
                                                 <i class="material-icons right">more_vert</i>
                                             </span>
-                                            <p class="truncate projet-description"><?= nl2br($e->description); ?></p>
+                                            <p class="truncate projet-description"><?= $e->description; ?></p>
                                         </div>
                                         <?php if ($e->url): ?>
                                             <div class="card-action center-align">
@@ -243,7 +243,7 @@
                                         <?php endif; ?>
                                         <div class="card-reveal">
                                             <span class="card-title grey-text text-darken-4"><?= $e->title; ?><i class="material-icons right">close</i></span>
-                                            <p class="projet-description"><?= $e->description; ?></p>
+                                            <p class="projet-description"><?= nl2br($e->description); ?></p>
                                         </div>
                                     </div>
                                 </div>
