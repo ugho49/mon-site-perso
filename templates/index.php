@@ -234,7 +234,7 @@
                                                 <?= $e->title; ?>
                                                 <i class="material-icons right">more_vert</i>
                                             </span>
-                                            <p class="truncate projet-description"><?= $e->description; ?></p>
+                                            <p class="truncate projet-description"><?= nl2br($e->description); ?></p>
                                         </div>
                                         <?php if ($e->url): ?>
                                             <div class="card-action center-align">
