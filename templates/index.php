@@ -426,7 +426,7 @@
             </a>
         </div>
 
-        <footer class="page-footer <?= $app->getColor(); ?>" style="margin-top:0px;">
+        <footer class="page-footer grey lighten-3">
             <div class="footer-copyright">
                 <div class="container center">© 2015 Ugho STEPHAN, All rights reserved.</div>
             </div>
