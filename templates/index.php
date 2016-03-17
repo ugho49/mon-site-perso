@@ -223,7 +223,11 @@
                                 <div class="col l4 m6 s12">
                                     <div class="card medium hoverable">
                                         <div class="card-image waves-effect waves-block waves-light">
-                                            <img class="activator image-projet" src="img/<?= $e->image; ?>">
+                                            <?php if ($e->image): ?>
+                                                <img class="activator image-projet" src="img/<?= $e->image; ?>">
+                                            <?php else: ?>
+                                                <img class="activator image-projet" src="img/no_image.png">
+                                            <?php endif; ?>
                                         </div>
                                         <div class="card-content">
                                             <span class="card-title activator grey-text text-darken-4">
