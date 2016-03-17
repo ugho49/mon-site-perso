@@ -8,6 +8,11 @@ switch ($name) {
         getApk('p4.apk');
         break;
 
+    case 'ruvcom':
+        getApk('ruvcom.apk');
+        break;
+
+
     case 'CV':
         getPdf('CV.pdf');
         break;

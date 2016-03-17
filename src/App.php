@@ -25,7 +25,7 @@ class App
         $requete->execute();
 
         foreach ($requete->fetchAll() as $r) {
-            $result[$r->libelle] = $r->value;
+            $result[$r->key] = $r->value;
         }
 
         return $result;

@@ -32,7 +32,7 @@ class Database
         $this->lang = $_SESSION['lang'];
 
         // Si PROD chargements du bon Pdo
-        if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
+        if($_SERVER['HTTP_HOST'] != 'localhost') {
             $this->loadProd();
         } else { // Sinon chargement du pdo de DEV
             $this->loadDev();
@@ -54,7 +54,7 @@ class Database
         }
         catch( PDOException $Exception ) {
             // Afficher l'erreur pdo si localhost
-            if($_SERVER['SERVER_ADDR'] != '151.80.158.49') {
+            if($_SERVER['HTTP_HOST'] == 'localhost') {
                 die('code : '.(int)$Exception->getCode().', Message : '.$Exception->getMessage());
             } else {
                 //Sinon afficher erreur standard

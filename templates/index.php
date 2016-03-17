@@ -219,29 +219,31 @@
 
                     <div class="row">
                         <?php foreach ($app->getProjects() as $e): ?>
-                            <div class="col m6 s12">
-                                <div class="card medium hoverable">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img class="activator image-projet" src="img/<?= $e->image; ?>">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">
-                                            <?= $e->title; ?>
-                                            <i class="material-icons right">more_vert</i>
-                                        </span>
-                                        <p class="truncate projet-description"><?= $e->description; ?></p>
-                                    </div>
-                                    <?php if ($e->url): ?>
-                                        <div class="card-action center-align">
-                                            <a href="<?= $e->url; ?>" target="_blank" class="link-projet"><?= $lang->sectionProjectsBtnAccess; ?></a>
+                            <?php if ($e->enabled): ?>
+                                <div class="col l4 m6 s12">
+                                    <div class="card medium hoverable">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <img class="activator image-projet" src="img/<?= $e->image; ?>">
                                         </div>
-                                    <?php endif; ?>
-                                    <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4"><?= $e->title; ?><i class="material-icons right">close</i></span>
-                                        <p class="projet-description"><?= $e->description; ?></p>
+                                        <div class="card-content">
+                                            <span class="card-title activator grey-text text-darken-4">
+                                                <?= $e->title; ?>
+                                                <i class="material-icons right">more_vert</i>
+                                            </span>
+                                            <p class="truncate projet-description"><?= $e->description; ?></p>
+                                        </div>
+                                        <?php if ($e->url): ?>
+                                            <div class="card-action center-align">
+                                                <a href="<?= $e->url; ?>" target="_blank" class="link-projet"><?= $e->button_name; ?></a>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="card-reveal">
+                                            <span class="card-title grey-text text-darken-4"><?= $e->title; ?><i class="material-icons right">close</i></span>
+                                            <p class="projet-description"><?= $e->description; ?></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

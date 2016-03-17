@@ -1,11 +1,9 @@
 <?php
-if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
-    $site_name="https://ugho-stephan.fr";
-} else {
-    $site_name="http://localhost/perso/public";
+$site_name="";
+if($_SERVER['HTTP_HOST'] != 'localhost') {
+    $site_name="https://ugho-stephan.fr/";
 }
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,13 +25,13 @@ if($_SERVER['SERVER_ADDR'] == '151.80.158.49') {
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font awesome for icons -->
-    <link rel="stylesheet" href="<?=$site_name?>/dist/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?=$site_name?>dist/font-awesome/css/font-awesome.min.css">
     <!-- Materialize -->
-    <link rel="stylesheet" href="<?=$site_name?>/dist/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="<?=$site_name?>dist/materialize/css/materialize.min.css">
     <!-- Animate -->
-    <link rel="stylesheet" href="<?=$site_name?>/dist/animate/animate.min.css">
+    <link rel="stylesheet" href="<?=$site_name?>dist/animate/animate.min.css">
     <!-- App  -->
-    <link rel="stylesheet" href="<?=$site_name?>/css/style.min.css">
+    <link rel="stylesheet" href="<?=$site_name?>css/style.min.css">
 
   </head>
 
