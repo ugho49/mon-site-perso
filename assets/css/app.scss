@@ -28,14 +28,21 @@ $breakpoint-small: 601px;
 * Global
 ****************/
 #languages {
-    position: absolute;
-    z-index: 999;
-    top: 5px;
+    position: fixed;
+    z-index: 10000;
+    top: 20px;
     right: 20px;
 
     .language_flag {
         width: 30px;
         height: 18px;
+    }
+
+    @media (max-width: $breakpoint-small) {
+        .language_flag {
+            width: 26px;
+            height: 16px;
+        }
     }
 }
 
@@ -185,7 +192,7 @@ nav {
     font-family: 'Ubuntu', sans-serif;
 }
 /***************
-* Partie Compétences
+* Partie Competences
 ****************/
 .title-progress {
     font-weight: 300;
