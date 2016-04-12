@@ -35,14 +35,8 @@ gulp.task('scripts', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
-// Clean
-gulp.task('clean', function() {
-  return del(['public/css', 'public/js']);
-});
-
 // Default task
-gulp.task('default', ['clean'], function() {
-  //gulp.start('styles', 'scripts', 'images');
+gulp.task('default', function() {
   gulp.start('styles', 'scripts');
 });
 
