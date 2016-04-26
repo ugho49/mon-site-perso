@@ -19,6 +19,7 @@ if($_SERVER['HTTP_HOST'] != 'localhost') {
     <meta name="author" content="Ugho STEPHAN">
     <meta name="publisher" content="Ugho STEPHAN">
     <meta name="copyright" content="Ugho STEPHAN">
+    <meta name="theme-color" content="#453925">
 
     <!-- Let browser know website is optimized for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
