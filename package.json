@@ -9,14 +9,13 @@
 		"url": "git+https://github.com/ugho49/mon-site-perso.git"
 	},
 	"dependencies": {
-		"del": "^2.1.0",
 		"gulp": "^3.9.0",
 		"gulp-autoprefixer": "^3.1.0",
 		"gulp-concat": "^2.6.0",
 		"gulp-minify-css": "^1.2.1",
 		"gulp-notify": "^2.2.0",
 		"gulp-rename": "^1.2.2",
-		"gulp-ruby-sass": "^2.0.5",
+		"gulp-sass": "^2.0.5",
 		"gulp-uglify": "^1.5.1"
 	}
 }
