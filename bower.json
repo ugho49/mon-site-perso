@@ -1,0 +1,16 @@
+{
+  "name": "perso",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ugho Stephan <stephan.ugho@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "Materialize": "materialize#^0.97.6",
+    "animate.css": "^3.5.1",
+    "font-awesome": "^4.6.1",
+    "gmap3": "^7.1.0"
+  }
+}
