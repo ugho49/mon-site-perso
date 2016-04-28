@@ -1,9 +1,3 @@
-<?php
-/*$site_name="";
-if($_SERVER['HTTP_HOST'] != 'localhost') {
-    $site_name="https://ugho-stephan.fr/";
-}
-*/?>
 <!DOCTYPE html>
 <html>
   <head>
