@@ -39,7 +39,7 @@
                 <h4><?= $info['subtitle']; ?></h4>
             </div>
             <div class="row center" id="home-arrow-down">
-                <a href="#about_ancre">
+                <a href="#about">
                     <i class="icon fa fa-angle-double-down fa-3x"></i>
                 </a>
             </div>
@@ -114,7 +114,7 @@
     <div class="row container">
         <br>
         <h2 class="title-section"><?= $lang->sectionAbout; ?></h2>
-        <span class="title_border" id="about_ancre"></span>
+        <span class="title_border"></span>
         <p class="grey-text text-darken-3 lighten-3 about-text">
             <?= $lang->sectionAboutText1; ?>
         </p>
