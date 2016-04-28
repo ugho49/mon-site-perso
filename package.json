@@ -9,7 +9,8 @@
         "url": "git+https://github.com/ugho49/mon-site-perso.git"
     },
     "scripts": {
-        "postinstall": "./node_modules/.bin/bower install"
+        "postinstall": "./node_modules/.bin/bower install",
+        "bower": "./node_modules/.bin/bower install"
     },
     "dependencies": {
         "bower": "^1.7.9",

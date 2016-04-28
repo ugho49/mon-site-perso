@@ -1,9 +1,9 @@
 <?php
-$site_name="";
+/*$site_name="";
 if($_SERVER['HTTP_HOST'] != 'localhost') {
     $site_name="https://ugho-stephan.fr/";
 }
-?>
+*/?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,8 +12,8 @@ if($_SERVER['HTTP_HOST'] != 'localhost') {
     <title>Ugho Stephan</title>
     <meta charset="utf-8" />
     <meta name="language" content="fr">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/icon">
-    <link rel="alternate" href="<?=$site_name?>" hreflang="fr" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/icon">
+    <link rel="alternate" href="https://ugho-stephan.fr" hreflang="fr" />
     <meta name="keywords" content="ugho stephan, developpeur, etudiant, mobile, web">
     <meta name="description" content="Site personnel de Ugho STEPHAN étudiant en informatique ...">
     <meta name="author" content="Ugho STEPHAN">
@@ -26,13 +26,13 @@ if($_SERVER['HTTP_HOST'] != 'localhost') {
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Font awesome for icons -->
-    <link rel="stylesheet" href="<?=$site_name?>dist/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
     <!-- Materialize -->
-    <link rel="stylesheet" href="<?=$site_name?>dist/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="/components/Materialize/dist/css/materialize.min.css">
     <!-- Animate -->
-    <link rel="stylesheet" href="<?=$site_name?>dist/animate/animate.min.css">
+    <link rel="stylesheet" href="/components/animate.css/animate.min.css">
     <!-- App  -->
-    <link rel="stylesheet" href="<?=$site_name?>css/style.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
 
   </head>
 

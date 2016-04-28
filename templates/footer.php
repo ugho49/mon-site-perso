@@ -1,22 +1,22 @@
 <?php
-$site_name="";
+/*$site_name="";
 if($_SERVER['HTTP_HOST'] != 'localhost') {
     $site_name="https://ugho-stephan.fr/";
-}
-?>
+}<?=$site_name?>
+*/?>
     <!-- jQuery -->
-    <script type="text/javascript" src="<?=$site_name?>dist/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
     <!-- Appear -->
-    <script type="text/javascript" src="<?=$site_name?>dist/appear/appear.min.js"></script>
+    <script type="text/javascript" src="/js/appear/appear.min.js"></script>
     <!-- Materialize -->
-    <script type="text/javascript" src="<?=$site_name?>dist/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/components/Materialize/dist/js/materialize.min.js"></script>
     <!-- Modernizr -->
-    <script type="text/javascript" src="<?=$site_name?>dist/modernizr/modernizr.min.js"></script>
+    <!--<script type="text/javascript" src="dist/modernizr/modernizr.min.js"></script>-->
     <!-- App -->
-    <script type="text/javascript" src="<?=$site_name?>js/app.min.js"></script>
+    <script type="text/javascript" src="/js/app.min.js"></script>
     <!-- Google Map -->
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;language=<?= $_SESSION['lang']; ?>"></script>
-    <script type="text/javascript" src="<?=$site_name?>dist/gmap3/gmap3.min.js"></script>
+    <script type="text/javascript" src="/components/gmap3/dist/gmap3.min.js"></script>
     <!-- Google Recaptcha -->
     <script type="text/javascript" src='https://www.google.com/recaptcha/api.js?hl=<?= $_SESSION['lang']; ?>'></script>
     <!-- Google Analytics -->

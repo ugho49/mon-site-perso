@@ -3,19 +3,19 @@
 ****************/
 @font-face {
     font-family: Pacifico;
-    src: url(../fonts/Pacifico.ttf) format("truetype");
+    src: url('../fonts/Pacifico.ttf') format("truetype");
 }
 
 @font-face {
     font-family: Ubuntu;
-    src: url(../fonts/Ubuntu-Regular.ttf) format("truetype");
+    src: url('../fonts/Ubuntu-Regular.ttf') format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: Ubuntu;
-    src: url(../fonts/Ubuntu-Light.ttf) format("truetype");
+    src: url('../fonts/Ubuntu-Light.ttf') format("truetype");
     font-weight: 300;
     font-style: normal;
 }
@@ -23,7 +23,11 @@
 * Variables
 ****************/
 $navcolor: #3A3A3A;
+$navcolorhover: #26a69a;
 $breakpoint-small: 601px;
+$navbarheight: 64px;
+$navbarheight-small: 55px;
+
 /***************
 * Global
 ****************/
@@ -61,10 +65,10 @@ img.language_flag:not(.active) {
 }
 
 .brand-logo img {
-    height: 64px !important;
+    height: $navbarheight !important;
 
     @media (max-width: $breakpoint-small) {
-        height: 55px !important;
+        height: $navbarheight-small !important;
     }
 }
 
@@ -88,26 +92,25 @@ img.language_flag:not(.active) {
 
 .table-of-contents {
     li {
-        padding: 0 !important;
+        padding: 0px !important;
     }
 
     a {
         line-height: inherit !important;
         padding-left: 20px !important;
+        border: none !important;
     }
 }
 
 .table-of-contents a.active {
-    font-weight: 300 !important;
-    color: #26a69a !important;
-    border-left: 0 solid #fff !important;
-    padding-left: 20px !important;
+    color: $navcolorhover !important;
 }
 
 .table-of-contents a:hover {
-    padding-left: 20px !important;
-    border-left: 0 solid #fff !important;
+    color: $navcolorhover !important;
 }
+
+
 /***************
 * Header
 ****************/
@@ -116,10 +119,13 @@ img.language_flag:not(.active) {
     -webkit-filter: brightness(70%);
     -moz-filter: brightness(70%);
     -o-filter: brightness(70%);
-    -ms-filter: brightness(70%);
 }
 
 #home {
+
+    height: 100vh !important;
+
+
     #avatar {
         height: 220px;
         margin-top: 50px;
@@ -144,6 +150,22 @@ img.language_flag:not(.active) {
 
     h4 {
         font-family: 'Ubuntu', sans-serif;
+    }
+
+    #home-arrow-down {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        left: 0;
+        top: 75%;
+
+        a {
+            color: #fff !important;
+
+            &:hover {
+                color: #eeeeee !important;
+            }
+        }
     }
 }
 
@@ -180,7 +202,13 @@ nav {
     border-bottom: 1px rgba(128, 128, 128, 0.36) solid !important;
 
     a {
+        height: 100% !important;
         color: $navcolor !important;
+        font-weight: 300 !important;
+    }
+
+    a:hover {
+        color: $navcolorhover !important;
     }
 }
 /***************
