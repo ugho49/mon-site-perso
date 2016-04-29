@@ -24,29 +24,24 @@
 
 <!-- DEBUT Partie Avatar -->
 <div class="parallax-container scrollspy" id="home">
-    <div class="section no-pad-bot">
-
-        <div id="languages">
-        	<img src="/img/fr.jpg" class="language_flag <?php if ($_SESSION['lang'] == "fr"): ?>active<?php endif; ?>" data-id="fr">
-        	<img src="/img/en.jpg" class="language_flag <?php if ($_SESSION['lang'] == "en"): ?>active<?php endif; ?>" data-id="en">
-        </div>
-        <div class="container">
-            <div class="row center">
-                <img src="/img/avatar.jpg" alt="avatar" class="circle responsive-img" id="avatar"/>
-            </div>
-            <div class="row center">
-                <h2><?= $info['title']; ?></h2>
-                <h4><?= $info['subtitle']; ?></h4>
-            </div>
-            <div class="row center" id="home-arrow-down">
-                <a href="#about">
-                    <i class="icon fa fa-angle-double-down fa-3x"></i>
-                </a>
-            </div>
-        </div>
-    </div>
     <div class="parallax">
         <img src="/img/<?= $images[0]; ?>" id="fond_info" />
+    </div>
+
+    <div id="languages">
+        <img src="/img/fr.jpg" class="language_flag <?php if ($_SESSION['lang'] == "fr"): ?>active<?php endif; ?>" data-id="fr">
+        <img src="/img/en.jpg" class="language_flag <?php if ($_SESSION['lang'] == "en"): ?>active<?php endif; ?>" data-id="en">
+    </div>
+
+    <div class="headline">
+        <img src="/img/avatar.jpg" alt="avatar" class="circle responsive-img" id="avatar"/>
+        <h2><?= $info['title']; ?></h2>
+        <h4><?= $info['subtitle']; ?></h4>
+        <div id="home-arrow-down">
+            <a href="#about">
+                <i class="icon fa fa-angle-double-down fa-3x"></i>
+            </a>
+        </div>
     </div>
 </div>
 <!-- FIN Partie Avatar -->

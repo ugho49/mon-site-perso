@@ -31,33 +31,6 @@ $navbarheight-small: 55px;
 /***************
 * Global
 ****************/
-#languages {
-    position: fixed;
-    z-index: 10000;
-    top: 20px;
-    right: 20px;
-
-    .language_flag {
-        width: 30px;
-        height: 18px;
-    }
-
-    @media (max-width: $breakpoint-small) {
-        .language_flag {
-            width: 26px;
-            height: 16px;
-        }
-    }
-}
-
-img.language_flag.active {
-    opacity: 0.6;
-}
-
-img.language_flag:not(.active) {
-    cursor: pointer;
-}
-
 .parallax-container {
     @media (max-width: $breakpoint-small) {
         height: 400px !important;
@@ -110,36 +83,72 @@ img.language_flag:not(.active) {
     color: $navcolorhover !important;
 }
 
-
 /***************
 * Header
 ****************/
-#fond_info {
-    filter:brightness(70%);
-    -webkit-filter: brightness(70%);
-    -moz-filter: brightness(70%);
-    -o-filter: brightness(70%);
+.parallax-container {
+    height: 100vh !important;
 }
 
 #home {
 
-    height: 100vh !important;
+    //height: 100vh !important;
+    text-align: center;
+
+    #fond_info {
+        filter:brightness(70%);
+        -webkit-filter: brightness(70%);
+        -moz-filter: brightness(70%);
+        -o-filter: brightness(70%);
+        bottom: 0 !important;
+    }
+
+    #languages {
+        position: fixed;
+        z-index: 10000;
+        top: 20px;
+        right: 20px;
+
+        .language_flag {
+            width: 30px;
+            height: 18px;
+        }
+
+        img.language_flag.active {
+            opacity: 0.6;
+        }
+
+        img.language_flag:not(.active) {
+            cursor: pointer;
+        }
+
+        @media (max-width: $breakpoint-small) {
+            .language_flag {
+                width: 26px;
+                height: 16px;
+            }
+        }
+    }
+
+    .headline{
+        z-index: 120;
+        text-align: center;
+        width: 100%;
+        margin-top: 14vh;
+    }
 
 
     #avatar {
         height: 220px;
-        margin-top: 50px;
         border: 7px solid rgba(255, 255, 255, 0.46);
 
         @media (max-width: $breakpoint-small) {
-            height: 180px;
-            margin-top: 0;
+            height: 150px;
         }
     }
 
     h2,
     h4 {
-        text-align: center;
         font-weight: 400;
         color: #fafafa;
     }
