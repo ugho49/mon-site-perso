@@ -1,10 +1,11 @@
 $(document).ready(function () {
+
     $('.btn_home').hide();
 
     var isDraggable = true;
     var isMobile = false;
-    var timelineBlocks = $('.cd-timeline-block'),
-        offset = 0.8;
+    var timelineBlocks = $('.cd-timeline-block');
+    var offset = 0.8;
 
     if (isMobileAndTablet()) {
         isDraggable = false;
@@ -12,17 +13,16 @@ $(document).ready(function () {
     }
 
     //Google Maps
-    $('#gmap')
-        .gmap3({
-            address: "Nantes, France", // center
-            zoom: 14,
-            scrollwheel: false,
-            draggable: isDraggable,
-            mapTypeId : google.maps.MapTypeId.ROADMAP
-        })
-        .marker([
-            {address:"Nantes, France", icon: "img/location.png"}
-        ]);
+    $('#gmap').gmap3({
+        address: "Nantes, France", // center
+        zoom: 14,
+        scrollwheel: false,
+        draggable: isDraggable,
+        mapTypeId : google.maps.MapTypeId.ROADMAP
+    })
+    .marker([
+        {address:"Nantes, France", icon: "img/location.png"}
+    ]);
 
     //animate skills bar
     $('.skills').each(function () {
@@ -48,12 +48,6 @@ $(document).ready(function () {
 
     //on scolling, show/animate timeline blocks when enter the viewport
     $(window).on('scroll', function () {
-        /*(!window.requestAnimationFrame) ? setTimeout(function () {
-            showBlocks(timelineBlocks, offset);
-        }, 100): window.requestAnimationFrame(function () {
-            showBlocks(timelineBlocks, offset);
-        });*/
-
         if (!window.requestAnimationFrame) {
             setTimeout(function () {
                 showBlocks(timelineBlocks, offset);
@@ -125,14 +119,14 @@ $(document).ready(function () {
     }
 
     // Plugin initialization
-    $('.slider').slider({
+    /*$('.slider').slider({
         full_width: true
-    });
-    //$('.modal-trigger').leanModal();
+    });*/
     $('.scrollspy').scrollSpy();
     $('.button-collapse').sideNav({
         'edge': 'left'
     });
+    //$('.modal-trigger').leanModal();
     //$('.datepicker').pickadate({selectYears: 20});
     //$('select').not('.disabled').material_select();
 

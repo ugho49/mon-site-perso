@@ -45,10 +45,6 @@ $navbarheight-small: 55px;
     }
 }
 
-#btn_home {
-    display: none;
-}
-
 .title-section,
 .subtitle-section {
     font-weight: 300 !important;
@@ -86,57 +82,49 @@ $navbarheight-small: 55px;
 /***************
 * Header
 ****************/
-.parallax-container {
-    height: 100vh !important;
+#languages {
+    position: fixed;
+    z-index: 10000;
+    top: 20px;
+    right: 20px;
+
+    .language_flag {
+        width: 30px;
+        height: 18px;
+    }
+
+    img.language_flag.active {
+        opacity: 0.6;
+    }
+
+    img.language_flag:not(.active) {
+        cursor: pointer;
+    }
+
+    @media (max-width: $breakpoint-small) {
+        .language_flag {
+            width: 26px;
+            height: 16px;
+        }
+    }
+}
+
+#fond_info {
+    filter:brightness(70%);
+    -webkit-filter: brightness(70%);
+    -moz-filter: brightness(70%);
+    -o-filter: brightness(70%);
+    bottom: 0 !important;
 }
 
 #home {
 
-    //height: 100vh !important;
+    height: 100vh !important;
     text-align: center;
 
-    #fond_info {
-        filter:brightness(70%);
-        -webkit-filter: brightness(70%);
-        -moz-filter: brightness(70%);
-        -o-filter: brightness(70%);
-        bottom: 0 !important;
-    }
-
-    #languages {
-        position: fixed;
-        z-index: 10000;
-        top: 20px;
-        right: 20px;
-
-        .language_flag {
-            width: 30px;
-            height: 18px;
-        }
-
-        img.language_flag.active {
-            opacity: 0.6;
-        }
-
-        img.language_flag:not(.active) {
-            cursor: pointer;
-        }
-
-        @media (max-width: $breakpoint-small) {
-            .language_flag {
-                width: 26px;
-                height: 16px;
-            }
-        }
-    }
-
     .headline{
-        z-index: 120;
-        text-align: center;
-        width: 100%;
         margin-top: 14vh;
     }
-
 
     #avatar {
         height: 220px;
@@ -163,7 +151,6 @@ $navbarheight-small: 55px;
 
     #home-arrow-down {
         position: absolute;
-        text-align: center;
         width: 100%;
         left: 0;
         top: 75%;
@@ -315,6 +302,7 @@ nav {
 #btn_home {
     bottom: 45px !important;
     right: 50px !important;
+    display: none;
 
     @media (max-width: $breakpoint-small) {
         display: none !important;

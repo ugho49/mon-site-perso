@@ -24,10 +24,6 @@
 
 <!-- DEBUT Partie Avatar -->
 <div class="parallax-container scrollspy" id="home">
-    <div class="parallax">
-        <img src="/img/<?= $images[0]; ?>" id="fond_info" />
-    </div>
-
     <div id="languages">
         <img src="/img/fr.jpg" class="language_flag <?php if ($_SESSION['lang'] == "fr"): ?>active<?php endif; ?>" data-id="fr">
         <img src="/img/en.jpg" class="language_flag <?php if ($_SESSION['lang'] == "en"): ?>active<?php endif; ?>" data-id="en">
@@ -42,6 +38,10 @@
                 <i class="icon fa fa-angle-double-down fa-3x"></i>
             </a>
         </div>
+    </div>
+
+    <div class="parallax">
+        <img src="/img/<?= $images[0]; ?>" id="fond_info" />
     </div>
 </div>
 <!-- FIN Partie Avatar -->
@@ -158,7 +158,6 @@
                 <?php endforeach; ?>
             </section>
         </div>
-
     </div>
 </div>
 <!-- FIN Partie Parcours -->
@@ -362,52 +361,50 @@
 
     <div class="row <?= $app->getColor(); ?>" style="margin-bottom: 0;">
         <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <br>
-                    <h4 class="subtitle-section"><?= $lang->sectionContactMessage; ?></h4>
-                    <div class="row">
-                        <form class="col s12" id="formulaire">
-                            <span id="ancre_flash"></span>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="first_name" type="text" required="required">
-                                    <label for="first_name"><?= $lang->formFirstName; ?></label>
-                                </div>
+            <div class="col s12">
+                <br>
+                <h4 class="subtitle-section"><?= $lang->sectionContactMessage; ?></h4>
+                <div class="row">
+                    <form class="col s12" id="formulaire">
+                        <span id="ancre_flash"></span>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="first_name" type="text" required="required">
+                                <label for="first_name"><?= $lang->formFirstName; ?></label>
+                            </div>
 
-                                <div class="input-field col s6">
-                                    <input id="last_name" type="text" required="required">
-                                    <label for="last_name"><?= $lang->formLastName; ?></label>
-                                </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" required="required">
+                                <label for="last_name"><?= $lang->formLastName; ?></label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email" required="required" class="validate">
-                                    <label for="email"><?= $lang->formEmail; ?></label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" required="required" class="validate">
+                                <label for="email" style="width: 0"><?= $lang->formEmail; ?></label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">mode_edit</i>
-                                    <textarea id="message" class="materialize-textarea" required="required"></textarea>
-                                    <label for="message"><?= $lang->formMessage; ?></label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="message" class="materialize-textarea" required="required"></textarea>
+                                <label for="message"><?= $lang->formMessage; ?></label>
                             </div>
-                            <div class="row">
-                                <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
+                        </div>
+                        <div class="row">
+                            <div class="g-recaptcha" data-sitekey="<?= $info['recaptcha_public']; ?>"></div>
+                        </div>
+                        <div class="row">
+                            <div class="center-align">
+                                <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
+                                    <?= $lang->formBtnSend; ?>
+                                    <i class="material-icons right">send</i>
+                                </button>
                             </div>
-                            <div class="row">
-                                <div class="center-align">
-                                    <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
-                                        <?= $lang->formBtnSend; ?>
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
