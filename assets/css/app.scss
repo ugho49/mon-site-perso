@@ -25,6 +25,7 @@
 $navcolor: #3A3A3A;
 $navcolorhover: #26a69a;
 $breakpoint-small: 601px;
+$breakpoint-medium: 993px;
 $navbarheight: 64px;
 $navbarheight-small: 55px;
 
@@ -198,9 +199,12 @@ nav {
     border-bottom: 1px rgba(128, 128, 128, 0.36) solid !important;
 
     a {
-        height: 100% !important;
         color: $navcolor !important;
         font-weight: 300 !important;
+
+        @media (min-width: $breakpoint-medium) {
+            height: 100% !important;
+        }
     }
 
     a:hover {
