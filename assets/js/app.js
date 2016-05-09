@@ -124,7 +124,8 @@ $(document).ready(function () {
     });*/
     $('.scrollspy').scrollSpy();
     $('.button-collapse').sideNav({
-        'edge': 'left'
+        edge: 'left',
+        closeOnClick: true // Closes side-nav on <a> clicks
     });
     //$('.modal-trigger').leanModal();
     //$('.datepicker').pickadate({selectYears: 20});
