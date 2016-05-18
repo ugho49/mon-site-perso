@@ -121,8 +121,10 @@ $(document).ready(function () {
     // Plugin initialization
     $('.scrollspy').scrollSpy();
     $('.button-collapse').sideNav({
-        'edge': 'left'
+        edge: 'left',
+        closeOnClick: true // Closes side-nav on <a> clicks
     });
+    $('textarea#message').characterCounter();
 
     if (!isMobile) {
         $('.parallax').parallax();

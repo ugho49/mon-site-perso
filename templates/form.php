@@ -8,25 +8,35 @@ $lang   = $app->getLang();
 /**
 * Vérifications params
 */
+// Check recaptcha is not empty
 if (empty($_POST['recaptcha'])) {
     $obj = array('status' => 'warning', 'libelle' => $lang->formMessageNotARobot);
     die(json_encode($obj));
-} else {
-    if(empty($_POST['prenom']) || empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['message'])) {
-        $obj = array('status' => 'warning', 'libelle' => $lang->formMessageFieldsMissing);
-        die(json_encode($obj));
-    }
-    else {
-        if(isValid($app, $logger, $_POST['recaptcha'])) {
-            sendMail($render, $app, $mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], nl2br(htmlspecialchars($_POST['message'])));
-            $obj = array('status' => 'success', 'libelle' => $lang->formMessageSuccess);
-            die(json_encode($obj));
-        } else {
-            $obj = array('status' => 'danger', 'libelle' => $lang->formMessageRobotNotGood);
-            die(json_encode($obj));
-        }
-    }
 }
+
+// Checks params are not empty
+if(empty($_POST['prenom']) || empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['message'])) {
+    $obj = array('status' => 'warning', 'libelle' => $lang->formMessageFieldsMissing);
+    die(json_encode($obj));
+}
+
+// Checks message field contain less or equal 1000 characters
+if(strlen($_POST['message']) > 1000) {
+    $obj = array('status' => 'warning', 'libelle' => $lang->formMessageFieldsTooLong);
+    die(json_encode($obj));
+}
+
+// Check recaptcha is valid
+if(!isValid($app, $logger, $_POST['recaptcha'])) {
+    $obj = array('status' => 'danger', 'libelle' => $lang->formMessageRobotNotGood);
+    die(json_encode($obj));
+}
+
+// If no errors, send a mail and show the result message to the user
+sendMail($render, $app, $mailer, $logger, $_POST['prenom'], $_POST['nom'], $_POST['email'], nl2br(htmlspecialchars($_POST['message'])));
+$obj = array('status' => 'success', 'libelle' => $lang->formMessageSuccess);
+die(json_encode($obj));
+
 
 /**
 * Functions

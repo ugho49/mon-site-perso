@@ -370,12 +370,12 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="first_name" type="text" required="required">
+                                <input id="first_name" type="text" required="required" class="validate">
                                 <label for="first_name"><?= $lang->formFirstName; ?></label>
                             </div>
 
                             <div class="input-field col s6">
-                                <input id="last_name" type="text" required="required">
+                                <input id="last_name" type="text" required="required" class="validate">
                                 <label for="last_name"><?= $lang->formLastName; ?></label>
                             </div>
                         </div>
@@ -389,7 +389,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="message" class="materialize-textarea" required="required"></textarea>
+                                <textarea id="message" class="materialize-textarea validate" required="required" length="1000"></textarea>
                                 <label for="message"><?= $lang->formMessage; ?></label>
                             </div>
                         </div>
