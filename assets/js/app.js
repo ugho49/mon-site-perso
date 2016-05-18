@@ -83,7 +83,6 @@ $(document).ready(function () {
     } else {
         $('.parallax img').css("display", "block").css("left", "40%").css("bottom", "-170px");
     }
-
 });
 
 (function() {

@@ -398,7 +398,7 @@
                         </div>
                         <div class="row">
                             <div class="center-align">
-                                <button class="valign btn btn-large waves-effect waves-light green disabled" type="submit" name="action" id="btn-form-submit" disabled="disabled">
+                                <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action" id="btn-form-submit">
                                     <?= $lang->formBtnSend; ?>
                                     <i class="material-icons right">send</i>
                                 </button>
