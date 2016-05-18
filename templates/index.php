@@ -370,26 +370,26 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="first_name" type="text" required="required" class="validate">
+                                <input id="first_name" type="text" required="required" class="f-field validate">
                                 <label for="first_name"><?= $lang->formFirstName; ?></label>
                             </div>
 
                             <div class="input-field col s6">
-                                <input id="last_name" type="text" required="required" class="validate">
+                                <input id="last_name" type="text" required="required" class="f-field validate">
                                 <label for="last_name"><?= $lang->formLastName; ?></label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">email</i>
-                                <input id="email" type="email" required="required" class="validate">
+                                <input id="email" type="email" required="required" class="f-field validate">
                                 <label for="email" style="width: 0"><?= $lang->formEmail; ?></label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="message" class="materialize-textarea validate" required="required" length="1000"></textarea>
+                                <textarea id="message" class="materialize-textarea validate f-field" required="required" length="1000"></textarea>
                                 <label for="message"><?= $lang->formMessage; ?></label>
                             </div>
                         </div>
@@ -398,7 +398,7 @@
                         </div>
                         <div class="row">
                             <div class="center-align">
-                                <button class="valign btn btn-large waves-effect waves-light green" type="submit" name="action">
+                                <button class="valign btn btn-large waves-effect waves-light green disabled" type="submit" name="action" id="btn-form-submit" disabled="disabled">
                                     <?= $lang->formBtnSend; ?>
                                     <i class="material-icons right">send</i>
                                 </button>

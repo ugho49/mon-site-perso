@@ -57,6 +57,36 @@ $(document).ready(function () {
         checkScroll(this.scrollY);
     });
 
+    // Navbar for movile
+    if (is_touch_device()) {
+        $('#nav-mobile').css({
+            overflow: 'auto'
+        });
+    }
+
+    // Set checkbox on forms.html to indeterminate
+    var indeterminateCheckbox = document.getElementById('indeterminate-checkbox');
+    if (indeterminateCheckbox !== null) {
+        indeterminateCheckbox.indeterminate = true;
+    }
+
+    // Plugin initialization
+    $('.scrollspy').scrollSpy();
+    $('.button-collapse').sideNav({
+        edge: 'left',
+        closeOnClick: true // Closes side-nav on <a> clicks
+    });
+    $('textarea#message').characterCounter();
+
+    if (!isMobile) {
+        $('.parallax').parallax();
+    } else {
+        $('.parallax img').css("display", "block").css("left", "40%").css("bottom", "-170px");
+    }
+
+});
+
+(function() {
     $('#formulaire').submit(function (event) {
         // Stop form from submitting normally
         event.preventDefault();
@@ -88,7 +118,9 @@ $(document).ready(function () {
             }
         });
     });
+})();
 
+(function() {
     $('.language_flag').click(function () {
         if (!$(this).hasClass('active')) {
             $.ajax({
@@ -104,35 +136,7 @@ $(document).ready(function () {
             });
         }
     });
-
-    // Navbar for movile
-    if (is_touch_device()) {
-        $('#nav-mobile').css({
-            overflow: 'auto'
-        });
-    }
-
-    // Set checkbox on forms.html to indeterminate
-    var indeterminateCheckbox = document.getElementById('indeterminate-checkbox');
-    if (indeterminateCheckbox !== null) {
-        indeterminateCheckbox.indeterminate = true;
-    }
-
-    // Plugin initialization
-    $('.scrollspy').scrollSpy();
-    $('.button-collapse').sideNav({
-        edge: 'left',
-        closeOnClick: true // Closes side-nav on <a> clicks
-    });
-    $('textarea#message').characterCounter();
-
-    if (!isMobile) {
-        $('.parallax').parallax();
-    } else {
-        $('.parallax img').css("display", "block").css("left", "40%").css("bottom", "-170px");
-    }
-
-});
+})();
 
 function isMobileAndTablet() {
     var check = false;
