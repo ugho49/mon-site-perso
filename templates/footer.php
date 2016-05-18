@@ -6,6 +6,8 @@
     <script type="text/javascript" src="/components/Materialize/dist/js/materialize.min.js"></script>
     <!-- App -->
     <script type="text/javascript" src="/js/app.min.js"></script>
+    <!-- Modernizr -->
+    <script type="text/javascript" src="/components/modernizr/modernizr.js"></script>
     <!-- Google Map -->
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;language=<?= $_SESSION['lang']; ?>"></script>
     <script type="text/javascript" src="/components/gmap3/dist/gmap3.min.js"></script>

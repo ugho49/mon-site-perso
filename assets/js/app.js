@@ -4,8 +4,8 @@ $(document).ready(function () {
 
     var isDraggable = true;
     var isMobile = false;
-    var timelineBlocks = $('.cd-timeline-block');
     var offset = 0.8;
+    var timelineBlocks = $('.cd-timeline-block');
 
     if (isMobileAndTablet()) {
         isDraggable = false;
@@ -40,12 +40,6 @@ $(document).ready(function () {
     //hide timeline blocks which are outside the viewport
     hideBlocks(timelineBlocks, offset);
 
-    checkScroll($(window).scrollTop());
-
-    $(window).scroll(function () { //Au scroll dans la fenetre on déclenche la fonction
-        checkScroll(this.scrollY);
-    });
-
     //on scolling, show/animate timeline blocks when enter the viewport
     $(window).on('scroll', function () {
         if (!window.requestAnimationFrame) {
@@ -55,6 +49,12 @@ $(document).ready(function () {
         } else {
             showBlocks(timelineBlocks, offset);
         }
+    });
+
+    checkScroll($(window).scrollTop());
+
+    $(window).scroll(function () { //Au scroll dans la fenetre on déclenche la fonction
+        checkScroll(this.scrollY);
     });
 
     $('#formulaire').submit(function (event) {
@@ -119,16 +119,10 @@ $(document).ready(function () {
     }
 
     // Plugin initialization
-    /*$('.slider').slider({
-        full_width: true
-    });*/
     $('.scrollspy').scrollSpy();
     $('.button-collapse').sideNav({
         'edge': 'left'
     });
-    //$('.modal-trigger').leanModal();
-    //$('.datepicker').pickadate({selectYears: 20});
-    //$('select').not('.disabled').material_select();
 
     if (!isMobile) {
         $('.parallax').parallax();
@@ -137,18 +131,6 @@ $(document).ready(function () {
     }
 
 });
-
-function hideBlocks(blocks, offset) {
-    blocks.each(function () {
-        ($(this).offset().top > $(window).scrollTop() + $(window).height() * offset) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
-    });
-}
-
-function showBlocks(blocks, offset) {
-    blocks.each(function () {
-        ($(this).offset().top <= $(window).scrollTop() + $(window).height() * offset && $(this).find('.cd-timeline-img').hasClass('is-hidden')) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
-    });
-}
 
 function isMobileAndTablet() {
     var check = false;
@@ -182,6 +164,18 @@ function checkScroll(pos) {
         //hide btn home
         $('#btn_home').fadeOut(500);
     }
+}
+
+function hideBlocks(blocks, offset) {
+    blocks.each(function () {
+        ($(this).offset().top > $(window).scrollTop() + $(window).height() * offset) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+    });
+}
+
+function showBlocks(blocks, offset) {
+    blocks.each(function () {
+        ($(this).offset().top <= $(window).scrollTop() + $(window).height() * offset && $(this).find('.cd-timeline-img').hasClass('is-hidden')) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+    });
 }
 
 function setFlash(type, libelle) {
