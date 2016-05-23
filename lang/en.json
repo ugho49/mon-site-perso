@@ -18,7 +18,7 @@
 	"formFirstName":"First Name",
 	"formLastName":"Last Name",
 	"formEmail":"Email",
-	"formMessage":"Message ..",
+	"formMessage":"Message",
 	"formBtnSend":"Send",
 	"formMessageNotARobot":"You must click on \"I am not a robot\"",
 	"formMessageFieldsMissing":"Fields are missing",
