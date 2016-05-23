@@ -390,7 +390,7 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">mode_edit</i>
                                 <textarea id="message" class="materialize-textarea validate f-field" required="required" length="1000"></textarea>
-                                <label for="message"><?= $lang->formMessage; ?></label>
+                                <label for="message" style="width: 0"><?= $lang->formMessage; ?></label>
                             </div>
                         </div>
                         <div class="row">
