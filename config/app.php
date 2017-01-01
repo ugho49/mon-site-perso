@@ -178,6 +178,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Translation Database Service Provider
+         */
+        Dimsav\Translatable\TranslatableServiceProvider::class,
+
     ],
 
     /*
