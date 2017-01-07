@@ -1,22 +1,7 @@
-// Variables
-@import "variables";
-
 // Fonts
-@font-face {
-  font-family: Pacifico;
-  src: url('../fonts/Pacifico.ttf') format("truetype");
-}
+@import "fonts";
 
-@font-face {
-  font-family: Ubuntu;
-  src: url('../fonts/Ubuntu-Regular.ttf') format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Ubuntu;
-  src: url('../fonts/Ubuntu-Light.ttf') format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
+// Partials
+@import "main";
+@import "chip";
+@import "timeline";

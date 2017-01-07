@@ -37,15 +37,14 @@ elixir((mix) => {
         'public/css/bundle.css', 'resources/assets/bower_components');
 
     // Vendors scripts
-    mix.styles([
-            'jquery/dist/jquery.min.js',
-            'materialize/dist/js/materialize.min.js',
-            'gmap3/dist/gmap3.min.js'
+    mix.scripts([
+            'bower_components/jquery/dist/jquery.min.js',
+            'js/appear/appear.min.js',
+            'bower_components/materialize/dist/js/materialize.min.js',
+            'bower_components/modernizr/modernizr.js',
+            'bower_components/gmap3/dist/gmap3.min.js'
         ],
-        'public/js/bundle.js', 'resources/assets/bower_components');
-
-    // Images
-    mix.imagemin();
+        'public/js/bundle.js', 'resources/assets');
 
     // Create Build
     mix.version([
@@ -54,4 +53,7 @@ elixir((mix) => {
         'js/bundle.js',
         'js/app.js'
     ]);
+
+    // Images
+    mix.imagemin();
 });
