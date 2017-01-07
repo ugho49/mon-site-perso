@@ -1,6 +1,6 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
+require('laravel-elixir-imagemin');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,7 +13,45 @@ require('laravel-elixir-vue-2');
  |
  */
 
-/*elixir((mix) => {
-    mix.sass('app.scss')
-       .webpack('app.js');
-});*/
+elixir.config.images = {
+    outputFolder: 'build/images'
+};
+
+elixir((mix) => {
+
+    // Compile own css and js
+    mix.sass('app.scss');
+    mix.scripts('app.js');
+
+    // Copy fonts
+    mix.copy('resources/assets/fonts', 'public/build/fonts');
+    mix.copy('resources/assets/bower_components/materialize/dist/fonts', 'public/build/fonts');
+    mix.copy('resources/assets/bower_components/font-awesome/fonts', 'public/build/fonts');
+
+    // Vendors style
+    mix.styles([
+            'materialize/dist/css/materialize.min.css',
+            'font-awesome/css/font-awesome.min.css',
+            'animate.css/animate.min.css'
+        ],
+        'public/css/bundle.css', 'resources/assets/bower_components');
+
+    // Vendors scripts
+    mix.styles([
+            'jquery/dist/jquery.min.js',
+            'materialize/dist/js/materialize.min.js',
+            'gmap3/dist/gmap3.min.js'
+        ],
+        'public/js/bundle.js', 'resources/assets/bower_components');
+
+    // Images
+    mix.imagemin();
+
+    // Create Build
+    mix.version([
+        'css/bundle.css',
+        'css/app.css',
+        'js/bundle.js',
+        'js/app.js'
+    ]);
+});

@@ -1,9 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
-    "type": "project",
+    "name": "perso",
+    "description": "Personal Website",
     "require": {
         "php": ">=5.6.4",
         "dimsav/laravel-translatable": "^6.0",

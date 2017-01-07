@@ -1,9 +1,22 @@
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
 // Variables
 @import "variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Fonts
+@font-face {
+  font-family: Pacifico;
+  src: url('../fonts/Pacifico.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url('../fonts/Ubuntu-Regular.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url('../fonts/Ubuntu-Light.ttf') format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}

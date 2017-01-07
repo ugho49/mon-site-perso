@@ -1,0 +1,17 @@
+{
+  "name": "perso",
+  "description": "Personal website",
+  "authors": [
+    "Ugho Stephan <stephan.ugho@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "materialize": "^0.97.8",
+    "jquery": "^3.1.1",
+    "font-awesome": "^4.7.0",
+    "animate.css": "^3.5.2",
+    "gmap3": "^7.2.0",
+    "modernizr": "^3.3.1"
+  }
+}
