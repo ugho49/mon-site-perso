@@ -26,7 +26,11 @@
                             </div>
                             @if($project->url)
                                 <div class="card-action center-align">
-                                    <a href="{{ $project->url }}" target="_blank" class="link-projet">{{ $project->action }}</a>
+                                    @if($project->isFile)
+                                        <a href="{{ URL::to('/files/' . $project->url) }}" target="_blank" class="link-projet">{{ $project->action }}</a>
+                                    @else
+                                        <a href="{{ $project->url }}" target="_blank" class="link-projet">{{ $project->action }}</a>
+                                    @endif
                                 </div>
                             @endif
                             <div class="card-reveal">

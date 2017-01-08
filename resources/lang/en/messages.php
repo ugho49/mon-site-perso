@@ -7,8 +7,6 @@ return [
     "navProjects" => "Projects",
     "navContact" => "Contact",
     "sectionAbout" => "About me",
-    "sectionAboutText1" => "After obtaining my Advanced Technician Certificate Option Computer Services Organizations in Chevrollier High School in Angers, I naturally directs me towards a License Degree (Computer Science Methods Applied to Business Management) at the University of Nantes. Unfortunately this route is not pleasant to me, I shifted to a Professionnal license in Software Computer Systems at the Technical University of Nantes.",
-    "sectionAboutText2" => "Currently I am in Professionnal Licence and I realize my training in alternation in the CGI company.",
     "sectionTimeline" => "Timeline",
     "sectionSkills" => "My skills",
     "sectionProjects" => "My Projects",

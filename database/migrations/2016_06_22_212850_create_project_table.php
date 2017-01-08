@@ -15,6 +15,7 @@ class CreateProjectTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('url');
+            $table->boolean('isFile')->default(false);
             $table->string('imagePath');
             $table->boolean('enabled');
             $table->timestamps();
