@@ -123,12 +123,8 @@ $(document).ready(function () {
     $('.language_flag').click(function () {
         if (!$(this).hasClass('active')) {
             $.ajax({
-                url: 'language',
-                type: 'POST',
-                data: {
-                    'lang': $(this).data('id')
-                },
-                dataType: 'json',
+                url: $(this).data('url'),
+                type: 'GET',
                 success: function (result) {
                     location.reload();
                 }

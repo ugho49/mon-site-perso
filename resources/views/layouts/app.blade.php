@@ -28,13 +28,7 @@
 
 <body>
 
-    @include('layouts.partials.header')
-    @include('layouts.partials.navbar')
-
     @yield('content')
-
-    @include('layouts.partials.footer')
-
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;language=fr"></script>

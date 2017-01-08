@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('translations', 'Api\TranslationController@index');
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'locale'], function() {
+Route::group(['prefix' => '{locale}', 'middleware' => 'api.locale'], function() {
     Route::resource('projects', 'Api\ProjectController');
     Route::resource('informations', 'Api\InformationController');
     Route::resource('skills', 'Api\SkillController');

@@ -12,3 +12,5 @@
 */
 
 Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
+
+Route::get('/language/{locale}', ['as' => 'changeLocale', 'uses' => 'HomeController@changeLocale']);

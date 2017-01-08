@@ -7,9 +7,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Session;
 
-class LocaleMiddleware
+class ApiLocaleMiddleware
 {
     /**
      * Handle an incoming request.
@@ -20,13 +19,15 @@ class LocaleMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $locale = "fr";
+        $localesAvailables = Translation::all('locale');
+        $localeParam = $request->segment(2);
 
-        if (Session::has("locale")) {
-            $locale = Session::get('locale');
-            Session::remove("locale");
+        if ( $localesAvailables->contains('locale', $localeParam) ) {
+            App::setLocale($localeParam);
+        } else {
+            return Response::json(['error' => true, 'message' => 'locale not found'], 404);
         }
-        App::setLocale($locale);
+
         return $next($request);
     }
 }
