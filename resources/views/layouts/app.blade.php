@@ -5,9 +5,9 @@
     <!-- Important Header -->
     <title>Ugho Stephan</title>
     <meta charset="utf-8" />
-    <meta name="language" content="fr">
+    <meta name="language" content="{{ App::getLocale() }}">
     <link rel="shortcut icon" href="{{ URL::to('/build/images/icons/favicon.ico') }}" type="image/icon">
-    <link rel="alternate" href="{{ URL::to('/') }}" hreflang="fr" />
+    <link rel="alternate" href="{{ URL::to('/') }}" hreflang="{{ App::getLocale() }}" />
     <meta name="keywords" content="ugho stephan, developpeur, etudiant, mobile, web">
     <meta name="description" content="Site personnel de Ugho STEPHAN étudiant en informatique ...">
     <meta name="author" content="Ugho STEPHAN">
@@ -31,8 +31,8 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;language=fr"></script>
-    <script type="text/javascript" src='https://www.google.com/recaptcha/api.js?hl=fr'></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;language={{ App::getLocale() }}"></script>
+    <script type="text/javascript" src='https://www.google.com/recaptcha/api.js?hl={{ App::getLocale() }}'></script>
     <script type="text/javascript" src="{{ URL::to('/') . elixir('js/bundle.js') }}"></script>
     <script type="text/javascript" src="{{ URL::to('/') . elixir('js/app.js') }}"></script>
 

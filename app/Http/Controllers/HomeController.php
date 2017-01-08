@@ -8,6 +8,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
+use App\Models\Skill;
+use App\Models\SkillType;
 use App\Models\Timeline;
 use App\Models\Translation;
 use Illuminate\Support\Facades\Response;
@@ -17,7 +20,16 @@ class HomeController extends Controller
 {
     public function index() {
         $timeline = Timeline::orderBy('start', 'DESC')->get();
-        return view('pages.index', ['timelines' => $timeline]);
+        $skills = Skill::all();
+        $typeSkills = SkillType::all();
+        $projects = Project::all();
+
+        return view('pages.index', [
+            'timelines'    => $timeline,
+            'typeSkills'   => $typeSkills,
+            'skills'       => $skills,
+            'projects'     => $projects
+        ]);
     }
 
     public function changeLocale($locale) {

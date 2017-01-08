@@ -13,16 +13,19 @@ $(document).ready(function () {
     }
 
     //Google Maps
-    /*$('#gmap').gmap3({
+    $('#gmap').gmap3({
         address: "Nantes, France", // center
         zoom: 14,
         scrollwheel: false,
         draggable: isDraggable,
         mapTypeId : google.maps.MapTypeId.ROADMAP
     })
-        .marker([
-            {address:"Nantes, France", icon: "img/location.png"}
-        ]);*/
+    .marker([
+        {
+            address: "Nantes, France",
+            icon: $('#gmap').data('icon-url')
+        }
+    ]);
 
     //animate skills bar
     $('.skills').each(function () {
