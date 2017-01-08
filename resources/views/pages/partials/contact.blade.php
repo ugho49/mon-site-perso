@@ -109,7 +109,7 @@
                 <br>
                 <h4 class="subtitle-section">{{ trans('messages.sectionContactMessage') }}</h4>
                 <div class="row">
-                    <form class="col s12" id="formulaire">
+                    <form class="col s12" id="formulaire" action="{{ URL::route('contact', App::getLocale()) }}">
                         <span id="ancre_flash"></span>
                         <div class="row">
                             <div class="input-field col s6">

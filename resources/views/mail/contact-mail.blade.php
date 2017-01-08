@@ -650,7 +650,7 @@ body{background-color:#ededf1}.mso h1{}.mso h1{font-family:sans-serif !important
       <div class="header" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 173000px);" id="emb-email-header-container">
       <!--[if (mso)|(IE)]><table align="center" class="header" cellpadding="0" cellspacing="0"><tr><td style="width: 600px"><![endif]-->
         <div class="logo emb-logo-margin-box" style="font-size: 26px;line-height: 32px;Margin-top: 4px;Margin-bottom: 0px;color: #c3ced9;font-family: Roboto,Tahoma,sans-serif;Margin-left: 20px;Margin-right: 20px;" align="center">
-          <div class="logo-center" style="font-size:0px !important;line-height:0 !important;" id="emb-email-header" align="center"><a target="_blank" style="text-decoration: none;transition: opacity 0.1s ease-in;color: #c3ced9;" href="http://test.createsend1.com/t/d-l-iljyjlk-l-r/"><img style="height: auto;width: 100%;border: 0;max-width: 128px;" src="https://i1.createsend1.com/ei/d/0C/38A/5F2/184904/csfinal/logo_10.png" alt="" width="128"></a></div>
+          <div class="logo-center" style="font-size:0px !important;line-height:0 !important;" id="emb-email-header" align="center"><a target="_blank" style="text-decoration: none;transition: opacity 0.1s ease-in;color: #c3ced9;" href="{{ URL::to('/') }}"><img style="height: auto;width: 100%;border: 0;max-width: 128px;" src="{{ URL::to('/build/images/icons/logo_10.png') }}" alt="" width="128"></a></div>
         </div>
       <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
       </div>
@@ -664,7 +664,7 @@ body{background-color:#ededf1}.mso h1{}.mso h1{font-family:sans-serif !important
     </div>
         
             <div style="Margin-left: 20px;Margin-right: 20px;">
-      <h3 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #788991;font-size: 16px;line-height: 24px;text-align: center;">BREAKING NEWS :</h3><h1 style="Margin-top: 12px;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #3e4751;font-size: 22px;line-height: 31px;font-family: Ubuntu,sans-serif;text-align: center;">Nouveau message :</h1><p style="Margin-top: 20px;Margin-bottom: 20px;"><span>{{ ucfirst($firstname) }} {{ strtoupper($lastname) }} ({{$email}}) vous à envoyé un message suite à sont parcours sur ugho-stephan.fr à 10:42 le 06/07/2016 - </span>IP : 192.168.1.1</p>
+      <h3 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #788991;font-size: 16px;line-height: 24px;text-align: center;">BREAKING NEWS :</h3><h1 style="Margin-top: 12px;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #3e4751;font-size: 22px;line-height: 31px;font-family: Ubuntu,sans-serif;text-align: center;">Nouveau message :</h1><p style="Margin-top: 20px;Margin-bottom: 20px;"><span>{{ ucfirst($firstname) }} {{ strtoupper($lastname) }} ({{$email}}) vous à envoyé un message suite à sont parcours sur {{ URL::to('/') }} à {{ Carbon\Carbon::now()->toTimeString() }} le {{ Carbon\Carbon::now()->format("d/m/Y") }} - </span>IP : {{ Request::ip() }}</p>
     </div>
         
             <div style="Margin-left: 20px;Margin-right: 20px;">
@@ -712,19 +712,6 @@ body{background-color:#ededf1}.mso h1{}.mso h1{font-family:sans-serif !important
           <div class="column narrow" style="text-align: left;font-size: 12px;line-height: 19px;color: #7c7e7f;font-family: Ubuntu,sans-serif;Float: left;max-width: 320px;min-width: 200px; width: 320px;width: calc(72200px - 12000%);">
             <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
               
-            </div>
-          </div>
-        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-        </div>
-      </div>
-      <div class="layout one-col email-footer" style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 173000px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
-        <div class="layout__inner" style="border-collapse: collapse;display: table;width: 100%;">
-        <!--[if (mso)|(IE)]><table align="center" cellpadding="0" cellspacing="0"><tr class="layout-email-footer"><td style="width: 600px;" class="w560"><![endif]-->
-          <div class="column" style="text-align: left;font-size: 12px;line-height: 19px;color: #7c7e7f;font-family: Ubuntu,sans-serif;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);">
-            <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 10px;Margin-bottom: 10px;">
-              <div>
-                <a target="_blank" style="text-decoration: underline;transition: opacity 0.1s ease-in;color: #7c7e7f;" href="#">Unsubscribe</a>
-              </div>
             </div>
           </div>
         <!--[if (mso)|(IE)]></td></tr></table><![endif]-->

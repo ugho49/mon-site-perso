@@ -24,6 +24,7 @@ return [
     "formBtnSend" => "Envoyer",
     "formMessageNotARobot" => "Il faut cliquez sur \"Je ne suis pas un robot\"",
     "formMessageFieldsMissing" => "Des champs sont manquants",
+    "formMessageInternalError" => "Erreur interne, merci de réessayer plus tard",
     "formMessageSuccess" => "Le message à été envoyé avec succès.",
     "formMessageFieldsTooLong" => "Le champs message ne doit pas contenir plus de 1000 caractères.",
     "formMessageRobotNotGood" => "Le champ \"Je ne suis pas un robot\" est en erreur.",

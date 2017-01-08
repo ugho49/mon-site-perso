@@ -89,33 +89,33 @@ $(document).ready(function () {
 });
 
 (function() {
-    $('#formulaire').submit(function (event) {
+    $('#formulaire').submit(function (e) {
         // Stop form from submitting normally
-        event.preventDefault();
+        e.preventDefault();
 
         var recaptchaResponse = $('#g-recaptcha-response').val();
         var message = $('#message').val();
         var email = $('#email').val();
-        var nom = $('#last_name').val();
-        var prenom = $('#first_name').val();
+        var lastname = $('#last_name').val();
+        var firstname = $('#first_name').val();
 
         $.ajax({
             type: "POST",
-            url: "form",
+            url: $(this).attr('action'),
             data: {
-                "prenom": prenom,
-                "nom": nom,
+                "firstname": firstname,
+                "lastname": lastname,
                 "email": email,
                 "message": message,
                 "recaptcha": recaptchaResponse
             },
             dataType: "json",
-            success: function (data) {
-                if (data.status == 'success') {
-                    setFlash(data.status, data.libelle);
+            complete: function (response) {
+                if (!response.responseJSON.error) {
+                    setFlash("success", response.responseJSON.message);
                     document.getElementById("formulaire").reset();
                 } else {
-                    setFlash(data.status, data.libelle);
+                    setFlash("danger", response.responseJSON.message);
                 }
             }
         });
@@ -183,7 +183,7 @@ function showBlocks(blocks, offset) {
 }
 
 function setFlash(type, libelle) {
-    var flash = '<div class="delete"><div class="chip col s12 z-depth-1 ' + type + '"> ' + libelle + '<i class="material-icons">close</i></div><br></div>';
+    var flash = '<div class="delete"><div class="chip col s12 z-depth-1 ' + type + '"> ' + libelle + '</div><br></div>';
 
     $('#ancre_flash').after(flash);
 

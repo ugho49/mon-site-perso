@@ -19,9 +19,9 @@
                             <p>{{ $t->description }}</p>
 
                             <span class="cd-date">
-                                {{ Carbon\Carbon::createFromFormat('Y-m-d', $t->start)->format('M Y') }}
+                                {{ Carbon\Carbon::createFromFormat('Y-m-d', $t->start)->formatLocalized('%b %Y') }}
                                 @if ($t->end != null)
-                                    , {{ Carbon\Carbon::createFromFormat('Y-m-d', $t->end)->format('M Y') }}
+                                    , {{ Carbon\Carbon::createFromFormat('Y-m-d', $t->end)->formatLocalized('%b %Y') }}
                                 @endif
                             </span>
 

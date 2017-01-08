@@ -25,6 +25,7 @@ return [
     "formMessageNotARobot" => "You must click on \"I am not a robot\"",
     "formMessageFieldsMissing" => "Fields are missing",
     "formMessageSuccess" => "The message has been sent successfully.",
+    "formMessageInternalError" => "Internal Error, thanks try again later...",
     "formMessageFieldsTooLong" => "The message field must not contain more than 1000 characters.",
     "formMessageRobotNotGood" => "The field \"I am not a robot\" is in error.",
     "btnGoTop" => "Go top",
