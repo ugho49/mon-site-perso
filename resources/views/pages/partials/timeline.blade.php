@@ -16,7 +16,7 @@
                         <div class="cd-timeline-content">
                             <h2>{{ $t->title }}</h2>
                             <h3>{{ $t->subtitle }}</h3>
-                            <p>{{ $t->description }}</p>
+                            <p>{!! nl2br($t->description) !!}</p>
 
                             <span class="cd-date">
                                 {{ Carbon\Carbon::createFromFormat('Y-m-d', $t->start)->formatLocalized('%b %Y') }}

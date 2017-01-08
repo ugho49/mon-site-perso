@@ -664,7 +664,7 @@ body{background-color:#ededf1}.mso h1{}.mso h1{font-family:sans-serif !important
     </div>
         
             <div style="Margin-left: 20px;Margin-right: 20px;">
-      <h3 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #788991;font-size: 16px;line-height: 24px;text-align: center;">BREAKING NEWS :</h3><h1 style="Margin-top: 12px;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #3e4751;font-size: 22px;line-height: 31px;font-family: Ubuntu,sans-serif;text-align: center;">Nouveau message :</h1><p style="Margin-top: 20px;Margin-bottom: 20px;"><span>{{ ucfirst($firstname) }} {{ strtoupper($lastname) }} ({{$email}}) vous à envoyé un message suite à sont parcours sur {{ URL::to('/') }} à {{ Carbon\Carbon::now()->toTimeString() }} le {{ Carbon\Carbon::now()->format("d/m/Y") }} - </span>IP : {{ Request::ip() }}</p>
+      <h3 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #788991;font-size: 16px;line-height: 24px;text-align: center;">BREAKING NEWS :</h3><h1 style="Margin-top: 12px;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #3e4751;font-size: 22px;line-height: 31px;font-family: Ubuntu,sans-serif;text-align: center;">Nouveau message :</h1><p style="Margin-top: 20px;Margin-bottom: 20px;"><span>{{ ucfirst($firstname) }} {{ strtoupper($lastname) }} ({{$email}}) vous à envoyé un message suite à son parcours sur {{ URL::to('/') }} à {{ Carbon\Carbon::now()->toTimeString() }} le {{ Carbon\Carbon::now()->format("d/m/Y") }} - </span>IP : {{ Request::ip() }}</p>
     </div>
         
             <div style="Margin-left: 20px;Margin-right: 20px;">

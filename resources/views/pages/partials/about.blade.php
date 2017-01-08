@@ -5,10 +5,10 @@
         <h2 class="title-section">{{ trans('messages.sectionAbout') }}</h2>
         <span class="title_border"></span>
         <p class="grey-text text-darken-3 lighten-3 about-text">
-            {{ Session::get('info_about_p1') }}
+            {!! nl2br(Session::get('info_about_p1')) !!}
         </p>
         <p class="grey-text text-darken-3 lighten-3 about-text">
-            {{ Session::get('info_about_p2') }}
+            {!! nl2br(Session::get('info_about_p2')) !!}
         </p>
     </div>
 </div>
