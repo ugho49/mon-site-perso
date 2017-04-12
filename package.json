@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
+    "postinstall": "./node_modules/.bin/bower i",
+    "prod": "./node_modules/.bin/gulp --production",
+    "dev": "./node_modules/.bin/gulp watch"
   },
   "devDependencies": {
     "bower": "^1.8.0",
