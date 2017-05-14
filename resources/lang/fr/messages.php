@@ -24,7 +24,8 @@ return [
     "formMessageFieldsMissing" => "Des champs sont manquants",
     "formMessageInternalError" => "Erreur interne, merci de réessayer plus tard",
     "formMessageSuccess" => "Le message à été envoyé avec succès.",
-    "formMessageFieldsTooLong" => "Le champs message ne doit pas contenir plus de 1000 caractères.",
+    "formMessageFieldsTooLong" => "Le champ message ne doit pas contenir plus de 1000 caractères.",
+    "formMessageEmailInvalid" => "Le champ email doit contenir une adresse email valide.",
     "formMessageRobotNotGood" => "Le champ \"Je ne suis pas un robot\" est en erreur.",
     "btnGoTop" => "Remonter en haut",
 ];

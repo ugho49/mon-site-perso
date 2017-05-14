@@ -127,13 +127,18 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">email</i>
                                 <input id="email" type="email" required="required" class="f-field validate">
-                                <label for="email" style="width: 0">{{ trans('messages.formEmail') }}</label>
+                                <label for="email"
+                                       data-error="{{ trans('messages.formMessageEmailInvalid') }}"
+                                       style="/*width: 0*/">{{ trans('messages.formEmail') }}</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="message" class="materialize-textarea validate f-field" required="required" length="1000"></textarea>
+                                <textarea id="message"
+                                          class="materialize-textarea validate f-field"
+                                          required="required"
+                                          data-length="1000"></textarea>
                                 <label for="message" style="width: 0">{{ trans('messages.formMessage') }}</label>
                             </div>
                         </div>

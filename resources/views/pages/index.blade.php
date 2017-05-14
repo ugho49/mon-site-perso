@@ -28,7 +28,7 @@
 
     <div class="fixed-action-btn" id="btn_home">
         <a href="#home"
-           class="btn-floating btn-large teal darken-1 tooltipped waves-effect waves-light"
+           class="btn-floating btn-large teal darken-1 tooltipped waves-effect waves-light pulse"
            data-position="top"
            data-delay="20"
            data-tooltip="{{ trans('messages.btnGoTop') }}">

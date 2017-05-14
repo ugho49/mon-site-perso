@@ -25,6 +25,7 @@ return [
     "formMessageSuccess" => "The message has been sent successfully.",
     "formMessageInternalError" => "Internal Error, thanks try again later...",
     "formMessageFieldsTooLong" => "The message field must not contain more than 1000 characters.",
+    "formMessageEmailInvalid" => "The email must be a valid email address.",
     "formMessageRobotNotGood" => "The field \"I am not a robot\" is in error.",
     "btnGoTop" => "Go top",
 ];

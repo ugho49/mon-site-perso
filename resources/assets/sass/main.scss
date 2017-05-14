@@ -123,10 +123,11 @@
   }
 
   #home-arrow-down {
+    animation: HomeArrowMoveUpDown 1s ease-in-out infinite;
     position: absolute;
     width: 100%;
     left: 0;
-    top: 85%;
+    top: 84%;
 
     a {
       color: #fff !important;
