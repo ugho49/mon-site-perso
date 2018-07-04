@@ -1,12 +1,14 @@
-# Site personnel
+# Personal Website
 
-## Prérequis
+## Requirement
 
 - PHP 7
 - MYSQL
 - NodeJS
 
-## Pour commencer
+This site is made with the Laravel Framework
+
+## How to start
 
 Install composer dependencies : \
 ``composer update``
